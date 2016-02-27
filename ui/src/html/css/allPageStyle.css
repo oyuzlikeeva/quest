@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+}
+
+a {
+    color: #fff;
+}
+
+li {
+    display: inline;
+    list-style-type: none;
+}
+
+.input {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+.content {
+    margin: 120px 5%;
+}
+
+.header {
+    background: #000;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 70px;
+    position: fixed;
+    top:0;
+    width: 100%;
+}
+
+.project-name{
+    background: none;
+    border: none;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 35px;
+}
+
+.header-button-group {
+    float: right;
+    margin: 20px 55px;
+}
+
+.icon-button {
+    background: #000;
+    border: none;
+    border-radius: 100%;
+    vertical-align: middle;
+}
+
+.log-in-button {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    vertical-align: middle;
+}
+
+.custom-button {
+    background: #000;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin: 1px;
+}
+
+.modal-dialog input {
+    margin: 10px;
+}
+
+.modal-dialog {
+    background: rgba(0,0,0,0.8);
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    pointer-events: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transition: opacity 400ms ease-in;
+    z-index: 99999;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+}
+
+.modal-dialog:target {
+    display: block;
+    pointer-events: auto;
+}
+
+.modal-dialog > div {
+    background: #fff;
+    border-radius: 2px;
+    margin: 10% auto;
+    padding: 20px;
+    position: relative;
+    width: 400px;
+}
+
+.close {
+    border-radius: 12px;
+    font-weight: bold;
+    line-height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-decoration: none;
+    width: 24px;
+}

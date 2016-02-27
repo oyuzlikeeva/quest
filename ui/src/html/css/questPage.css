@@ -1,0 +1,65 @@
+.quest-photo-gallery {
+    float: left;
+}
+
+.quest-description {
+    margin: 10% 0;
+}
+
+.quest-description-title {
+    text-align: right;
+}
+
+.mini-photo-gallery {
+    margin: 5px;
+    position: relative;
+    right: 42px;
+}
+
+.icon-button {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    display: inline;
+    height: 30px;
+    margin: 0 15px;
+    width: 30px;
+}
+
+.quest-description-button {
+    display: inline-block;
+    float: left;
+    text-align: left;
+}
+
+.quest-rating {
+
+}
+
+.quest-comments {
+    margin-left: 5%;
+    width: 60%;
+    padding: 5%;
+}
+
+.quest-comment {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+}
+
+.quest-comment-title>.quest-rating {
+    position: relative;
+    left: 40%;
+}
+
+.time-comment {
+    color: #757575;
+}
+
+.quest-comment-divider {
+    background: #00695C;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 3px;
+}

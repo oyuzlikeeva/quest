@@ -1,0 +1,62 @@
+.icon-button {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 36px;
+    margin: 0 auto;
+    padding: 0;
+    width: 36px;
+}
+
+.add-new-button {
+    float: right;
+}
+
+.add-new-button .icon-button {
+    padding: 0;
+    margin: 0;
+}
+
+.comments-notification {
+    float: left;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.notification-table {
+    border-radius: 2px;
+    border-collapse: collapse;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+th {
+    padding: 5px 0;
+}
+
+tr {
+    border: 1px solid #eee;
+}
+
+tr:nth-child(2n) {
+    background: #eee;
+}
+
+.text-comment {
+    padding: 5px;
+    width: 60%;
+}
+
+.username {
+    text-align: center;
+}
+
+.actions {
+    padding-left: 12%;
+}
+
+.modal-title-divider {
+    background: #00695C;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 2px;
+}

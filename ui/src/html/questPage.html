@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>QuestoMania</title>
+        <link rel="stylesheet" type="text/css" href="css/allPageStyle.css">
+        <link rel="stylesheet" type="text/css" href="css/questPage.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="block-project-name">
+                <a href="main.html" aria-label="Quest name">
+                    <span class="project-name" type="button">
+                        QuestoMania
+                    </span>
+                </a>
+            </div>
+            <div class="header-button-group">
+                <button type="button" class="icon-button">
+                    <a href="userProfile.html" aria-label="User profile page">
+                        <img src="css/img/icons/ic_person_white_36px.svg">
+                    </a>
+                </button>
+                <a href="logIn.html" aria-label="Log in page">
+                    <button type="button" class="log-in-button">Log in</button>
+                </a>
+            </div>
+        </header>
+        <div class="content">
+            <div class="quest-photo-gallery">
+                <img src="css/img/kvestrum.jpg" width="450" height="400"/>
+                <ul>
+                    <li class="mini-photo-gallery"><img src="css/img/quest1.jpg" width="100" height="90"/></li>
+                    <li class="mini-photo-gallery"><img src="css/img/quest2.jpg" width="100" height="90"/></li>
+                    <li class="mini-photo-gallery"><img src="css/img/quest3.jpg" width="100" height="90"/></li>
+                    <li class="mini-photo-gallery"><img src="css/img/quest4.jpg" width="100" height="90"/></li>
+                </ul>
+            </div>
+            <div class="quest-description">
+                <div class="quest-description-title">
+                    <div class="quest-description-button">
+                        <input class="custom-button" type="button" value="Reservation"
+                               alt="make a reservation"/>
+                        <a href="#mark-passed" aria-label="Mark quest button">
+                            <button class="custom-button" type="button">Mark passed</button>
+                        </a>
+                        <a href="#edit-quest-info" aria-label="Edit quest button">
+                            <button class="icon-button" type="button">
+                                <img src="css/img/icons/ic_mode_edit_white_18px.svg">
+                            </button><br/>
+                        </a>
+                        <h3>Стоимость прохождения:<span>1 500</span></h3>
+                    </div>
+                    <h1 class="quest-name">Quest name</h1>
+                    <h3 class="quest-project-name">Project name</h3>
+                    <span class="quest-rating">star will be</span>
+                </div>
+
+                <div class="description">
+                    <p>Квест (англ. quest), или приключенческая игра (англ. adventure game) — один из основных жанров
+                        компьютерных игр, представляющий собой интерактивную историю с главным героем, управляемым
+                        игроком. Важнейшими элементами игры в жанре квеста являются собственно повествованиеи
+                        обследование мира, а ключевую роль в игровом процессе играют решение головоломок и задач,
+                        требующих от игрока умственных усилий. Такие характерные для других жанров компьютерных
+                        игр элементы, как бои, экономическое планирование и задачи, требующие от игрока скорости
+                        реакции и быстрых ответных действий, в квестах сведены к минимуму или вовсе отсутствуют[1].
+                        Игры, объединяющие в себе характерные признаки квестов и жанра action, выделяютв
+                        отдельный жанр — action-adventure.
+
+                        Англоязычное название adventure game восходит к первой игре жанра, Colossal Cave Adventure, и
+                        должно пониматься как «игра, подобная Adventure», хотя современные игры могут сильно от неё
+                        отличаться. В русском языке закрепилось наименование «квест»[источник не указан 681 день],
+                        которое изначально также было именем собственным и использовалось в названии популярных игр
+                        этого жанра, разработанных компанией Sierra On-Line: King's Quest, Space Quest, Police Quest.
+
+                    </p>
+                </div>
+            </div>
+            <div class="quest-comments">
+                <h3>Comments on <span>Quest name(taken from title)</span></h3>
+                <div class="quest-comment">
+                    <div class="quest-comment-title">
+                        <h3>Title</h3>
+                        <span class="username">Username</span>
+                        <span class="time-comment">time submit comment</span>
+                        <span class="quest-rating">STAAAAARS*_*</span>
+                    </div>
+                    <hr class="quest-comment-divider">
+                    <p class="quest-comment-text">
+                        ключевую роль в игровом процессе играют решение головоломок и задач, требующих от игрока
+                        умственных усилий. Такие характерные для других жанров компьютерных игр элементы, как бои,
+                        экономическое планирование и задачи, требующие от игрока скорости реакции и быстрых ответных
+                        действий, в квестах сведены к минимуму или вовсе отсутствуют[1]. Игры, объединяющие в себе
+                        характерные признаки квестов и жанра action, выделяют в отдельный жанр — action-adventure.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--Modal window for mark on passed-->
+        <div id="mark-passed" class="modal-dialog">
+            <div>
+                <h2>Quest mark passed</h2>
+                <a href="#close" aria-label="Close" class="close">
+                    <img src="css/img/icons/ic_clear_black_24px.svg"/>
+                </a>
+                <hr class="quest-comment-divider">
+                <form>
+                    <label>Title of comment:
+                            <input class="input"
+                                   type="text"
+                                   placeholder="Enter comment's title"
+                                   alt="Enter comment's title"/>
+                    </label><br/>
+                    <label>
+                        Your score quest:
+                        <input class="input"
+                               type="text"
+                               placeholder="How are you scoring the quest"
+                               alt="How are you scoring the quest"/>
+                    </label><br/>
+                    <label>
+                        Comment of quest:<br/>
+                        <textarea type="text" placeholder="short story about quest">
+
+                        </textarea>
+                    </label><br/>
+                    <label>
+                        Add photo from quest:
+                        <input class="input"
+                               type="file"
+                               accept="image/jpeg,image/png"
+                               alt="add quest's photo"/>
+                    </label><br/>
+                    <button class="custom-button" type="submit">Edit quest info</button>
+                </form>
+            </div>
+        </div>
+        <!--Modal window for edit quest information-->
+        <div id="edit-quest-info" class="modal-dialog">
+            <div>
+                <h2>Edit quest info</h2>
+                <a href="#close" aria-label="Close" class="close">
+                    <img src="css/img/icons/ic_clear_black_24px.svg"/>
+                </a>
+                <hr class="quest-comment-divider">
+                <form>
+                    <label>
+                        Quest name:
+                        <input class="input"
+                               type="text"
+                               alt="Enter quest name"/>
+                    </label><br/>
+                    <label>
+                        Project name:
+                        <input class="input"
+                               type="text"
+                               alt="Enter quest's project name"/>
+                    </label><br/>
+                    <label>
+                        Coast of quest:
+                        <input class="input"
+                               type="number"
+                               step="0.5"
+                               alt="Coast of quest"/>
+                    </label><br/>
+                    <label>
+                        Address of quest:
+                        <input class="input"
+                               type="text"
+                               alt="Address of quest"/>
+                    </label><br/>
+                    <label>
+                        Keywords:
+                        <input class="input"
+                               type="text"
+                               alt="Write keywords separated by commas"/>
+                    </label><br/>
+                    <label>
+                        Description of quest:<br/>
+                        <textarea type="text">
+
+                        </textarea>
+                    </label><br/>
+                    <label>
+                        Add photo of quest:
+                        <input class="input"
+                               type="file"
+                               accept="image/jpeg,image/png"
+                               multiple
+                               alt="add quest's photos"/>
+                    </label><br/>
+                    <button class="custom-button" type="submit">Edit quest info</button>
+                </form>
+            </div>
+        </div>
+        <!--model window for mark passed quest form error message-->
+        <div class="modal-dialog">
+            <a href="#close" aria-label="Close" class="close">
+                <img src="css/img/icons/ic_clear_black_24px.svg"/>
+            </a>
+            <h2>Error add mark quest is passed</h2>
+            <hr class="quest-comment-divider">
+            <p>Please, check filling form</p>
+        </div>
+        <!--model window for edit quest form error message-->
+        <div class="modal-dialog">
+            <a href="#close" aria-label="Close" class="close">
+                <img src="css/img/icons/ic_clear_black_24px.svg"/>
+            </a>
+            <h2>Error edit quest info</h2>
+            <hr class="quest-comment-divider">
+            <p>Please, check filling form</p>
+        </div>
+    </body>
+</html>

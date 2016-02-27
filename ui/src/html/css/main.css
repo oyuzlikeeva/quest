@@ -1,0 +1,26 @@
+.quest-block {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    float: left;
+    height: 300px;
+    margin: 2% 1%;
+    padding: 5px;
+    width: 250px;
+}
+
+.quest-name {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.quest-block-info {
+    padding-right: 5px;
+    text-align: right;
+}
+
+.quest-rating {
+    position: relative;
+    bottom: 35px;
+    right: 130px;
+}
