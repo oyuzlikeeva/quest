@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Log in</title>
+        <link rel="stylesheet" type="text/css" href="logIn.css">
+        <link rel="stylesheet" type="text/css" href="../allPageStyle.css">
+    </head>
+    <body>
+        <a href="/main">
+            <button class="back-on-main-page" type="button">
+                <img src="../img/icons/ic_arrow_back_white_36px.svg"/>
+            </button>
+        </a>
+        <div class="log-in">
+            <div class="title-form">
+                <button type="button">
+                    <span id="log-in-title"
+                          class="log-in-form-title"
+                          onclick=showLogInForm()>
+                        Log in
+                    </span>
+                </button>
+                <button type="button">
+                    <span id="sign-up-title"
+                          class="log-in-form-title"
+                          onclick=showSignUpForm()>
+                        Sign up
+                    </span>
+                </button>
+            </div>
+            <div>
+                <hr class="log-in-line">
+                <hr class="sign-up-line hidden">
+            </div>
+            <hr class="title-line">
+            <div class="log-in-form">
+                <form>
+                    <label>
+                        Login:
+                        <input class="input"
+                               type="text"
+                               requaered
+                               name="username"
+                               maxlength="10"
+                               placeholder="Enter your login"
+                               alt="Enter your login"/>
+                    </label><br/>
+                    <label>
+                        Password
+                        <input class="input"
+                               type="password"
+                               requaered
+                               name="password"
+                               maxlength="10"
+                               placeholder="Enter your password"
+                               alt="Enter your password"/>
+                    </label><br/>
+                    <button type="submit"
+                           class="custom-button">
+                           Log in
+                    </button>
+                </form>
+            </div>
+            <div class="sign-up-form hidden">
+                <form>
+                    <label>
+                        Login:
+                        <input class="input"
+                               type="text"
+                               requaered
+                               name="username"
+                               maxlength="10"
+                               placeholder="Enter your login"
+                               alt="Enter your login"/>
+                    </label><br/>
+                    <label>
+                        Password:
+                        <input class="input"
+                               type="password"
+                               requaered
+                               name="password"
+                               maxlength="10"
+                               placeholder="Enter your password"
+                               alt="Enter your password"/>
+                    </label><br/>
+                    <label>
+                        Repeat password:
+                        <input class="input"
+                               type="password"
+                               requaered
+                               name="repeatPassword"
+                               maxlength="10"
+                               placeholder="Repeat your password"
+                               alt="Repeat your password"/>
+                    </label><br/>
+
+                    <button class="custom-button"
+                            type="submit">
+                        Sign up
+                    </button>
+                </form>
+            </div>
+            <!--model window for log in error message-->
+            <div id="log-in-error" class="modal-dialog">
+                <h2>Error log in</h2>
+                <p>Pair login/password not correctly</p>
+            </div>
+            <!--model window for sign up error message-->
+            <div id="sign-up-error" class="modal-dialog">
+                <h2>Error sign up</h2>
+                <p>Password was't repeat correctly</p>
+            </div>
+        </div>
+        <script src="../jquery-2.2.1.js"></script>
+        <script src="logIn.js"></script>
+    </body>
+</html>

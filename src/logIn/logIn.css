@@ -1,0 +1,92 @@
+.log-in {
+    border: 1px solid #eee;
+    border-radius: 3px;
+    height: auto;
+    margin: 10% auto;
+    padding: 35px;
+    width: 30%;
+}
+
+.log-in input {
+    margin: 10px;
+}
+
+.back-on-main-page {
+    background: #000;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    display: inline;
+    height: 45px;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    width: 45px;
+}
+
+.input {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+.custom-button {
+    background: #000;
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 16px;
+    padding: 5px 10px;
+    position: relative;
+    left: 60%;
+    width: 80px;
+}
+
+.title-form button{
+    background: none;
+    border: none;
+    margin-bottom: 10px;
+}
+
+.log-in-form-title {
+    font-size: 20px;
+    margin-right: 20px;
+}
+
+.log-in-line {
+    border: none;
+    border-radius: 1px;
+    background: #00695C;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    float: left;
+    height: 5px;
+    position: relative;
+    bottom: 8px;
+    width: 80px;
+}
+
+.sign-up-line {
+    border: none;
+    border-radius: 1px;
+    background: #00695C;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 5px;
+    position: relative;
+    bottom: 8px;
+    right: 45px;
+    width: 125px;
+}
+
+.title-line {
+    background: #eee;
+    border: none;
+    height: 1px;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+}
+
+.hidden {
+    display: none;
+}

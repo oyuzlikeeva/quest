@@ -1,0 +1,90 @@
+li {
+    display: inline;
+    list-style-type: none;
+}
+
+.log-in-button {
+    position: relative;
+    top: 5px;
+}
+
+.icon-button {
+    background: none;
+    height: 20px;
+    margin: 0 20px;
+    padding: 0;
+    width: 20px;
+}
+
+.user-gallery {
+    float: left;
+    width: 80%;
+}
+
+.user-info {
+    float: right;
+    text-align: center;
+}
+
+.user-photo {
+    background: #00695C;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 150px;
+    width: 150px;
+}
+.user-photo img {
+    margin: auto;
+}
+
+.user-photo-gallery {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+    height: 40%;
+    width: 90%;
+}
+
+.user-gallery-item {
+    margin-top: 35px;
+}
+
+.quest-user-photo {
+    margin: 10px 5px;
+}
+
+.quest-user-photo:first-child {
+    margin-left: 0;
+}
+
+.img-chevron {
+    position: relative;
+    bottom: 65px;
+    margin: 0;
+    padding: 0;
+}
+
+.item-divider {
+    background: #00695C;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    height: 2px;
+}
+
+.quest-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.time-added-comment {
+    color: #757575;
+    font-size: 14px;
+}
+
+.quest-rating {
+    position: relative;
+    bottom: 20px;
+    left: 90%;
+}

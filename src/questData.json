@@ -1,0 +1,81 @@
+{"quests" : [{
+"id": 1,
+"name": "Человек, которого не было",
+"projectName": "Выйти из комнаты",
+"coast": 1500,
+"rating": 4,
+"numberOfPersons": "1-4",
+"timeOfQuest": "1 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Саратов, ул Московская, 55"
+}, {
+"id": 2,
+"name": "Тайна третьего Рейха",
+"projectName": "Внедрение",
+"coast": "2500",
+"rating": "4",
+"numberOfPersons": "2-4",
+"timeOfQuest": "1,5 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Энгельс, ул Подгорная, 5"
+}, {
+"id": "3",
+"name": "Комната Шелока Холмса",
+"projectName": "Location",
+"coast": "1500",
+"rating": "3.5",
+"numberOfPersons": "1-5",
+"timeOfQuest": "1 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Саратов, ул Мичурина, 121"
+}, {
+"id": "4",
+"name": "Капсульный отель",
+"projectName": "Выйти из комнаты",
+"coast": "2000",
+"rating": "5",
+"numberOfPersons": "1-4",
+"timeOfQuest": "1 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Саратов, ул Мичурина, 214"
+}, {
+"id": "5",
+"name": "Замок святого ангела",
+"projectName": "Выйти из комнаты",
+"coast": "1500-2000",
+"rating": "3.5",
+"numberOfPersons": "1-4",
+"timeOfQuest": "1 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Саратов, ул Московская, 55"
+}, {
+"id": "6",
+"name": "Блейд",
+"projectName": "Внедрение",
+"coast": "1500-2000",
+"rating": "4",
+"numberOfPersons": "2-4",
+"timeOfQuest": "1,5 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Энгельс, ул Подгорная, 5"
+}, {
+"id": "7",
+"name": "Тайная лаборатория",
+"projectName": "Location",
+"coast": "1500-2000",
+"rating": "3.5",
+"numberOfPersons": "1-5",
+"timeOfQuest": "1 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Саратов, ул Мичурина, 121"
+}, {
+"id": "8",
+"name": "1408",
+"projectName": "Выйти из комнаты",
+"coast": "1500-2000",
+"rating": "5",
+"numberOfPersons": "1-4",
+"timeOfQuest": "1 час",
+"description": "Здесь умопомрачительная история",
+"address": "г.Саратов, ул Мичурина, 214"
+}]}
