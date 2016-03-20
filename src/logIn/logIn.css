@@ -24,13 +24,13 @@
     width: 45px;
 }
 
-.input {
+.log-in-input {
     border: 1px solid #eee;
     border-radius: 2px;
     padding: 5px 10px;
 }
 
-.custom-button {
+.log-in .custom-button {
     background: #000;
     border: none;
     border-radius: 2px;
@@ -43,7 +43,7 @@
     width: 80px;
 }
 
-.title-form button{
+.title-log-in-form button{
     background: none;
     border: none;
     margin-bottom: 10px;
@@ -78,7 +78,7 @@
     width: 125px;
 }
 
-.title-line {
+.log-in-title-line {
     background: #eee;
     border: none;
     height: 1px;

@@ -1,3 +1,29 @@
-{
-  username: 'Вася'
-}
+{"users": [{
+    "username": "Стас",
+    "status": "admin"
+  },{
+    "username": "Вася",
+    "status": "user"
+  }, {
+    "username": "Коля",
+    "status": "user"
+  }, {
+    "username": "Петя",
+    "status": "user"
+  }, {
+    "username": "Маша",
+    "status": "user"
+  }, {
+    "username": "Саша",
+    "status": "user"
+  }, {
+    "username": "Марина",
+    "status": "user"
+  }, {
+    "username": "Настя",
+    "status": "user"
+  }, {
+    "username": "Лена",
+    "status": "user"
+  }
+]}

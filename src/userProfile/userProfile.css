@@ -1,13 +1,3 @@
-li {
-    display: inline;
-    list-style-type: none;
-}
-
-.log-in-button {
-    position: relative;
-    top: 5px;
-}
-
 .icon-button {
     background: none;
     height: 20px;
@@ -42,7 +32,7 @@ li {
     border: 1px solid #eee;
     border-radius: 2px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-    height: 40%;
+    height: 25%;
     width: 90%;
 }
 
@@ -58,14 +48,14 @@ li {
     margin-left: 0;
 }
 
-.img-chevron {
+.user-page .img-chevron {
     position: relative;
     bottom: 65px;
     margin: 0;
     padding: 0;
 }
 
-.item-divider {
+.user-page .item-divider {
     background: #00695C;
     border: none;
     border-radius: 1px;
@@ -73,17 +63,17 @@ li {
     height: 2px;
 }
 
-.quest-name {
+.user-page .quest-name {
     font-size: 20px;
     font-weight: bold;
 }
 
-.time-added-comment {
+.user-page .time-added-comment {
     color: #757575;
     font-size: 14px;
 }
 
-.quest-rating {
+.user-page .quest-rating {
     position: relative;
     bottom: 20px;
     left: 90%;

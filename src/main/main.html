@@ -1,52 +1,32 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>QuestoMania</title>
-        <link rel="stylesheet" type="text/css" href="../allPageStyle.css">
-        <link rel="stylesheet" type="text/css" href="main.css">
-    </head>
-    <body>
-        <header class="header">
-            <div class="block-project-name">
-                <a href="/main" aria-label="Quest name">
-                    <span class="project-name" type="button">
-                        QuestoMania
-                    </span>
-                </a>
-            </div>
-            <div class="header-button-group">
-                <button type="button" class="icon-button">
-                    <a href="/userProfile" aria-label="User profile page">
-                        <img src="../img/icons/ic_person_white_36px.svg"
-                             alt="User profile button">
-                    </a>
-                </button>
-                <a href="/" aria-label="Log in page">
-                    <button type="button" class="log-in-button">Log in</button>
-                </a>
-            </div>
-        </header>
-        <div class="content">
-            <script id="template" type="text/x-handlebars-template">
-                {{#each quests}}
-                <div class="quest-block" onclick="location = http://localhost:8888/questPage">
-                    <div class="quest-block-image">
-                        <img src="../img/kvestrum.jpg"
-                            width="250"
-                             height="250"
-                             alt="Quest's photo">
-                    </div>
-                    <div class="quest-block-info">
-                            <span class="quest-name">{{name}}</span><br/>
-                            <span class="quest-project-name">{{projectName}}</span><br/>
-                            <span class="quest-rating">{{rating}}</span><br/>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <title>QuestoMania</title>
+    <link rel="stylesheet" type="text/css" href="allPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="main/main.css">
+</head>
+<body>
+    <div class="quests-gallery-page">
+        <script id="template" type="text/x-handlebars-template">
+            {{#each quests}}
+            <div class="quest-block" onclick="location = http://localhost:8888/questPage">
+                <div class="quest-block-image">
+                    <img src="img/kvestrum.jpg"
+                         width="250"
+                         height="250"
+                         alt="Quest's photo">
                 </div>
-                {{/each}}
-            </script>
-        </div>
-        <script src="../jquery-2.2.1.js"></script>
-        <script src="../handlebars-v4.0.5.js"></script>
-        <script src="main.js"></script>
-    </body>
+                <div class="quest-block-info">
+                        <span class="quest-name">{{name}}</span><br/>
+                        <span class="quest-project-name">{{projectName}}</span><br/>
+                        <span class="quest-rating">{{rating}}</span><br/>
+                </div>
+            </div>
+            {{/each}}
+        </script>
+    </div>
+    <script src="jquery-2.2.1.js"></script>
+    <script src="handlebars-v4.0.5.js"></script>
+    <script src="main/main.js"></script>
+</body>
 </html>

@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>QuestoMania</title>
+        <link rel="stylesheet" type="text/css" href="allPageStyle.css">
+    </head>
+    <body>
+        <header class="header">
+            <div class="block-project-name">
+                <a href="#main" aria-label="Quest name">
+                    <span class="project-name" type="button">
+                        QuestoMania
+                    </span>
+                </a>
+            </div>
+            <div class="header-button-group">
+                <button type="button" class="icon-button">
+                    <a href="#userProfile" aria-label="User profile page">
+                        <img src="img/icons/ic_person_white_36px.svg"
+                             alt="User profile button">
+                    </a>
+                </button>
+                <a href="#logIn" aria-label="Log in page">
+                    <button type="button" class="log-in-button">Log in</button>
+                </a>
+            </div>
+        </header>
+        <div class="content">
+            <iframe id="iframe" class="hidden" src="#" width="90%" height="100%" frameborder="0" onload="hiddenHeader()"></iframe>
+        </div>
+        <script src="jquery-2.2.1.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

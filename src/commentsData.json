@@ -1,0 +1,52 @@
+{"comments": [{
+"questName": "Человек, которого не было",
+"username": "Вася",
+"rating": "4",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "11.01.16",
+"spoiler": true
+}, {
+"questName": "Тайна третьего Рейха",
+"username": "Коля",
+"rating": "4",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "05.05.15"
+}, {
+"questName": "Комната Шелока Холмса",
+"username": "Петя",
+"rating": "3.5",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "31.12.15"
+}, {
+"questName": "Капсульный отель",
+"username": "Маша",
+"rating": "5",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "01.01.16",
+"spoiler": true
+}, {
+"questName": "Замок святого ангела",
+"username": "Саша",
+"rating": "3.5",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "15.03.15"
+}, {
+"questName": "Блейд",
+"username": "Марина",
+"rating": "4",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "20.06.15"
+}, {
+"questName": "Тайная лаборатория",
+"username": "Настя",
+"rating": "3.5",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "07.07.15"
+}, {
+"questName": "1408",
+"username": "Лена",
+"rating": "5",
+"comment": "Здесь умопомрачительная история",
+"dateAddedComment": "01.11.15",
+"spoiler": true
+}]}
