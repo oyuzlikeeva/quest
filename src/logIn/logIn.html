@@ -35,12 +35,12 @@
             </div>
             <hr class="log-in-title-line">
             <div class="log-in-form">
-                <form>
+                <form id="log-in-form" method="post">
                     <label>
                         Login:
-                        <input class="log-in-input"
+                        <input id="log-in-username"
+                               class="log-in-input"
                                type="text"
-                               requaered
                                name="username"
                                maxlength="10"
                                placeholder="Enter your login"
@@ -48,16 +48,17 @@
                     </label><br/>
                     <label>
                         Password
-                        <input class="log-in-input"
+                        <input id="log-in-password"
+                               class="log-in-input"
                                type="password"
-                               requaered
                                name="password"
                                maxlength="10"
                                placeholder="Enter your password"
                                alt="Enter your password"/>
                     </label><br/>
                     <button type="submit"
-                           class="custom-button">
+                            class="custom-button"
+                            onclick=submitLogInData()>
                            Log in
                     </button>
                 </form>
@@ -66,9 +67,9 @@
                 <form>
                     <label>
                         Login:
-                        <input class="log-in-input"
+                        <input id="sign-up-username"
+                               class="log-in-input"
                                type="text"
-                               requaered
                                name="username"
                                maxlength="10"
                                placeholder="Enter your login"
@@ -76,9 +77,9 @@
                     </label><br/>
                     <label>
                         Password:
-                        <input class="log-in-input"
+                        <input id="sign-up-password"
+                               class="log-in-input"
                                type="password"
-                               requaered
                                name="password"
                                maxlength="10"
                                placeholder="Enter your password"
@@ -86,9 +87,8 @@
                     </label><br/>
                     <label>
                         Repeat password:
-                        <input class="log-in-input"
+                        <input id="sign-up-repeat-password"class="log-in-input"
                                type="password"
-                               requaered
                                name="repeatPassword"
                                maxlength="10"
                                placeholder="Repeat your password"

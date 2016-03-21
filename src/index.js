@@ -3,12 +3,24 @@ var xhr = new XMLHttpRequest(),
     commentsData,
     userData;
 
+function postData(data, path) {
+    xhr.open('POST', path, false);
+    xhr.send(data);
+
+    if (xhr.status != 200) {
+        console.log( xhr.status + ': ' + xhr.statusText );
+    } else {
+        console.log('Success post data')
+        return 'success'
+    }
+}
+
 function getQuestsData() {
     xhr.open('GET', '../questData.json', false);
     xhr.send();
 
     if (xhr.status != 200) {
-        alert( xhr.status + ': ' + xhr.statusText );
+        console.log( xhr.status + ': ' + xhr.statusText );
     } else {
         questData = JSON.parse(xhr.responseText);
     }
@@ -37,7 +49,7 @@ function getCommentsData() {
     xhr.send();
 
     if (xhr.status != 200) {
-        alert( xhr.status + ': ' + xhr.statusText );
+        console.log( xhr.status + ': ' + xhr.statusText );
     } else {
         commentsData = JSON.parse(xhr.responseText);
         return commentsData;
