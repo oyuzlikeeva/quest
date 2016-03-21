@@ -9,6 +9,13 @@ body {
     font-weight: normal;
 }
 
+.quests-gallery-page,
+.quest-page,
+.user-page,
+.admin-page{
+    margin: 3%;
+}
+
 .header a {
     color: #fff;
 }
@@ -25,7 +32,11 @@ li {
 }
 
 #iframe {
-    padding: 120px 5%;
+    border: none;
+    height: 100%;
+    margin: 0;
+    padding-top: 70px;
+    width: 100%;
 }
 
 .header {
