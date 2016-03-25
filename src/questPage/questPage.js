@@ -2,7 +2,7 @@ function getQuestInfoData(){
     var data = window.parent.getQuestData();
     var template = Handlebars.compile($('#quest-template').html());
 
-    $('.quest-description').append( template(data) );
+    $('.quest-info').append( template(data) );
     console.log('questData: \n' + data);
 }
 getQuestInfoData();

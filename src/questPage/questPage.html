@@ -8,24 +8,27 @@
     <body>
         <div class="quest-page">
             <div class="quest-info">
+
+                <script id="quest-template" type="text/x-handlebars-template">
                 <div class="quest-photo-gallery">
-                    <img src="img/kvestrum.jpg" width="450" height="400"/>
+                    <img src="{{photo.src1}}" width="450" height="300"/>
                     <ul>
-                        <li class="mini-photo-gallery"><img src="img/quest1.jpg" width="100" height="90"/></li>
-                        <li class="mini-photo-gallery"><img src="img/quest2.jpg" width="100" height="90"/></li>
-                        <li class="mini-photo-gallery"><img src="img/quest3.jpg" width="100" height="90"/></li>
-                        <li class="mini-photo-gallery"><img src="img/quest4.jpg" width="100" height="90"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src1}}" width="100" height="50"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src2}}" width="100" height="50"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src3}}" width="100" height="50"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src4}}" width="100" height="50"/></li>
                     </ul>
                 </div>
 
 
                 <div class="quest-description">
-                    <script id="quest-template" type="text/x-handlebars-template">
                         <h1 class="quest-name">{{name}}</h1>
                         <div class="quest-description-title">
                             <div class="quest-description-button">
-                                <input class="custom-button" type="button" value="Reservation"
+                                <a href="{{siteForReservation}}" aria-label="Reservation">
+                                    <input class="custom-button" type="button" value="Reservation"
                                        alt="make a reservation"/>
+                                </a>
                                 <a href="#mark-passed" aria-label="Mark quest button">
                                     <button class="custom-button" type="button">Mark passed</button>
                                 </a>
@@ -38,7 +41,7 @@
                                     {{numberOfPerson}}
                                     <img src="img/icons/ic_group_black_32px.svg"/>
                                 </span><br/>
-                                <h3>Стоимость прохождения: <span>{{coast}}</span></h3>
+                                <h3>Стоимость прохождения: от <span>{{coast}}</span></h3>
                                 <h3>Время прохождения:
                                     <span class="time-of-quest">
                                         {{timeOfQuest}}
@@ -57,8 +60,9 @@
                             <span class="address-of-quest">Адресс квеста: </span>
                             {{address}}
                         </div>
-                    </script>
+
                 </div>
+                </script>
             </div>
             <div class="quest-comments">
                 <h3>Comments on this quest</h3>

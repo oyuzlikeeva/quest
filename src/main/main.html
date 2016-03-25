@@ -9,17 +9,18 @@
     <div class="quests-gallery-page">
         <script id="template" type="text/x-handlebars-template">
             {{#each quests}}
-            <div class="quest-block" onclick="location = http://localhost:8888/questPage">
+            <div class="quest-block" onclick=goOnQuestPage({{id}})>
                 <div class="quest-block-image">
-                    <img src="img/kvestrum.jpg"
+                    <img src="{{photo.src1}}"
                          width="250"
-                         height="250"
+                         height="150"
                          alt="Quest's photo">
                 </div>
                 <div class="quest-block-info">
-                        <span class="quest-name">{{name}}</span><br/>
-                        <span class="quest-project-name">{{projectName}}</span><br/>
-                        <span class="quest-rating">{{rating}}</span><br/>
+                    <span id={{id}} class="hidden">{{id}}</span>
+                    <span class="quest-name">{{name}}</span><br/>
+                    <span class="quest-project-name">{{projectName}}</span><br/>
+                    <span class="quest-rating">{{rating}}</span><br/>
                 </div>
             </div>
             {{/each}}

@@ -1,7 +1,10 @@
 var xhr = new XMLHttpRequest(),
     questData,
     commentsData,
-    userData;
+    quests = {},
+    goOnQuestData = {},
+    questID = '',
+    questCollection = [];
 
 function postData(data, path) {
     xhr.open('POST', path, false);
@@ -10,7 +13,7 @@ function postData(data, path) {
     if (xhr.status != 200) {
         console.log( xhr.status + ': ' + xhr.statusText );
     } else {
-        console.log('Success post data')
+        console.log('Success post data');
         return 'success'
     }
 }
@@ -24,26 +27,20 @@ function getQuestsData() {
     } else {
         questData = JSON.parse(xhr.responseText);
     }
-        return(questData);
+    createCollection(questData);
+
+    return(questData);
 }
 
 function getQuestData() {
-    var i,
-        data;
-
-    data = getQuestsData();
-    questData = data.quests;
-    for (i = 0; i < questData.length; i++) {
-        console.log(questData[i].id);
-        if (questData[i].id === '3') {
-            console.log(questData[i]);
-            return questData[i];
-        }
-    }
+    return goOnQuestData;
 }
 
 function getCommentsData() {
-    var i;
+    var i,
+        comment,
+        comments = {},
+        questComments = [];
 
     xhr.open('GET', '../commentsData.json', false);
     xhr.send();
@@ -52,7 +49,18 @@ function getCommentsData() {
         console.log( xhr.status + ': ' + xhr.statusText );
     } else {
         commentsData = JSON.parse(xhr.responseText);
-        return commentsData;
+        for (key in commentsData) {
+            for (i=0; i < commentsData[key].length; i++) {
+                comment = commentsData[key][i];
+                if (comment.questID === questID) {
+                    questComments.push(comment);
+
+                    console.log(questComments);
+                }
+            }
+        }
+console.log(questComments);
+        return {comments: questComments};
     }
 }
 
@@ -64,13 +72,46 @@ function getUserData() {
     data = getCommentsData();
     questData = data.comments;
     for (i = 0; i < questData.length; i++) {
-        console.log(questData[i].username);
         if (questData[i].username === 'Вася') {
-            console.log(questData[i]);
             return questData[i];
         }
     }
+}
 
+function createCollection(questData) {
+    var id,
+        quest,
+        key,
+        i;
+
+    for (key in questData) {
+        for (i = 0; i < questData[key].length; i++) {
+            id = questData[key][i].id;
+
+            if (quests[id] !== id) {
+                quests[id] = { id: id };
+                quests[id][key] = questData[key][i];
+            } else {
+                quests[id][key] = questData[key][i];
+            }
+        }
+    }
+
+    for (quest in quests) {
+        questCollection.push(quests[quest]);
+    }
+}
+
+function goOnQuestPage(id) {
+    var i;
+    for (i = 0; i < questCollection.length; i++) {
+        if(questCollection[i].id === id) {
+            questID = id;
+            goOnQuestData = questCollection[i].quests;
+        }
+    }
+
+    window.location.hash = '#questPage';
 }
 
 function hiddenHeader() {
@@ -98,16 +139,6 @@ function changeUrl() {
     iframe = document.getElementById('iframe');
     iframe.src = windowUrl;
 }
-
-//function goOnQuestPage() {
-//    var windowUrl,
-//        iframe;
-//    windowUrl = window.location.hash.substring(1);
-//    console.log(windowUrl);
-//    iframe = document.getElementById('iframe');
-//    iframe.src = windowUrl;
-//}
-
 
 window.onhashchange = changeUrl;
 window.onload = function() {
