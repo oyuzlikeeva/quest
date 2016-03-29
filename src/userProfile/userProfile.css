@@ -6,11 +6,6 @@
     width: 20px;
 }
 
-.user-gallery {
-    float: left;
-    width: 80%;
-}
-
 .user-info {
     float: right;
     text-align: center;
@@ -32,16 +27,20 @@
     border: 1px solid #eee;
     border-radius: 2px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
-    height: 25%;
-    width: 90%;
+    float: left;
+    height: 190px;
+    width: 80%;
 }
 
 .user-gallery-item {
-    margin-top: 35px;
+    margin-top: 105px;
+    clear: both;
 }
 
 .quest-user-photo {
     margin: 10px 5px;
+    height: 170px;
+    width: 190px;
 }
 
 .quest-user-photo:first-child {
@@ -50,12 +49,12 @@
 
 .user-page .img-chevron {
     position: relative;
-    bottom: 65px;
+    bottom: 90px;
     margin: 0;
     padding: 0;
 }
 
-.user-page .item-divider {
+.item-divider {
     background: #00695C;
     border: none;
     border-radius: 1px;
@@ -63,17 +62,17 @@
     height: 2px;
 }
 
-.user-page .quest-name {
+.quest-name {
     font-size: 20px;
     font-weight: bold;
 }
 
-.user-page .time-added-comment {
+.time-added-comment {
     color: #757575;
     font-size: 14px;
 }
 
-.user-page .quest-rating {
+.quest-rating {
     position: relative;
     bottom: 20px;
     left: 90%;

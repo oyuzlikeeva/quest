@@ -1,15 +1,20 @@
-function getData(){
+function getProfileData(){
     var data,
-        template,
+        userData,
+        commentsData,
+        commentTemplate,
+        photoTemplate,
         userTemplate;
 
-    data = window.parent.getUserData();
+    data = window.parent.getUserProfileData("Саша");
+    userData = data.userData;
+    commentsData = data.userComments;
+    photoTemplate = Handlebars.compile($('#photo-template').html());
+    commentTemplate = Handlebars.compile($('#comment-template').html());
     userTemplate = Handlebars.compile($('#user-template').html());
-    $('.user-info').append( userTemplate(data) );
-    console.log(data);
-    template = Handlebars.compile($('#comment-template').html());
-    $('.user-gallery-item').append( template(data) );
-    console.log(data);
-}
-getData();
 
+    $('.user-info').append(userTemplate(userData));
+    $('.user-gallery-item').append(commentTemplate(commentsData));
+    $('.user-photo-gallery').append(photoTemplate(userData));
+}
+getProfileData();

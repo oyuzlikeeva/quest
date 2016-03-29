@@ -11,12 +11,12 @@
 
                 <script id="quest-template" type="text/x-handlebars-template">
                 <div class="quest-photo-gallery">
-                    <img src="{{photo.src1}}" width="450" height="300"/>
+                    <img src="{{photo.src1}}" width="450" height="290"/>
                     <ul>
-                        <li class="mini-photo-gallery"><img src="{{photo.src1}}" width="100" height="50"/></li>
-                        <li class="mini-photo-gallery"><img src="{{photo.src2}}" width="100" height="50"/></li>
-                        <li class="mini-photo-gallery"><img src="{{photo.src3}}" width="100" height="50"/></li>
-                        <li class="mini-photo-gallery"><img src="{{photo.src4}}" width="100" height="50"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src1}}" width="100" height="60"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src2}}" width="100" height="60"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src3}}" width="100" height="60"/></li>
+                        <li class="mini-photo-gallery"><img src="{{photo.src4}}" width="100" height="60"/></li>
                     </ul>
                 </div>
 
@@ -33,7 +33,7 @@
                                     <button class="custom-button" type="button">Mark passed</button>
                                 </a>
                                 <a href="#edit-quest-info" aria-label="Edit quest button">
-                                    <button class="icon-button" type="button">
+                                    <button class="icon-button" type="button" onclick="openEditModal()">
                                         <img src="img/icons/ic_mode_edit_white_18px.svg">
                                     </button>
                                 </a>
@@ -129,60 +129,65 @@
                         <img src="img/icons/ic_clear_black_24px.svg"/>
                     </a>
                     <hr class="quest-comment-divider">
-                    <form>
-                        <label>
-                            Quest name:
-                            <input class="input"
-                                   type="text"
-                                   alt="Enter quest name"/>
-                        </label><br/>
-                        <label>
-                            Project name:
-                            <input class="input"
-                                   type="text"
-                                   alt="Enter quest's project name"/>
-                        </label><br/>
-                        <label>
-                            Coast of quest:
-                            <input class="input"
-                                   type="number"
-                                   step="0.5"
-                                   alt="Coast of quest"/>
-                        </label><br/>
-                        <label>
-                            Number of persons:
-                            <input class="input"
-                                   type="number"
-                                   step="1"
-                                   alt="Number of persons"/>
-                        </label><br/>
-                        <label>
-                            Address of quest:
-                            <input class="input"
-                                   type="text"
-                                   alt="Address of quest"/>
-                        </label><br/>
-                        <label>
-                            Keywords:
-                            <input class="input"
-                                   type="text"
-                                   alt="Write keywords separated by commas"/>
-                        </label><br/>
-                        <label>
-                            Description of quest:<br/>
-                            <textarea type="text">
-
-                            </textarea>
-                        </label><br/>
-                        <label>
-                            Add photo of quest:
-                            <input class="input"
-                                   type="file"
-                                   accept="image/jpeg,image/png"
-                                   multiple
-                                   alt="add quest's photos"/>
-                        </label><br/>
-                        <button class="custom-button" type="submit">Edit quest info</button>
+                    <form id="edit-form">
+                        <script id="edit-template" type="text/x-handlebars-template">
+                            <label>
+                                Quest name:
+                                <input class="input"
+                                       type="text"
+                                       alt="Enter quest name"
+                                        value="{{name}}"/>
+                            </label><br/>
+                            <label>
+                                Project name:
+                                <input class="input"
+                                       type="text"
+                                       alt="Enter quest's project name"
+                                        value="{{projectName}}"/>
+                            </label><br/>
+                            <label>
+                                Coast of quest:
+                                <input class="input"
+                                       type="number"
+                                       step="0.5"
+                                       alt="Coast of quest"
+                                        value="{{coast}}"/>
+                            </label><br/>
+                            <label>
+                                Number of persons:
+                                <input class="input"
+                                       type="text"
+                                       alt="Number of persons"
+                                       value="{{numberOfPersons}}"/>
+                            </label><br/>
+                            <label>
+                                Address of quest:
+                                <input class="input"
+                                       type="text"
+                                       alt="Address of quest"
+                                        value="{{address}}"/>
+                            </label><br/>
+                            <label>
+                                Keywords:
+                                <input class="input"
+                                       type="text"
+                                       alt="Write keywords separated by commas"
+                                        value="{{keywords}}"/>
+                            </label><br/>
+                            <label>
+                                Description of quest:<br/>
+                                <textarea class="edit-description" type="text">{{description}}</textarea>
+                            </label><br/>
+                            <label>
+                                Add photo of quest:
+                                <input class="input"
+                                       type="file"
+                                       accept="image/jpeg,image/png"
+                                       multiple
+                                       alt="add quest's photos"/>
+                            </label><br/>
+                            <button class="custom-button" type="submit">Edit quest info</button>
+                        </script>
                     </form>
                 </div>
             </div>

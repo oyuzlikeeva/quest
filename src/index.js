@@ -27,7 +27,7 @@ function getQuestsData() {
     } else {
         questData = JSON.parse(xhr.responseText);
     }
-    createCollection(questData);
+    createQuestCollection(questData);
 
     return(questData);
 }
@@ -46,9 +46,21 @@ function getCommentsData() {
     xhr.send();
 
     if (xhr.status != 200) {
-        console.log( xhr.status + ': ' + xhr.statusText );
+        console.log(xhr.status + ': ' + xhr.statusText);
     } else {
         commentsData = JSON.parse(xhr.responseText);
+        return commentsData;
+    }
+}
+
+function getQuestCommentsData() {
+    var i,
+        comment,
+        comments = {},
+        commentsData,
+        questComments = [];
+
+    commentsData = getCommentsData();
         for (key in commentsData) {
             for (i=0; i < commentsData[key].length; i++) {
                 comment = commentsData[key][i];
@@ -59,26 +71,53 @@ function getCommentsData() {
                 }
             }
         }
-console.log(questComments);
+    console.log(questComments);
         return {comments: questComments};
-    }
+
 }
 
-function getUserData() {
-    var i,
-        data,
-        userComments = {};
+function getUserData(username) {
+    var userData,
+        users,
+        i;
 
-    data = getCommentsData();
-    questData = data.comments;
-    for (i = 0; i < questData.length; i++) {
-        if (questData[i].username === 'Вася') {
-            return questData[i];
+    xhr.open('GET', '../usersData.json', false);
+    xhr.send();
+
+    if (xhr.status != 200) {
+        console.log(xhr.status + ': ' + xhr.statusText);
+    } else {
+        userData = JSON.parse(xhr.responseText);
+        users = userData.users;
+    }
+    for (i = 0; i < users.length; i++) {
+        if (users[i].username === username) {
+            return users[i];
         }
     }
 }
 
-function createCollection(questData) {
+function getUserProfileData(username) {
+    var i,
+        commentsData,
+        userData,
+        userComments = [],
+        data = {};
+
+    userData = getUserData(username);
+    commentsData = getCommentsData().comments;
+    for (i = 0; i < commentsData.length; i++) {
+        if (commentsData[i].username === username) {
+            userComments.push(commentsData[i]);
+        }
+    }
+
+    return data = {userData: userData,
+        userComments: userComments};
+
+}
+
+function createQuestCollection(questData) {
     var id,
         quest,
         key,
@@ -90,10 +129,8 @@ function createCollection(questData) {
 
             if (quests[id] !== id) {
                 quests[id] = { id: id };
-                quests[id][key] = questData[key][i];
-            } else {
-                quests[id][key] = questData[key][i];
             }
+            quests[id][key] = questData[key][i];
         }
     }
 

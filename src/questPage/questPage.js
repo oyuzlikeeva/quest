@@ -1,20 +1,27 @@
+var questData;
+
+
 function getQuestInfoData(){
-    var data = window.parent.getQuestData();
+    questData = window.parent.getQuestData();
     var template = Handlebars.compile($('#quest-template').html());
 
-    $('.quest-info').append( template(data) );
-    console.log('questData: \n' + data);
+    $('.quest-info').append( template(questData) );
+    console.log('questData: \n' + questData);
 }
 getQuestInfoData();
 
-function getQuestCommentsData(){
-    var data = window.parent.getCommentsData();
+function getCommentsData(){
+    var data = window.parent.getQuestCommentsData();
     commentTemplate = Handlebars.compile($('#comment-template').html());
 
     $('.quest-comments').append( commentTemplate(data) );
     console.log('commentsData: \n' + data);
 }
-getQuestCommentsData();
+getCommentsData();
 
 
-
+function openEditModal() {
+    var template = Handlebars.compile($('#edit-template').html());
+    $('#edit-form').append( template(questData) );
+    console.log('questData: \n' + questData);
+}

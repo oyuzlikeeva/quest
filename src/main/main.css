@@ -28,3 +28,10 @@
 .quests-gallery-page {
     width:100%;
 }
+
+.quest-block-info> .quest-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    height: 10px;
+}

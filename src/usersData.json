@@ -3,27 +3,75 @@
     "status": "admin"
   },{
     "username": "Вася",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Коля",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Петя",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Маша",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Саша",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Марина",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Настя",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }, {
     "username": "Лена",
-    "status": "user"
+    "status": "user",
+    "photo": {
+      "src1": "img/user1.jpg",
+      "src2": "img/user1.jpg",
+      "src3": "img/user1.jpg",
+      "src4": "img/user1.jpg"
+    }
   }
 ]}
