@@ -92,7 +92,8 @@
     display: none;
 }
 
-#error-message {
+#log-in-error-message,
+#sign-up-error-message {
     display: none;
     color: red;
 }
