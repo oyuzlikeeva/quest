@@ -56,7 +56,8 @@
                                placeholder="Enter your password"
                                alt="Enter your password"/>
                     </label><br/>
-                    <button type="submit"
+                    <span id="log-in-error-message">Invalid login or password</span>
+                    <button type="button"
                             class="custom-button"
                             onclick=submitLogInData()>
                            Log in
@@ -94,22 +95,12 @@
                                placeholder="Repeat your password"
                                alt="Repeat your password"/>
                     </label><br/>
-
+                    <span id="sign-up-error-message">Wrong password</span>
                     <button class="custom-button"
                             type="submit">
                         Sign up
                     </button>
                 </form>
-            </div>
-            <!--model window for log in error message-->
-            <div id="log-in-error" class="modal-dialog">
-                <h2>Error log in</h2>
-                <p>Pair login/password not correctly</p>
-            </div>
-            <!--model window for sign up error message-->
-            <div id="sign-up-error" class="modal-dialog">
-                <h2>Error sign up</h2>
-                <p>Password was't repeat correctly</p>
             </div>
         </div>
         <script src="jquery-2.2.1.js"></script>

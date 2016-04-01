@@ -10,7 +10,11 @@ function submitLogInData() {
     data = {username: username,
         password: password};
     newHash = '#main';
-    submitData(path, data, newHash)
+    if (validatedLogInForm()) {
+        submitData(path, data, newHash)
+    } else {
+        $('#log-in-error-message').css('display', 'block');
+    }
 }
 
 function submitSignUpData() {
@@ -21,14 +25,18 @@ function submitSignUpData() {
         path = '/userData',
         data = {};
 
-    username = document.getElementById('sign-up-username').value;
-    password = document.getElementById('sign-up-password').value;
-    repeatPassword = document.getElementById('sign-up-repeat-password').value;
+    username = $('#sign-up-username').val();
+    password = $('#sign-up-password').val();
+    repeatPassword = $('#sign-up-repeat-password').val();
     data = {username: username,
         password: password,
         repeatPassword: repeatPassword};
     newHash = '#main';
-    submitData(path, data, newHash)
+    if (validatedSignUpForm()) {
+        submitData(path, data, newHash)
+    } else {
+        $('#sig-up-error-message').css('display', 'block');
+    }
 }
 
 function submitData(path, data, newHash) {
@@ -37,6 +45,34 @@ function submitData(path, data, newHash) {
     response = window.parent.postData(data, path);
     if (response === 'success') {
         window.parent.location.hash = newHash;
+    }
+}
+
+function validatedLogInForm() {
+    var username,
+        password;
+
+    username = $('#log-in-username');
+    password = $('#log-in-password');
+    if (username.val() !== '' || password.val() !== '') {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function validatedSignUpForm() {
+    var username,
+        password,
+        repeatedPassword;
+
+    username = $('#sign-up-username');
+    password = $('#sign-up-password');
+    repeatedPassword = ('#sign-up-repeat-password');
+    if (username.val() === '' || password.val() === '' || repeatedPassword.val() === '') {
+        return false;
+    } else if (password.val() === repeatedPassword.val()) {
+        return true;
     }
 }
 

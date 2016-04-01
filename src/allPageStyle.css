@@ -1,12 +1,13 @@
-body {
-    margin: 0;
-}
-
 @font-face {
-    font-family: "SansationRegular";
-    src: url("fonts/SansationRegular/SansationRegular.ttf");
+    font-family: "SansationLight";
+    src: url("fonts/SansationLight/SansationLight.woff") format('woff');
     font-style: normal;
     font-weight: normal;
+}
+
+body {
+    font-family: "SansationLight";
+    margin: 0;
 }
 
 .quests-gallery-page,

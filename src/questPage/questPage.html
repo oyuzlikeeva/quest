@@ -85,30 +85,31 @@
             <!--Modal window for mark on passed-->
             <div id="mark-passed" class="modal-dialog">
                 <div>
-                    <h2>Quest mark passed</h2>
+                    <h2>Mark quest as passed</h2>
                     <a href="#close" aria-label="Close" class="close">
                         <img src="img/icons/ic_clear_black_24px.svg"/>
                     </a>
                     <hr class="quest-comment-divider">
                     <form>
                         <label>Title of comment:
-                                <input class="input"
+                                <input id="comment-title"
+                                       class="input"
                                        type="text"
                                        placeholder="Enter comment's title"
                                        alt="Enter comment's title"/>
                         </label><br/>
                         <label>
                             Your score quest:
-                            <input class="input"
-                                   type="text"
+                            <input id="quest-rating"
+                                   class="input"
+                                   type="number"
+                                   step="0.5"
                                    placeholder="How are you scoring the quest"
                                    alt="How are you scoring the quest"/>
                         </label><br/>
                         <label>
                             Comment of quest:<br/>
-                            <textarea type="text" placeholder="short story about quest">
-
-                            </textarea>
+                            <textarea id="comment" type="text" placeholder="short story about quest"></textarea>
                         </label><br/>
                         <label>
                             Add photo from quest:
@@ -117,7 +118,7 @@
                                    accept="image/jpeg,image/png"
                                    alt="add quest's photo"/>
                         </label><br/>
-                        <button class="custom-button" type="submit">Edit quest info</button>
+                        <button class="custom-button" type="button" onclick=submitEditedQuestInfo()>Edit quest info</button>
                     </form>
                 </div>
             </div>
@@ -191,7 +192,7 @@
                     </form>
                 </div>
             </div>
-            <!--model window for mark passed quest form error message-->
+            <!--modal window for mark passed quest form error message-->
             <div class="modal-dialog">
                 <a href="#close" aria-label="Close" class="close">
                     <img src="img/icons/ic_clear_black_24px.svg"/>
@@ -200,7 +201,7 @@
                 <hr class="quest-comment-divider">
                 <p>Please, check filling form</p>
             </div>
-            <!--model window for edit quest form error message-->
+            <!--modal window for edit quest form error message-->
             <div class="modal-dialog">
                 <a href="#close" aria-label="Close" class="close">
                     <img src="img/icons/ic_clear_black_24px.svg"/>

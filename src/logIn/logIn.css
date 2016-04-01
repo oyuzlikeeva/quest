@@ -1,3 +1,4 @@
+
 .log-in {
     border: 1px solid #eee;
     border-radius: 3px;
@@ -68,7 +69,7 @@
 
 .sign-up-line {
     border: none;
-    border-radius: 1px;
+    border-radius: 1px
     background: #00695C;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     height: 5px;
@@ -89,4 +90,9 @@
 
 .hidden {
     display: none;
+}
+
+#error-message {
+    display: none;
+    color: red;
 }
