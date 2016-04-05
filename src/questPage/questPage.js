@@ -25,6 +25,7 @@ function openEditModal() {
 
 function submitEditedQuestInfo() {
     var i,
+        data = {},
         title,
         rating,
         comment,
@@ -41,5 +42,9 @@ function submitEditedQuestInfo() {
         if (comment.indexOf(keyword) !== -1) {
             questData.spoil = true;
         }
+    }
+
+    if ( rating !== '' || title !== '' || comment !== ''){
+        data = {}
     }
 }

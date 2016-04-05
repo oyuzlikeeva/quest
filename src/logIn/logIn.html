@@ -35,8 +35,8 @@
             </div>
             <hr class="log-in-title-line">
             <div class="log-in-form">
-                <form id="log-in-form" method="post">
-                    <label>
+                <form id="log-in-form" action="" onsubmit=submitLogInData()>
+                    <p>
                         Login:
                         <input id="log-in-username"
                                class="log-in-input"
@@ -44,9 +44,10 @@
                                name="username"
                                maxlength="10"
                                placeholder="Enter your login"
+                               required
                                alt="Enter your login"/>
-                    </label><br/>
-                    <label>
+                    </p>
+                    <p>
                         Password
                         <input id="log-in-password"
                                class="log-in-input"
@@ -54,47 +55,51 @@
                                name="password"
                                maxlength="10"
                                placeholder="Enter your password"
+                               required
                                alt="Enter your password"/>
-                    </label><br/>
+                    </p>
                     <span id="log-in-error-message">Invalid login or password</span>
-                    <button type="button"
-                            class="custom-button"
-                            onclick=submitLogInData()>
+                    <button type="submit"
+                            class="custom-button">
                            Log in
                     </button>
                 </form>
             </div>
             <div class="sign-up-form hidden">
-                <form>
-                    <label>
+                <form action="" onsubmit=submitSignUpData()>
+                    <p>
                         Login:
                         <input id="sign-up-username"
+                               name="sign-up-username"
                                class="log-in-input"
                                type="text"
-                               name="username"
                                maxlength="10"
                                placeholder="Enter your login"
+                               required
                                alt="Enter your login"/>
-                    </label><br/>
-                    <label>
+                    </p>
+                    <p>
                         Password:
                         <input id="sign-up-password"
+                               name="sign-up-password"
                                class="log-in-input"
                                type="password"
-                               name="password"
                                maxlength="10"
                                placeholder="Enter your password"
+                               required
                                alt="Enter your password"/>
-                    </label><br/>
-                    <label>
+                    </p>
+                    <p>
                         Repeat password:
-                        <input id="sign-up-repeat-password"class="log-in-input"
+                        <input id="sign-up-repeat-password"
+                               name="sign-up-repeat-password"
+                               class="log-in-input"
                                type="password"
-                               name="repeatPassword"
                                maxlength="10"
                                placeholder="Repeat your password"
+                               required
                                alt="Repeat your password"/>
-                    </label><br/>
+                    </p>
                     <span id="sign-up-error-message">Wrong password</span>
                     <button class="custom-button"
                             type="submit">

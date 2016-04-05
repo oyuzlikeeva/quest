@@ -6,11 +6,11 @@
     width: 36px;
 }
 
-.add-new{
+.added-new{
     float: right;
 }
 
-.add-new-button .icon-button {
+.added-new-button .icon-button {
     padding: 0;
     margin: 0;
 }
@@ -59,4 +59,15 @@ tr:nth-child(2n) {
     border-radius: 1px;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
     height: 2px;
+}
+
+#added-new-error-message {
+    display: none;
+    color: red;
+}
+
+#added-button {
+    padding: 5px 20px;
+    position: relative;
+    left: 75%;
 }

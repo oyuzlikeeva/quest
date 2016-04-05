@@ -10,11 +10,7 @@ function submitLogInData() {
     data = {username: username,
         password: password};
     newHash = '#main';
-    if (validatedLogInForm()) {
-        submitData(path, data, newHash)
-    } else {
-        $('#log-in-error-message').css('display', 'block');
-    }
+    submitData(path, data, newHash)
 }
 
 function submitSignUpData() {
@@ -39,40 +35,27 @@ function submitSignUpData() {
     }
 }
 
+function validatedSignUpForm() {
+    var password,
+        repeatedPassword;
+
+    password = $('#sign-up-password');
+    repeatedPassword = ('#sign-up-repeat-password');
+    if (password.val() === repeatedPassword.val()) {
+        return true;
+    } else {
+        $('#sig-up-error-message').css('display', 'block');
+    }
+}
+
 function submitData(path, data, newHash) {
     var response;
 
     response = window.parent.postData(data, path);
     if (response === 'success') {
         window.parent.location.hash = newHash;
-    }
-}
-
-function validatedLogInForm() {
-    var username,
-        password;
-
-    username = $('#log-in-username');
-    password = $('#log-in-password');
-    if (username.val() !== '' || password.val() !== '') {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-function validatedSignUpForm() {
-    var username,
-        password,
-        repeatedPassword;
-
-    username = $('#sign-up-username');
-    password = $('#sign-up-password');
-    repeatedPassword = ('#sign-up-repeat-password');
-    if (username.val() === '' || password.val() === '' || repeatedPassword.val() === '') {
-        return false;
-    } else if (password.val() === repeatedPassword.val()) {
-        return true;
+    } else  {
+        $('#log-in-error-message').css('display', 'block');
     }
 }
 

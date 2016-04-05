@@ -16,22 +16,21 @@
 
 .quest-block-info {
     padding-right: 5px;
+}
+
+#quest-block-info-title {
     text-align: right;
 }
 
 .quest-rating {
     position: relative;
-    bottom: 18px;
-    right: 210px;
+    bottom: 15px;
+    /*right: 260px;*/
 }
 
 .quests-gallery-page {
     width:100%;
 }
-
-.quest-block-info> .quest-description {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-align: center;
-    height: 10px;
-}
+/*
+	Ratings Stars
+*/
