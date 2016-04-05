@@ -5,6 +5,7 @@
     float: left;
     height: 300px;
     margin: 2% 1%;
+    overflow: hidden;
     padding: 5px;
     width: 250px;
 }
@@ -15,7 +16,10 @@
 }
 
 .quest-block-info {
+    background: #fff;
     padding-right: 5px;
+    position: relative;
+    bottom: 0px;
 }
 
 #quest-block-info-title {
@@ -31,6 +35,7 @@
 .quests-gallery-page {
     width:100%;
 }
-/*
-	Ratings Stars
-*/
+
+.quest-block-info:hover{
+    bottom: 90px;
+}
