@@ -70,7 +70,7 @@ function deletedComment(id) {
             response = window.parent.postData(comments[i], '/deleteCommentData');
             if (response === 'success') {
                 $('#'+id ).remove();
-                delete comments[i];
+                comments.splice(i,1);
                 console.log(id, comments);
             }
         }
@@ -85,7 +85,7 @@ function markNotSpoil(id) {
     for (i = 0; i < comments.length; i++) {
         if (comments[i].questID === id) {
             console.log(comments[i]);
-            delete comments[i].spoiler;
+            comments[i].spoiler = false;
             console.log(comments[i]);
             response = window.parent.postData(comments[i], '/updateCommentsData');
             if (response === 'success') {

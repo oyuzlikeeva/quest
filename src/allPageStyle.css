@@ -187,9 +187,24 @@ textarea {
     position: relative;
     width: 1.1em;
 }
+
 .quest-rating > span:before{
     color: gold;
-    content: "\2605";
     position: absolute;
     left: 1px;
+}
+.quest-rating > span[class*='rating-5']:before{
+    content: "\2605\2605\2605\2605\2605";
+}
+.quest-rating > span[class*='rating-4']:before{
+     content: "\2605\2605\2605\2605";
+ }
+.quest-rating > span[class*='rating-3']:before{
+    content: "\2605\2605\2605";
+}
+.quest-rating > span[class*='rating-2']:before{
+    content: "\2605\2605";
+}
+.quest-rating > span[class*='rating-1']:before{
+    content: "\2605";
 }
