@@ -1,10 +1,4 @@
 @media  (min-width: 400px) and (max-width: 650px) {
-    .back-on-main-page {
-        position: fixed;
-        top: 5px;
-        left: 10px;
-    }
-
     .log-in {
         width: 50%;
     }
@@ -35,13 +29,6 @@
         margin: 10% auto;
         padding: 35px;
         width: 30%;
-    }
-
-    .back-on-main-page {
-        position: fixed;
-        top: 20px;
-        left: 25px;
-        width: 45px;
     }
 
     .log-in-form-title {
@@ -76,15 +63,6 @@
         margin: 10px;
     }
 
-    .back-on-main-page {
-        background: #000;
-        border: none;
-        border-radius: 100%;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
-        display: inline;
-        height: 45px;
-    }
-
     .log-in-input {
         border: 1px solid #eee;
         border-radius: 2px;
@@ -95,7 +73,7 @@
         background: #000;
         border: none;
         border-radius: 2px;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
         color: #fff;
         font-size: 16px;
         padding: 5px 10px;
@@ -118,7 +96,7 @@
         border: none;
         border-radius: 1px;
         background: #00695C;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
         float: left;
         height: 5px;
     }
@@ -127,7 +105,7 @@
         border: none;
         border-radius: 1px;
         background: #00695C;
-        box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
         height: 5px;
     }
 

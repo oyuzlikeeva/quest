@@ -5,13 +5,11 @@
         <link rel="stylesheet" type="text/css" href="allPageStyle.css">
     </head>
     <body>
-        <header class="header">
+        <div id="header">
             <div class="block-project-name">
-                <a href="#main" aria-label="Quest name">
-                    <span class="project-name" type="button">
-                        QuestoMania
-                    </span>
-                </a>
+                <span class="project-name" type="button" onclick=App.goOnMainPage()>
+                    QuestoMania
+                </span>
             </div>
             <div class="header-button-group">
                 <button type="button" class="icon-button">
@@ -20,13 +18,10 @@
                              alt="User profile button">
                     </a>
                 </button>
-                <a href="#logIn" aria-label="Log in page">
-                    <button type="button" class="log-in-button">Log in</button>
-                </a>
             </div>
-        </header>
-        <div class="content">
-            <iframe id="iframe" class="hidden" src="#"onload="hiddenHeader()"></iframe>
+        </div>
+        <div id="content">
+            <iframe id="iframe" class="hidden" src="#"onload="App.hiddenHeader()"></iframe>
         </div>
         <script src="jquery-2.2.1.js"></script>
         <script src="index.js"></script>

@@ -7,24 +7,19 @@
         <link rel="stylesheet" type="text/css" href="logIn/logIn.css">
     </head>
     <body>
-        <a href="/main">
-            <button class="back-on-main-page" type="button">
-                <img src="img/icons/ic_arrow_back_white_36px.svg"/>
-            </button>
-        </a>
         <div class="log-in">
             <div class="title-log-in-form">
                 <button type="button">
                     <span id="log-in-title"
                           class="log-in-form-title"
-                          onclick=showLogInForm()>
+                          onclick=App.showLogInForm()>
                         Log in
                     </span>
                 </button>
                 <button type="button">
                     <span id="sign-up-title"
                           class="log-in-form-title"
-                          onclick=showSignUpForm()>
+                          onclick=App.showSignUpForm()>
                         Sign up
                     </span>
                 </button>
@@ -35,7 +30,7 @@
             </div>
             <hr class="log-in-title-line">
             <div class="log-in-form">
-                <form id="log-in-form" action="" onsubmit=submitLogInData()>
+                <form id="log-in-form" action="" onsubmit="App.submitLogInData()">
                     <p>
                         Login:
                         <input id="log-in-username"
@@ -66,7 +61,7 @@
                 </form>
             </div>
             <div class="sign-up-form hidden">
-                <form action="" onsubmit=submitSignUpData()>
+                <form action="" onsubmit=App.submitSignUpData()>
                     <p>
                         Login:
                         <input id="sign-up-username"

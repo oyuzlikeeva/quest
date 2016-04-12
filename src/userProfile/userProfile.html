@@ -9,41 +9,41 @@
         <div class="user-page">
             <div class="user-info">
                 <script id="user-template" type="text/x-handlebars-template">
-                    <div class="user-photo">
-                        <img src="img/icons/ic_person_white_48px.svg" width="140" height="140"/>
-                    </div>
-                    <p class="username">{{username}}</p>
+                    <h1 class="username">{{username}}</h1>
                 </script>
             </div>
             <div class="user-photo-gallery">
-
                 <script id="photo-template" type="text/x-handlebars-template">
-                <button type="button" class="icon-button">
-                    <img class="img-chevron" src="img/icons/ic_chevron_left_black_24px.svg"/>
-                </button>
-                    <img class="quest-user-photo" src="{{photo.src1}}"/>
-                    <img class="quest-user-photo" src="{{photo.src2}}"/>
-                    <img class="quest-user-photo" src="{{photo.src3}}"/>
-                    <img class="quest-user-photo hidden" src="{{photo.src4}}"/>
-                <button type="button" class="icon-button">
-                    <img class="img-chevron" src="img/icons/ic_chevron_right_black_24px.svg"/>
-                </button>
+                    <button type="button" class="icon-button">
+                        <img class="img-chevron" src="img/icons/ic_chevron_left_black_24px.svg"/>
+                    </button>
+                        <img class="quest-user-photo" src="{{photo.src1}}"/>
+                        <img class="quest-user-photo" src="{{photo.src2}}"/>
+                        <img class="quest-user-photo hidden" src="{{photo.src3}}"/>
+                        <img class="quest-user-photo hidden" src="{{photo.src4}}"/>
+                        <img class="quest-user-photo hidden" src="{{photo.src5}}"/>
+                        <img class="quest-user-photo hidden" src="{{photo.src6}}"/>
+                        <img class="quest-user-photo hidden" src="{{photo.src4}}"/>
+                    <button type="button" class="icon-button">
+                        <img class="img-chevron" src="img/icons/ic_chevron_right_black_24px.svg"/>
+                    </button>
                 </script>
             </div>
             <div class="user-gallery-item">
+                <h2>Comments made by the user :</h2>
                 <script id="comment-template" type="text/x-handlebars-template">
                     {{#each this}}
-                    <div class="user-gallery-item-title">
-                        <span class="quest-name">{{questName}}</span>
-                        <span class="time-added-comment">{{dateAddedComment}}</span><br/>
-                        <span class="quest-rating">
-                            <span class="rating-{{rating}}"></span>
-                        </span>
-                    </div>
-                    <div class="user-gallery-item-comment">
-                        <p>{{comment}}</p>
-                    </div>
-                    <hr class="item-divider">
+                        <div class="user-gallery-item-title">
+                            <span class="quest-name">{{questName}}</span>
+                            <span class="time-added-comment">{{dateAddedComment}}</span><br/>
+                            <span class="quest-rating">
+                                <span class="rating-{{rating}}"></span>
+                            </span>
+                        </div>
+                        <div class="user-gallery-item-comment">
+                            <p>{{comment}}</p>
+                        </div>
+                        <hr class="item-divider"/>
                     {{/each}}
                 </script>
             </div>

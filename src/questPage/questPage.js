@@ -1,50 +1,52 @@
-var questData;
+App = window.parent.App;
 
-
-function getQuestInfoData(){
-    questData = window.parent.getQuestData();
-    var template = Handlebars.compile($('#quest-template').html());
-
-    $('.quest-info').append(template(questData));
-}
-getQuestInfoData();
-
-function getCommentsData(){
-    var data = window.parent.getQuestCommentsData();
-    commentTemplate = Handlebars.compile($('#comment-template').html());
-
-    $('.quest-comments').append(commentTemplate(data));
-}
-getCommentsData();
-
-
-function openEditModal() {
+App.openEditModal = function() {
     var template = Handlebars.compile($('#edit-template').html());
-    $('#edit-form').append(template(questData));
-}
+    $('#edit-form').append(template(App.questData));
+};
 
-function submitEditedQuestInfo() {
+App.submitEditedQuestInfo = function() {
     var i,
         data = {},
         title,
         rating,
         comment,
+        questData = App.questData,
         keyword,
         keywords = [];
 
     rating = $('#quest-rating').val();
     title = $('#comment-title').val();
     comment = $('#comment').val();
-    console.log(comment);
     keywords = questData.keywords.split(',');
     for (i = 0; i < keywords.length; i++) {
-        keyword = keywords[i].trim()
+        keyword = keywords[i].trim();
         if (comment.indexOf(keyword) !== -1) {
             questData.spoil = true;
         }
     }
+};
 
-    if ( rating !== '' || title !== '' || comment !== ''){
-        data = {}
-    }
-}
+App.getQuestInfoData = (function() {
+    var template,
+        url;
+
+    url = window.parent.location.hash;
+    App.questData = window.parent.App.getQuestData(url.split('/')[1]);
+    template = Handlebars.compile($('#quest-template').html());
+    $('.quest-info').append(template(App.questData));
+});
+
+App.getQuestInfoData();
+
+App.getCommentData = (function() {
+    var data,
+        commentTemplate;
+
+    data = window.parent.App.getQuestCommentsData();
+    commentTemplate = Handlebars.compile($('#comment-template').html());
+    $('.quest-comments').append(commentTemplate(data));
+});
+
+App.getCommentData();
+

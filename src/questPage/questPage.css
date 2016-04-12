@@ -1,5 +1,5 @@
 .description {
-    margin-top: 7%;
+    margin-top: 10%;
 }
 
 .quest-photo-gallery {
@@ -17,7 +17,7 @@
 }
 
 .icon-button {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     display: inline;
     height: 30px;
     margin: 0 15px;
@@ -33,16 +33,23 @@
 .quest-comments {
     clear: both;
     margin: auto;
-    width: 75%;
     padding: 5%;
+    width: 75%;
 }
 
 .quest-comment {
     border: 1px solid #eee;
     border-radius: 2px;
-    box-shadow: 0 0px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
     margin: 2% 0;
     padding: 20px;
+}
+
+.quest-comment-title > .quest-rating {
+    text-align: right;
+    position: relative;
+    bottom: 15px;
+    left: 75%;
 }
 
 .number-of-persons>img {
@@ -61,6 +68,10 @@
     background: #00695C;
     border: none;
     border-radius: 1px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     height: 3px;
+}
+
+.username {
+    font-size: 20px;
 }

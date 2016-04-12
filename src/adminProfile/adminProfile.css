@@ -1,5 +1,5 @@
 .icon-button {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     height: 36px;
     margin: 0 auto;
     padding: 0;
@@ -11,8 +11,8 @@
 }
 
 .added-new-button .icon-button {
-    padding: 0;
     margin: 0;
+    padding: 0;
 }
 
 .comments-notification {
@@ -24,7 +24,7 @@
 .notification-table {
     border-radius: 2px;
     border-collapse: collapse;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     width: 100%;
 }
 
@@ -57,7 +57,7 @@ tr:nth-child(2n) {
     background: #00695C;
     border: none;
     border-radius: 1px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     height: 2px;
 }
 

@@ -1,111 +1,103 @@
-var xhr = new XMLHttpRequest(),
-    questData,
-    commentsData,
-    quests = {},
-    goOnQuestData = {},
-    questID = '',
-    questCollection = [];
+var App = {},
+    xhr = new XMLHttpRequest();
+    App.questCollection = [];
 
-function postData(data, path) {
+App.postData = (function(data, path) {
     xhr.open('POST', path, false);
     xhr.send(data);
-
     if (xhr.status != 200) {
         console.log( xhr.status + ': ' + xhr.statusText );
     } else {
-        console.log('Success post data');
         return 'success'
     }
-}
+});
 
-function getQuestsData() {
-    xhr.open('GET', '../questData.json', false);
+App.getQuestsData = (function() {
+    xhr.open('GET', '../api/questData.json', false);
     xhr.send();
-
-    if (xhr.status != 200) {
-        console.log( xhr.status + ': ' + xhr.statusText );
-    } else {
-        questData = JSON.parse(xhr.responseText);
-    }
-    createQuestCollection(questData);
-
-    return(questData);
-}
-
-function getQuestData() {
-    return goOnQuestData;
-}
-
-function getCommentsData() {
-    var i,
-        comment,
-        comments = {},
-        questComments = [];
-
-    xhr.open('GET', '../commentsData.json', false);
-    xhr.send();
-
     if (xhr.status != 200) {
         console.log(xhr.status + ': ' + xhr.statusText);
     } else {
-        commentsData = JSON.parse(xhr.responseText);
-        return commentsData;
+        App.questData = JSON.parse(xhr.responseText);
     }
-}
+    App.createQuestCollection(App.questData);
 
-function getQuestCommentsData() {
+    return(App.questData);
+});
+
+App.getQuestData = (function(url) {
+    var i,
+        questCollection;
+
+    questCollection= App.questCollection;
+    for (i = 0; i < questCollection.length; i++) {
+        if(questCollection[i].id === +url) {
+            return questCollection[i].quests;
+        }
+    }
+});
+
+App.getCommentsData = (function() {
+    xhr.open('GET', '../api/commentsData.json', false);
+    xhr.send();
+    if (xhr.status != 200) {
+        console.log(xhr.status + ': ' + xhr.statusText);
+    } else {
+        App.commentsData = JSON.parse(xhr.responseText);
+        return App.commentsData;
+    }
+});
+
+App.getQuestCommentsData = (function() {
     var i,
         comment,
         comments = {},
         commentsData,
         questComments = [];
 
-    commentsData = getCommentsData();
-        for (key in commentsData) {
-            for (i=0; i < commentsData[key].length; i++) {
-                comment = commentsData[key][i];
-                if (comment.questID === questID) {
-                    questComments.push(comment);
-
-                    console.log(questComments);
-                }
+    commentsData = App.getCommentsData();
+    for (key in commentsData) {
+        for (i = 0; i < commentsData[key].length; i++) {
+            comment = commentsData[key][i];
+            if (comment.questID === App.questID) {
+                questComments.push(comment);
             }
         }
-    console.log(questComments);
-        return {comments: questComments};
+    }
+    return {comments: questComments};
 
-}
+});
 
-function getUserData(username) {
+App.getUserData = (function(username) {
     var userData,
         users,
         i;
 
-    xhr.open('GET', '../usersData.json', false);
+    xhr.open('GET', '../api/usersData.json', false);
     xhr.send();
-
     if (xhr.status != 200) {
         console.log(xhr.status + ': ' + xhr.statusText);
     } else {
         userData = JSON.parse(xhr.responseText);
         users = userData.users;
     }
+
     for (i = 0; i < users.length; i++) {
         if (users[i].username === username) {
             return users[i];
         }
     }
-}
+});
 
-function getUserProfileData(username) {
+App.getUserProfileData = (function(username) {
     var i,
         commentsData,
         userData,
         userComments = [],
         data = {};
 
-    userData = getUserData(username);
-    commentsData = getCommentsData().comments;
+    userData = App.getUserData(username);
+    commentsData = App.getCommentsData().comments;
     for (i = 0; i < commentsData.length; i++) {
         if (commentsData[i].username === username) {
             userComments.push(commentsData[i]);
@@ -115,11 +107,12 @@ function getUserProfileData(username) {
     return data = {userData: userData,
         userComments: userComments};
 
-}
+});
 
-function createQuestCollection(questData) {
+App.createQuestCollection = (function(questData) {
     var id,
         quest,
+        quests = {},
         key,
         i;
 
@@ -135,50 +128,57 @@ function createQuestCollection(questData) {
     }
 
     for (quest in quests) {
-        questCollection.push(quests[quest]);
+        App.questCollection.push(quests[quest]);
     }
-}
+});
 
-function goOnQuestPage(id) {
-    var i;
+App.goOnQuestPage = (function(id) {
+    var i,
+        hash,
+        questCollection = App.questCollection;
+
     for (i = 0; i < questCollection.length; i++) {
         if(questCollection[i].id === id) {
-            questID = id;
-            goOnQuestData = questCollection[i].quests;
+            hash = '#questPage/' + id;
+            App.questID = id;
         }
     }
+    window.location.hash = hash;
+    document.getElementById('iframe').src = hash;
+});
 
-    window.location.hash = '#questPage';
-}
-
-function hiddenHeader() {
+App.hiddenHeader = (function() {
     var header,
         content,
         iframeUrl;
 
-
-    header = document.getElementsByClassName('header')[0];
-    content = document.getElementsByClassName('content')[0];
     iframeUrl = document.getElementById('iframe').src;
     if (iframeUrl === 'http://localhost:8888/logIn') {
-        header.style.display = 'none';
-        content.style.marginTop = '0';
+        $('#header').css('display', 'none');
     } else {
-        header.style.display = 'block';
+        $('#header').css('display', 'block');
     }
-}
+});
 
 function changeUrl() {
     var windowUrl,
         iframe;
-    windowUrl = window.location.hash.substring(1);
-    console.log(windowUrl);
+
+    windowUrl = window.location.hash.substring(1).split('/')[0];
     iframe = document.getElementById('iframe');
     iframe.src = windowUrl;
 }
 
 window.onhashchange = changeUrl;
 window.onload = function() {
-    document.getElementById('iframe').style.display = 'block';
+    $('#iframe').css('display', 'block');
     changeUrl();
 };
+
+App.goOnMainPage = function() {
+    document.getElementById('iframe').src = '#main';
+    window.location.hash = '#main'
+};
+
+
+App.getQuestsData();

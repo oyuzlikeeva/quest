@@ -42,9 +42,9 @@ li {
     width: 100%;
 }
 
-.header {
+#header {
     background: #000;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     height: 70px;
     min-width: 450px;
     position: fixed;
@@ -52,12 +52,11 @@ li {
     width: 100%;
 }
 
-.project-name{
+.project-name {
     background: none;
     border: none;
     color: #fff;
     float: left;
-    /*font-family: Stationary thin;*/
     font-size: 25px;
     font-weight: bold;
     margin: 20px 35px;
@@ -100,7 +99,7 @@ li {
     background: #000;
     border: none;
     border-radius: 100%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     display: inline;
     height: 45px;
     position: fixed;
@@ -117,7 +116,7 @@ li {
     background: #000;
     border: none;
     border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     color: #fff;
     font-size: 16px;
     padding: 5px 10px;
@@ -129,7 +128,7 @@ li {
 }
 
 .modal-dialog {
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, .8);
     display: none;
     font-family: Arial, Helvetica, sans-serif;
     pointer-events: none;
@@ -181,30 +180,36 @@ textarea {
     direction: rtl;
     unicode-bidi: bidi-override;
 }
+
 .quest-rating > span {
     display: inline-block;
     color: transparent;
     position: relative;
-    width: 1.1em;
+    width: 1.5em;
 }
 
-.quest-rating > span:before{
+.quest-rating > span:before {
     color: gold;
-    position: absolute;
+    position: relative;
     left: 1px;
 }
-.quest-rating > span[class*='rating-5']:before{
+
+.quest-rating > span[class*='rating-5']:before {
     content: "\2605\2605\2605\2605\2605";
 }
-.quest-rating > span[class*='rating-4']:before{
-     content: "\2605\2605\2605\2605";
+
+.quest-rating > span[class*='rating-4']:before {
+    content: "\2605\2605\2605\2605";
  }
-.quest-rating > span[class*='rating-3']:before{
+
+.quest-rating > span[class*='rating-3']:before {
     content: "\2605\2605\2605";
 }
-.quest-rating > span[class*='rating-2']:before{
+
+.quest-rating > span[class*='rating-2']:before {
     content: "\2605\2605";
 }
-.quest-rating > span[class*='rating-1']:before{
+
+.quest-rating > span[class*='rating-1']:before {
     content: "\2605";
 }

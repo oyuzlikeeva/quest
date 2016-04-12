@@ -35,11 +35,11 @@
                             <td class="text-comment">{{comment}}</td>
                             <td class="username">{{username}}</td>
                             <td class="actions">
-                                <button class="icon-button" onclick=deletedComment({{questID}})>
+                                <button class="icon-button" onclick=App.deletedComment({{questID}})>
                                     <img src="../img/icons/ic_close_white_24px.svg"
                                          alt="Delete comment"/>
                                 </button>
-                                <button class="icon-button" onclick=markNotSpoil({{questID}})>
+                                <button class="icon-button" onclick=App.markNotSpoil({{questID}})>
                                     <img src="../img/icons/ic_check_white_24px.svg"
                                          alt="Stay comment"/>
                                 </button>
@@ -60,7 +60,7 @@
                              alt="Close modal dialog"/>
                         </a>
                     <hr class="modal-title-divider">
-                    <form action="" onsubmit=submitAddedData()>
+                    <form action="" onsubmit=AsubmitAddedData()>
                         <p>Quest name:
                             <input id="quest-name"
                                    name="quest-name"
@@ -88,8 +88,7 @@
                                    required
                                    type="url"
                                    alt="quest reservation"
-                                   placeholder="Write url for quest reservation"
-                                   value="http://dsfsdf.com"/>
+                                   placeholder="Write url like http://www.siteforreservation.com"/>
                         </p>
                         <p>
                             Number of persons:
