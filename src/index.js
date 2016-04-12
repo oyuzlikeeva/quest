@@ -180,5 +180,6 @@ App.goOnMainPage = function() {
     window.location.hash = '#main'
 };
 
-
 App.getQuestsData();
+
+window.history.go(-2);
