@@ -23,6 +23,7 @@ function start() {
         }
     }
     http.createServer(onRequest).listen(8888);
+
     console.log('Server has started.');
 }
 
@@ -46,6 +47,7 @@ function getProcess(pathname, response) {
             response.writeHead(404, {'Content-Type': 'text/plain'});
             response.write('404 Not Found\n');
             response.end();
+            return;
         }
         mimeType = mimeTypes[path.extname(filename)];
         response.writeHead(200, {'Content-Type': mimeType + '; charset=utf-8'});
