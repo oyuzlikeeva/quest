@@ -27,7 +27,7 @@ App.submitEditedQuestInfo = function() {
     }
 };
 
-App.getQuestInfoData = (function() {
+App.getQuestInfoData = function() {
     var template,
         url;
 
@@ -35,18 +35,17 @@ App.getQuestInfoData = (function() {
     App.questData = window.parent.App.getQuestData(url.split('/')[1]);
     template = Handlebars.compile($('#quest-template').html());
     $('.quest-info').append(template(App.questData));
-});
+};
 
 App.getQuestInfoData();
 
-App.getCommentData = (function() {
+App.getCommentData = function() {
     var data,
         commentTemplate;
 
     data = window.parent.App.getQuestCommentsData();
     commentTemplate = Handlebars.compile($('#comment-template').html());
     $('.quest-comments').append(commentTemplate(data));
-});
+};
 
 App.getCommentData();
-

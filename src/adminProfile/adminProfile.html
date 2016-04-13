@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<script>
+<html>
     <head>
         <meta charset="UTF-8">
         <title>QuestoMania</title>
         <link rel="stylesheet" type="text/css" href="allPageStyle.css">
         <link rel="stylesheet" type="text/css" href="adminProfile/adminProfile.css">
     </head>
-    <>
+    <body>
         <div class="admin-page">
             <div class="comments-notification">
                 <div class="added-new">
@@ -30,22 +30,22 @@
                     <tbody>
                     <script id="template" type="text/x-handlebars-template">
                         {{#each comments}}
-                        {{#if spoiler}}
-                        <tr id="{{questID}}">
-                            <td class="text-comment">{{comment}}</td>
-                            <td class="username">{{username}}</td>
-                            <td class="actions">
-                                <button class="icon-button" onclick=App.deletedComment({{questID}})>
-                                    <img src="../img/icons/ic_close_white_24px.svg"
-                                         alt="Delete comment"/>
-                                </button>
-                                <button class="icon-button" onclick=App.markNotSpoil({{questID}})>
-                                    <img src="../img/icons/ic_check_white_24px.svg"
-                                         alt="Stay comment"/>
-                                </button>
-                            </td>
-                        </tr>
-                        {{/if}}
+                            {{#if spoiler}}
+                                <tr id="{{questID}}">
+                                    <td class="text-comment">{{comment}}</td>
+                                    <td class="username">{{username}}</td>
+                                    <td class="actions">
+                                        <button class="icon-button" onclick=App.deletedComment({{questID}})>
+                                            <img src="../img/icons/ic_close_white_24px.svg"
+                                                 alt="Delete comment"/>
+                                        </button>
+                                        <button class="icon-button" onclick=App.markNotSpoil({{questID}})>
+                                            <img src="../img/icons/ic_check_white_24px.svg"
+                                                 alt="Stay comment"/>
+                                        </button>
+                                    </td>
+                                </tr>
+                            {{/if}}
                         {{/each}}
                     </script>
                     </tbody>
@@ -60,7 +60,7 @@
                              alt="Close modal dialog"/>
                         </a>
                     <hr class="modal-title-divider">
-                    <form action="" onsubmit=AsubmitAddedData()>
+                    <form action="" onsubmit=App.submitAddedData()>
                         <p>Quest name:
                             <input id="quest-name"
                                    name="quest-name"
@@ -165,7 +165,8 @@
         </div>
         <script src="https://code.jquery.com/jquery-2.2.3.min.js"
                 integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
-                crossorigin="anonymous"></script>
+                crossorigin="anonymous">
+        </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.js"></script>
         <script src="adminProfile/adminProfile.js"></script>
     </body>

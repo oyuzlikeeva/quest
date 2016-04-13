@@ -1,13 +1,20 @@
-.icon-button {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 36px;
-    margin: 0 auto;
-    padding: 0;
-    width: 36px;
+.actions {
+    padding-left: 12%;
 }
 
 .added-new{
     float: right;
+}
+
+#added-button {
+    padding: 5px 20px;
+    position: relative;
+    left: 75%;
+}
+
+#added-new-error-message {
+    color: red;
+    display: none;
 }
 
 .added-new-button .icon-button {
@@ -19,6 +26,22 @@
     float: left;
     margin: 0 auto;
     width: 100%;
+}
+
+.icon-button {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    height: 36px;
+    margin: 0 auto;
+    padding: 0;
+    width: 36px;
+}
+
+.modal-title-divider {
+    background: #00695C;
+    border: none;
+    border-radius: 1px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    height: 2px;
 }
 
 .notification-table {
@@ -47,27 +70,4 @@ tr:nth-child(2n) {
 
 .username {
     text-align: center;
-}
-
-.actions {
-    padding-left: 12%;
-}
-
-.modal-title-divider {
-    background: #00695C;
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 2px;
-}
-
-#added-new-error-message {
-    display: none;
-    color: red;
-}
-
-#added-button {
-    padding: 5px 20px;
-    position: relative;
-    left: 75%;
 }

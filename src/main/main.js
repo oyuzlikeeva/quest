@@ -13,4 +13,3 @@ function goOnQuestPage(id) {
     }
     getData();
 })();
-

@@ -9,25 +9,25 @@
     <div class="quests-gallery-page">
         <script id="template" type="text/x-handlebars-template">
             {{#each quests}}
-            <div class="quest-block" onclick=goOnQuestPage({{id}})>
-                <div class="quest-block-image">
-                    <img src="{{photo.src1}}"
-                         width="400"
-                         height="250"
-                         alt="Quest's photo">
-                </div>
-                <div class="quest-block-info">
-                    <span id={{id}} class="hidden">{{id}}</span>
-                    <div id="quest-block-info-title">
-                        <span class="quest-name">{{name}}</span><br/>
-                        <span class="quest-project-name">{{projectName}}</span><br/>
+                <div class="quest-block" onclick=goOnQuestPage({{id}})>
+                    <div class="quest-block-image">
+                        <img src="{{photo.src1}}"
+                             width="400"
+                             height="250"
+                             alt="Quest's photo">
                     </div>
-                    <span class="quest-rating">
-                        <span class="rating-{{rating}}"></span>
-                    </span><br/>
-                    <span class="quest-description">{{description}}</span><br/>
+                    <div class="quest-block-info">
+                        <span id={{id}} class="hidden">{{id}}</span>
+                        <div id="quest-block-info-title">
+                            <span class="quest-name">{{name}}</span><br/>
+                            <span class="quest-project-name">{{projectName}}</span><br/>
+                        </div>
+                        <span class="quest-rating">
+                            <span class="rating-{{rating}}"></span>
+                        </span><br/>
+                        <span class="quest-description">{{description}}</span><br/>
+                    </div>
                 </div>
-            </div>
             {{/each}}
         </script>
     </div>

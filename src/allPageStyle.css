@@ -22,15 +22,39 @@ a {
     color: #fff;
 }
 
-li {
+.back-on-main-page {
+    background: #000;
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     display: inline;
-    list-style-type: none;
+    height: 45px;
+    position: fixed;
+    top: 20px;
+    left: 25px;
+    width: 45px;
 }
 
-.input {
-    border: 1px solid #eee;
+.close {
+    border-radius: 12px;
+    font-weight: bold;
+    line-height: 25px;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    text-decoration: none;
+    width: 24px;
+}
+
+.custom-button {
+    background: #000;
+    border: none;
     border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+    color: #fff;
+    font-size: 16px;
     padding: 5px 10px;
+    margin: 1px;
 }
 
 #iframe {
@@ -42,6 +66,13 @@ li {
     width: 100%;
 }
 
+.input {
+    border: 1px solid #eee;
+    border-radius: 2px;
+    padding: 5px 10px;
+}
+
+
 #header {
     background: #000;
     box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
@@ -52,14 +83,8 @@ li {
     width: 100%;
 }
 
-.project-name {
-    background: none;
-    border: none;
-    color: #fff;
-    float: left;
-    font-size: 25px;
-    font-weight: bold;
-    margin: 20px 35px;
+.hidden {
+    display: none;
 }
 
 .header-button-group {
@@ -74,12 +99,9 @@ li {
     vertical-align: middle;
 }
 
-.log-in-button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    vertical-align: middle;
+li {
+    display: inline;
+    list-style-type: none;
 }
 
 .log-in {
@@ -91,40 +113,16 @@ li {
     width: 30%;
 }
 
-.log-in input {
-    margin: 10px;
-}
-
-.back-on-main-page {
-    background: #000;
+.log-in-button {
+    background: none;
     border: none;
-    border-radius: 100%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    display: inline;
-    height: 45px;
-    position: fixed;
-    top: 20px;
-    left: 25px;
-    width: 45px;
-}
-
-.hidden {
-    display: none;
-}
-
-.custom-button {
-    background: #000;
-    border: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
     color: #fff;
     font-size: 16px;
-    padding: 5px 10px;
-    margin: 1px;
+    vertical-align: middle;
 }
 
-.modal-dialog p {
-    margin: 7px 10px;
+.log-in input {
+    margin: 10px;
 }
 
 .modal-dialog {
@@ -143,12 +141,6 @@ li {
     -moz-transition: opacity 400ms ease-in;
 }
 
-.modal-dialog:target {
-    display: block;
-    height: 100%;
-    pointer-events: auto;
-}
-
 .modal-dialog > div {
     background: #fff;
     border-radius: 2px;
@@ -159,20 +151,29 @@ li {
     width: 60%;
 }
 
+.modal-dialog p {
+    margin: 7px 10px;
+}
+
+.modal-dialog:target {
+    display: block;
+    height: 100%;
+    pointer-events: auto;
+}
+
+.project-name {
+    background: none;
+    border: none;
+    color: #fff;
+    float: left;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px 35px;
+}
+
 textarea {
     height: 130px;
     width: 100%;
-}
-
-.close {
-    border-radius: 12px;
-    font-weight: bold;
-    line-height: 25px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    text-decoration: none;
-    width: 24px;
 }
 
 
@@ -194,22 +195,22 @@ textarea {
     left: 1px;
 }
 
-.quest-rating > span[class*='rating-5']:before {
-    content: "\2605\2605\2605\2605\2605";
-}
-
-.quest-rating > span[class*='rating-4']:before {
-    content: "\2605\2605\2605\2605";
- }
-
-.quest-rating > span[class*='rating-3']:before {
-    content: "\2605\2605\2605";
+.quest-rating > span[class*='rating-1']:before {
+    content: "\2605";
 }
 
 .quest-rating > span[class*='rating-2']:before {
     content: "\2605\2605";
 }
 
-.quest-rating > span[class*='rating-1']:before {
-    content: "\2605";
+.quest-rating > span[class*='rating-3']:before {
+    content: "\2605\2605\2605";
+}
+
+.quest-rating > span[class*='rating-4']:before {
+    content: "\2605\2605\2605\2605";
+}
+
+.quest-rating > span[class*='rating-5']:before {
+    content: "\2605\2605\2605\2605\2605";
 }

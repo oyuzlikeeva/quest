@@ -68,6 +68,7 @@ App.showLogInForm = function() {
     $('.sign-up-line').css('display', 'none');
     $('.sign-up-form').css('display', 'none');
 };
+
 App.showSignUpForm = function() {
     $('.log-in-line').css('display', 'none');
     $('.log-in-form').css('display', 'none');

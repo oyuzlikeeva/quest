@@ -8,7 +8,7 @@ App = window.parent.App;
     $('tbody').append( template(App.data) );
 })();
 
-App.submitAddedData = (function() {
+App.submitAddedData = function() {
     var path = '/questData',
         newHash,
         data = {};
@@ -25,18 +25,18 @@ App.submitAddedData = (function() {
         siteForReservation: $('#reservation-url').val()};
     newHash = '#questPage';
     App.submitData(path, data, newHash)
-});
+};
 
-App.submitData = (function(path, data, newHash) {
+App.submitData = function(path, data, newHash) {
     var response;
 
     response = window.parent.App.postData(data, path);
     if (response === 'success') {
         window.parent.location.hash = newHash;
     }
-});
+};
 
-App.deletedComment = (function(id) {
+App.deletedComment = function(id) {
     var i,
         response,
         comments = App.data.comments;
@@ -50,9 +50,9 @@ App.deletedComment = (function(id) {
             }
         }
     }
-});
+};
 
-App.markNotSpoil = (function(id) {
+App.markNotSpoil = function(id) {
     var i,
         response,
         comments = App.data.comments;
@@ -66,4 +66,4 @@ App.markNotSpoil = (function(id) {
             }
         }
     }
-});
+};

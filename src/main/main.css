@@ -10,11 +10,6 @@
     width: 250px;
 }
 
-.quest-name {
-    font-size: 20px;
-    font-weight: bold;
-}
-
 .quest-block-info {
     background: #fff;
     padding-right: 5px;
@@ -24,9 +19,8 @@
     width: 100%;
 }
 
-#quest-block-info-title {
-    text-align: right;
-    margin-bottom: 5px;
+.quest-block-info:hover{
+    bottom: 200px;
 }
 
 .quest-block-info > .quest-rating {
@@ -35,10 +29,16 @@
     left: 40px;
 }
 
+#quest-block-info-title {
+    text-align: right;
+    margin-bottom: 5px;
+}
+
 .quests-gallery-page {
     width:100%;
 }
 
-.quest-block-info:hover{
-    bottom: 200px;
+.quest-name {
+    font-size: 20px;
+    font-weight: bold;
 }
