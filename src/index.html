@@ -13,13 +13,17 @@
             </div>
             <div class="header-button-group">
                 <button type="button" class="icon-button">
-                    <a href="#userProfile" aria-label="User profile page">
+                    <a id="user-profile" href="#userProfile" aria-label="User profile page">
                         <img src="img/icons/ic_person_white_36px.svg"
                              alt="User profile button">
                     </a>
                 </button>
-                <a href="#logOut" aria-label="Log out">
-                    <button type="button" class="log-in-button">Log out</button>
+                <a href="#logIn" aria-label="Log out">
+                    <button type="button"
+                            class="log-in-button"
+                            onclick=App.logOut()>
+                        Log out
+                    </button>
                 </a>
             </div>
         </div>

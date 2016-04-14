@@ -69,9 +69,9 @@ App.getQuestCommentsData = function() {
 };
 
 App.getUserData = function(username) {
-    var userData,
-        users,
-        i;
+    var i,
+        userData,
+        users;
 
     xhr.open('GET', '../api/usersData.json', false);
     xhr.send();
@@ -87,6 +87,8 @@ App.getUserData = function(username) {
             return users[i];
         }
     }
+
+    return false;
 };
 
 App.getUserProfileData = function(username) {
@@ -110,11 +112,11 @@ App.getUserProfileData = function(username) {
 };
 
 App.createQuestCollection = function(questData) {
-    var id,
+    var i,
+        id,
         quest,
         quests = {},
-        key,
-        i;
+        key;
 
     for (key in questData) {
         for (i = 0; i < questData[key].length; i++) {
@@ -131,6 +133,9 @@ App.createQuestCollection = function(questData) {
         App.questCollection.push(quests[quest]);
     }
 };
+
+App.User = new Object();
+App.Quest = new Object();
 
 App.goOnQuestPage = function(id) {
     var i,
@@ -177,8 +182,31 @@ window.onload = function() {
 
 App.goOnMainPage = function() {
     document.getElementById('iframe').src = '#main';
-    window.location.hash = '#main'
+    window.location.hash = '#main';
+};
+
+App.setUserRole = function(username) {
+    if (username === 'admin') {
+        App.userRole = localStorage.setItem('userRole', 'admin');
+        $('#user-profile').attr('href', '#adminProfile');
+        return '#adminProfile';
+    } else {
+        if (App.getUserData(username) !== false) {
+            App.userRole = localStorage.setItem('username', username);
+            $('#user-profile').attr('href', '#userProfile/' + username);
+            return '#userProfile/' + username;
+        } else {
+            return '#logIn'
+        }
+    }
+};
+
+App.getUserRole = function() {
+    return App.userRole;
+};
+
+App.logOut = function() {
+    localStorage.removeItem('userRole');
 };
 
 App.getQuestsData();
-window.history.go(-2);

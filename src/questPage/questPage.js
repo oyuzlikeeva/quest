@@ -27,6 +27,19 @@ App.submitEditedQuestInfo = function() {
     }
 };
 
+App.goOnUserProfile = function(username) {
+    console.log(username);
+    window.parent.location.hash = '#userProfile/' + username;
+};
+
+document.onload = function() {
+    var userRole = App.getUserRole();
+
+    if (userRole !== 'admin') {
+        $('#edit-quest-info').attr('class', 'hidden');
+    }
+};
+
 App.getQuestInfoData = function() {
     var template,
         url;
