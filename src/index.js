@@ -20,55 +20,12 @@ App.getQuestsData = function() {
     } else {
         App.questData = JSON.parse(xhr.responseText);
     }
-    App.createQuestCollection(App.questData);
+    App.createQuestsCollection(App.questData);
 
     return(App.questData);
 };
 
-App.getQuestData = function(url) {
-    var i,
-        questCollection;
-
-    questCollection= App.questCollection;
-    for (i = 0; i < questCollection.length; i++) {
-        if(questCollection[i].id === +url) {
-            return questCollection[i].quests;
-        }
-    }
-};
-
-App.getCommentsData = function() {
-    xhr.open('GET', '../api/commentsData.json', false);
-    xhr.send();
-    if (xhr.status != 200) {
-        console.log(xhr.status + ': ' + xhr.statusText);
-    } else {
-        App.commentsData = JSON.parse(xhr.responseText);
-        return App.commentsData;
-    }
-};
-
-App.getQuestCommentsData = function() {
-    var i,
-        comment,
-        comments = {},
-        commentsData,
-        questComments = [];
-
-    commentsData = App.getCommentsData();
-    for (key in commentsData) {
-        for (i = 0; i < commentsData[key].length; i++) {
-            comment = commentsData[key][i];
-            if (comment.questID === App.questID) {
-                questComments.push(comment);
-            }
-        }
-    }
-    return {comments: questComments};
-
-};
-
-App.getUserData = function(username) {
+App.getUsersData = function(username) {
     var i,
         userData,
         users;
@@ -81,61 +38,69 @@ App.getUserData = function(username) {
         userData = JSON.parse(xhr.responseText);
         users = userData.users;
     }
-
-    for (i = 0; i < users.length; i++) {
-        if (users[i].username === username) {
-            return users[i];
-        }
-    }
-
-    return false;
+    App.createUsersCollection(App.userData);
 };
 
-App.getUserProfileData = function(username) {
-    var i,
-        commentsData,
-        userData,
-        userComments = [],
-        data = {};
-
-    userData = App.getUserData(username);
-    commentsData = App.getCommentsData().comments;
-    for (i = 0; i < commentsData.length; i++) {
-        if (commentsData[i].username === username) {
-            userComments.push(commentsData[i]);
-        }
-    }
-
-    return data = {userData: userData,
-        userComments: userComments};
-
-};
-
-App.createQuestCollection = function(questData) {
+App.createUsersCollection = function(userData) {
     var i,
         id,
-        quest,
-        quests = {},
+        user,
+        users = {},
+        username,
+        comments,
         key;
 
-    for (key in questData) {
-        for (i = 0; i < questData[key].length; i++) {
-            id = questData[key][i].id;
+    for (key in userData) {
+        for (i = 0; i < userData[key].length; i++) {
+            username = userData[key][i].username;
+            comments = userData[key][i].comments;
 
-            if (quests[id] !== id) {
-                quests[id] = { id: id };
+            if (users[username] !== username) {
+                users[username] = { username: username,
+                                    comments: comments};
             }
-            quests[id][key] = questData[key][i];
+            users[username][key] = userData[key][i];
         }
     }
 
-    for (quest in quests) {
-        App.questCollection.push(quests[quest]);
+    for (user in users) {
+        App.questCollection.push(new UserModel(users[user]));
     }
+    console.log(App.questCollection)
 };
 
-App.User = new Object();
-App.Quest = new Object();
+
+//App.createQuestsCollection = function(questData) {
+//    var i,
+//        id,
+//        quest,
+//        quests = {},
+//        key;
+//
+//    for (key in questData) {
+//        for (i = 0; i < questData[key].length; i++) {
+//            id = questData[key][i].id;
+//
+//            if (quests[id] !== id) {
+//                quests[id] = { id: id };
+//            }
+//            quests[id][key] = questData[key][i];
+//        }
+//    }
+//
+//    for (quest in quests) {
+//        App.questCollection.push(new QuestModel(quests[quest]));
+//    }
+//    console.log(App.questCollection)
+//};
+
+App.getUserProfileData = function(username){
+    for (i = 0; i < App.questCollection; i++) {
+        if (App.questCollection[i].username === username) {
+            App.questCollection[i].getUserProfileData();
+        }
+    }
+};
 
 App.goOnQuestPage = function(id) {
     var i,
@@ -196,7 +161,7 @@ App.setUserRole = function(username) {
             $('#user-profile').attr('href', '#userProfile/' + username);
             return '#userProfile/' + username;
         } else {
-            return '#logIn'
+            return '#logIn';
         }
     }
 };
