@@ -41,10 +41,10 @@
     "username": "Саша",
     "status": "user",
     "photo": {
-      "src1": "img/user1.jpg",
-      "src2": "img/user1.jpg",
-      "src3": "img/user1.jpg",
-      "src4": "img/user1.jpg"
+      "src1": "img/1.jpg",
+      "src2": "img/2.jpg",
+      "src3": "img/1.jpg",
+      "src4": "img/2.jpg"
     }
   }, {
     "username": "Марина",

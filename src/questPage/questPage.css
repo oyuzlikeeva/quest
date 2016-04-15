@@ -71,6 +71,13 @@
 
 .quest-photo-gallery {
     float: left;
+    height: 40%;
+    width: 80%;
+}
+
+.quest-photo-gallery img {
+    height: 350px;
+    width: 600px;
 }
 
 .username {
@@ -79,4 +86,55 @@
 
 .username:hover {
     color: #757575;
+}
+
+.slider {
+    height: 290px;
+    overflow: hidden;
+    margin: 0 0 7px;
+    position: relative;
+    z-index: 9;
+    width: 700px;
+}
+
+.slider ul,
+.slider li {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.slider ul {
+    width: 9999px;
+}
+
+.slider ul li {
+    height: 290px;
+    float: left;
+    list-style-type: none;
+    width: 700px;
+}
+
+.slider .nav {
+    position: absolute;
+    bottom: 12px;
+    left: 15px;
+}
+
+.slider .nav span {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px #000;
+    cursor: pointer;
+    display: block;
+    float: left;
+    height: 16px;
+    margin: 0 8px 0 0;
+    opacity: 0.9;
+    overflow: hidden;
+    width: 16px;
+}
+
+.slider .nav span.on {
+    background: #00695C;
 }
