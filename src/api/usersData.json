@@ -87,12 +87,20 @@
   }, {
     "username": "Саша",
     "status": "user",
-    "photo": {
-      "src1": "img/user1.jpg",
-      "src2": "img/user1.jpg",
-      "src3": "img/user1.jpg",
-      "src4": "img/user1.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/user1.jpg"
+      },
+      {
+        "src": "img/user1.jpg"
+      },
+      {
+        "src": "img/user1.jpg"
+      },
+      {
+        "src": "img/user1.jpg"
+      }
+    ],
     "comments": [
       {
         "questID":2,

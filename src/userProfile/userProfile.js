@@ -17,5 +17,5 @@
 
     $('.user-info').append(userTemplate(userData));
     $('.user-gallery-item').append(commentTemplate(commentsData));
-    $('.user-photo-gallery').append(photoTemplate(userData));
+    $('.user-photo-gallery').append(photoTemplate(userData.photo));
 })();
