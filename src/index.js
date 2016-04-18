@@ -187,12 +187,12 @@ App.goOnMainPage = function() {
 
 App.setUserRole = function(username) {
     if (username === 'admin') {
-        App.userRole = localStorage.setItem('userRole', 'admin');
+        localStorage.setItem('userRole', 'admin');
         $('#user-profile').attr('href', '#adminProfile');
         return '#adminProfile';
     } else {
         if (App.getUserData(username) !== false) {
-            App.userRole = localStorage.setItem('username', username);
+            localStorage.setItem('userRole', 'user');
             $('#user-profile').attr('href', '#userProfile/' + username);
             return '#userProfile/' + username;
         } else {
@@ -202,7 +202,7 @@ App.setUserRole = function(username) {
 };
 
 App.getUserRole = function() {
-    return App.userRole;
+    return localStorage.getItem('userRole');
 };
 
 App.logOut = function() {

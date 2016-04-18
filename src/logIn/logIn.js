@@ -27,7 +27,14 @@ App.submitSignUpData = function() {
         password: password,
         repeatPassword: repeatPassword};
     if (App.validatedSignUpForm()) {
-        App.submitData(path, data, newHash)
+        var response;
+
+        response = window.parent.App.postData(data, path);
+        if (response === 'success') {
+            App.setUserRole(data.username);
+            window.parent.location.hash = '#userProfile/'+ username;
+            window.location.hash = '#userProfile/'+ username;
+        }
     } else {
         $('#sign-up-error-message').css('display', 'block');
     }

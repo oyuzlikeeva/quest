@@ -1,5 +1,3 @@
-App = window.parent.App;
-
 (function() {
     var hash,
         data,

@@ -22,7 +22,8 @@
     "photo": {
       "src1": "img/3reih1.jpg",
       "src2": "img/3reih2.jpg",
-      "src3": "img/3reih3.jpg"
+      "src3": "img/3reih3.jpg",
+      "src3": "img/3reih4.jpg"
     },
     "name": "В плену третьего Рейха",
     "projectName": "Внедрение",
@@ -116,7 +117,8 @@
     "photo": {
       "src1": "img/secretLab1.jpg",
       "src2": "img/secretLab2.jpg",
-      "src3": "img/secretLab3.jpg"
+      "src3": "img/secretLab3.jpg",
+      "src3": "img/secretLab4.jpg"
     },
     "name": "Секретная лаборатория",
     "projectName": "Location",
