@@ -8,23 +8,16 @@
     <body>
         <div class="quest-page">
             <div class="quest-info">
-                <script id="quest-template" type="text/x-handlebars-template">
                     <div class="quest-photo-gallery slider">
                         <ul>
-                            <li>
-                                <img src="{{photo.src1}}"/>
-                            </li>
-                            <li>
-                                <img src="{{photo.src2}}"/>
-                            </li>
-                            <li>
-                                <img src="{{photo.src3}}"/>
-                            </li>
-                            <li>
-                                <img src="{{photo.src4}}"/>
-                            </li>
+                            <script id="photo-template" type="text/x-handlebars-template">
+                                {{#each this}}
+                                <li><img class="quest-photo" src="{{src}}"/></li>
+                                {{/each}}
+                            </script>
                         </ul>
                     </div>
+                <script id="quest-template" type="text/x-handlebars-template">
                     <div class="quest-description">
                         <h1 class="quest-name">{{name}}</h1>
                         <div class="quest-description-title">

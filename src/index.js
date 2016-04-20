@@ -1,6 +1,7 @@
 var App = {},
     xhr = new XMLHttpRequest();
     App.questCollection = [];
+    App.usersCollection = [];
 
 App.postData = (function(data, path) {
     xhr.open('POST', path, false);
@@ -20,9 +21,9 @@ App.getQuestsData = function() {
     } else {
         App.questData = JSON.parse(xhr.responseText);
     }
-    App.createQuestsCollection(App.questData);
+    //App.createQuestsCollection(App.questData);
 
-    return(App.questData);
+    //return(App.questData);
 };
 
 App.getUsersData = function(username) {
@@ -37,8 +38,13 @@ App.getUsersData = function(username) {
     } else {
         userData = JSON.parse(xhr.responseText);
         users = userData.users;
+        App.createUsersCollection(userData);
+        for (i =0; i < users.length; i++) {
+            if (users[i].username === username) {
+                return users[i];
+            }
+        }
     }
-    App.createUsersCollection(App.userData);
 };
 
 App.createUsersCollection = function(userData) {
@@ -56,19 +62,40 @@ App.createUsersCollection = function(userData) {
             comments = userData[key][i].comments;
 
             if (users[username] !== username) {
-                users[username] = { username: username,
-                                    comments: comments};
+                users[username] = { username: username };
             }
             users[username][key] = userData[key][i];
         }
     }
 
     for (user in users) {
-        App.questCollection.push(new UserModel(users[user]));
+        console.log('user' + user);
+        App.usersCollection.push(new UserModel(users[user]));
     }
-    console.log(App.questCollection)
 };
 
+function UserModel(user) {
+    var vm = this;
+    console.log(vm);
+    return vm.user = user;
+}
+
+UserModel.prototype = {
+
+    getUserProfileData: function() {
+        return data = {userData: {
+                        username: vm.username,
+                        userRoll: vm.role,
+                        userPhoto: vm.photo
+                        },
+                        userComments: vm.comments};
+    },
+
+    getComments: function() {
+        return data = {userData: vm.user,
+            userComments: vm.comments};
+    }
+};
 
 //App.createQuestsCollection = function(questData) {
 //    var i,

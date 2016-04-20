@@ -9,16 +9,15 @@
         <div class="user-page">
             <div class="user-info">
                 <script id="user-template" type="text/x-handlebars-template">
-                    <h1 class="username">{{username}}</h1>
+                    <h1 class="username">{{this}}</h1>
                 </script>
             </div>
             <div class="user-photo-gallery slider">
                 <ul>
                     <script id="photo-template" type="text/x-handlebars-template">
-                        <li><img class="quest-user-photo" src="{{photo.src1}}"/></li>
-                        <li><img class="quest-user-photo " src="{{photo.src2}}"/></li>
-                        <li><img class="quest-user-photo" src="{{photo.src3}}"/></li>
-                        <li><img class="quest-user-photo" src="{{photo.src4}}"/></li>
+                        {{#each this}}
+                        <li><img class="quest-user-photo" src="{{src}}"/></li>
+                        {{/each}}
                     </script>
                 </ul>
             </div>

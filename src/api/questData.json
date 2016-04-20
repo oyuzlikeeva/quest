@@ -1,11 +1,19 @@
 {"quests" : [{
     "id": 1,
-    "photo": {
-      "src1": "img/fantasmagoria1.jpg",
-      "src2": "img/fantasmagoria2.jpg",
-      "src3": "img/fantasmagoria3.jpg",
-      "src4": "img/fantasmagoria5.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/fantasmagoria1.jpg"
+      },
+      {
+        "src": "img/fantasmagoria2.jpg"
+      },
+      {
+        "src": "img/fantasmagoria3.jpg"
+      },
+      {
+        "src": "img/fantasmagoria5.jpg"
+      }
+    ],
     "name": "Фантасмагория",
     "projectName": "PUZZLE",
     "coast": 3000,
@@ -18,11 +26,17 @@
     "siteForReservation": "http://vk.com/phantasmagoria64"
   }, {
     "id": 2,
-    "photo": {
-      "src1": "img/3reih1.jpg",
-      "src2": "img/3reih2.jpg",
-      "src3": "img/3reih3.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/3reih1.jpg"
+      },
+      {
+        "src": "img/3reih2.jpg"
+      },
+      {
+        "src": "img/3reih3.jpg"
+      }
+    ],
     "name": "В плену третьего Рейха",
     "projectName": "Внедрение",
     "coast": 2500,
@@ -35,12 +49,20 @@
     "siteForReservation": "http://vnedrenie.org/"
   }, {
     "id": 3,
-    "photo": {
-      "src1": "img/sherlok1.jpg",
-      "src2": "img/sherlok2.jpg",
-      "src3": "img/sherlok3.jpg",
-      "src4": "img/sherlok4.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/sherlok1.jpg"
+      },
+      {
+        "src": "img/sherlok2.jpg"
+      },
+      {
+        "src": "img/sherlok3.jpg"
+      },
+      {
+        "src": "img/sherlok4.jpg"
+      }
+    ],
     "name": "Комната Шелока Холмса",
     "projectName": "Location",
     "coast": 1500,
@@ -53,12 +75,20 @@
     "siteForReservation": "http://lockation.ru/agenda.php"
   }, {
     "id": 4,
-    "photo": {
-      "src1": "img/kapsHotel1.jpg",
-      "src2": "img/kapsHotel2.jpg",
-      "src3": "img/kapsHotel3.jpg",
-      "src4": "img/kapsHotel4.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/kapsHotel1.jpg"
+      },
+      {
+        "src": "img/kapsHotel2.jpg"
+      },
+      {
+        "src": "img/kapsHotel3.jpg"
+      },
+      {
+        "src": "img/kapsHotel4.jpg"
+      }
+    ],
     "name": "Капсульный отель",
     "projectName": "Выйти из комнаты",
     "coast": 1800,
@@ -71,12 +101,20 @@
   "siteForReservation": "http://komnataquest.ru/saratov"
   }, {
     "id": 5,
-    "photo": {
-      "src1": "img/santAngelCastle1.jpg",
-      "src2": "img/santAngelCastle2.jpg",
-      "src3": "img/santAngelCastle3.jpg",
-      "src4": "img/santAngelCastle4.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/santAngelCastle1.jpg"
+      },
+      {
+        "src": "img/santAngelCastle2.jpg"
+      },
+      {
+        "src": "img/santAngelCastle3.jpg"
+      },
+      {
+        "src": "img/santAngelCastle4.jpg"
+      }
+    ],
     "name": "Замок святого ангела",
     "projectName": "Выйти из комнаты",
     "coast": 1800,
@@ -89,12 +127,20 @@
     "siteForReservation": "http://komnataquest.ru/saratov"
   }, {
     "id": 6,
-    "photo": {
-      "src1": "img/blade1.jpg",
-      "src2": "img/blade2.jpg",
-      "src3": "img/blade3.jpg",
-      "src4": "img/blade4.jpg"
-    },
+    "photo": [
+      {
+        "src1": "img/blade1.jpg"
+      },
+      {
+        "src2": "img/blade2.jpg"
+      },
+      {
+        "src3": "img/blade3.jpg"
+      },
+      {
+        "src4": "img/blade4.jpg"
+      }
+    ],
     "name": "Блейд",
     "projectName": "Внедрение",
     "coast": 1500,
@@ -107,11 +153,17 @@
     "siteForReservation": "http://vnedrenie.org"
   }, {
     "id": 7,
-    "photo": {
-      "src1": "img/secretLab1.jpg",
-      "src2": "img/secretLab2.jpg",
-      "src3": "img/secretLab3.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/secretLab1.jpg"
+      },
+      {
+        "src": "img/secretLab2.jpg"
+      },
+      {
+        "src": "img/secretLab3.jpg"
+      }
+    ],
     "name": "Секретная лаборатория",
     "projectName": "Location",
     "coast": 1500,
@@ -124,12 +176,20 @@
     "siteForReservation": "http://lockation.ru/agenda.php"
   }, {
     "id": 8,
-    "photo": {
-      "src1": "img/14081.jpg",
-      "src2": "img/14082.jpg",
-      "src3": "img/14083.jpg",
-      "src4": "img/14084.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/14081.jpg"
+      },
+      {
+        "src": "img/14082.jpg"
+      },
+      {
+        "src": "img/14083.jpg"
+      },
+      {
+        "src": "img/14084.jpg"
+      }
+    ],
     "name": "1408",
     "projectName": "Выйти из комнаты",
     "coast": 1800,
@@ -142,9 +202,11 @@
     "siteForReservation": "http://komnataquest.ru/saratov"
   }, {
     "id": 9,
-    "photo": {
-      "src1": "img/wakeUpYourMind.jpg"
-    },
+    "photo": [
+      {
+        "src": "img/wakeUpYourMind.jpg"
+      }
+    ],
     "name": "Разбуди сознание",
     "projectName": "Выйти из комнаты",
     "coast": 1300,

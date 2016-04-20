@@ -42,12 +42,15 @@ document.onload = function() {
 
 App.getQuestInfoData = function() {
     var template,
+        photoTemplate,
         url;
 
     url = window.parent.location.hash;
     App.questData = window.parent.App.getQuestData(url.split('/')[1]);
     template = Handlebars.compile($('#quest-template').html());
+    photoTemplate = Handlebars.compile($('#photo-template').html());
     $('.quest-info').append(template(App.questData));
+    $('.quest-template').append(photoTemplate(App.questData.photo));
 };
 
 App.getQuestInfoData();
