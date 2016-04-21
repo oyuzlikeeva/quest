@@ -8,7 +8,7 @@ App.postData = (function(data, path) {
     xhr.open('POST', path, false);
     xhr.send(data);
     if (xhr.status != 200) {
-        console.log( xhr.status + ': ' + xhr.statusText );
+        console.error( xhr.status + ': ' + xhr.statusText );
     } else {
         return 'success'
     }
@@ -18,7 +18,7 @@ App.getQuestsData = function() {
     xhr.open('GET', '../api/questsData.json', false);
     xhr.send();
     if (xhr.status != 200) {
-        console.log(xhr.status + ': ' + xhr.statusText);
+        console.error(xhr.status + ': ' + xhr.statusText);
     } else {
         App.questData = JSON.parse(xhr.responseText);
     }
@@ -29,7 +29,7 @@ App.getQuestsData = function() {
 
 App.getQuestData = function(id) {
 
-}
+};
 
 App.getUsersData = function(username) {
     var i,
@@ -39,7 +39,7 @@ App.getUsersData = function(username) {
     xhr.open('GET', '../api/usersData.json', false);
     xhr.send();
     if (xhr.status != 200) {
-        console.log(xhr.status + ': ' + xhr.statusText);
+        console.error(xhr.status + ': ' + xhr.statusText);
     } else {
         userData = JSON.parse(xhr.responseText);
         App.createUsersCollection(userData);
