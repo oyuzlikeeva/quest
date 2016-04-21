@@ -1,25 +1,20 @@
 ( function() {
     var hash,
         data,
-        userData,
-        photoData,
-        commentsData,
         commentTemplate,
         photoTemplate,
         userTemplate;
 
     hash = window.parent.location.hash;
     data = window.parent.App.getUsersData( hash.split('/')[1] );
-    userData = data.username;
-    commentsData = data.comments;
-    photoData = data.photo;
+    console.log(data);
     photoTemplate = Handlebars.compile( $('#photo-template').html() );
     commentTemplate = Handlebars.compile( $('#comment-template').html() );
     userTemplate = Handlebars.compile( $('#user-template').html() );
 
-    $('.user-info').append( userTemplate(userData) );
-    $('.user-gallery-item').append( commentTemplate(commentsData ));
-    $('.user-photo-gallery').append( photoTemplate(photoData));
+    $('.user-info').append( userTemplate( data.username) );
+    $('.user-gallery-item').append( commentTemplate( data.userComments ));
+    $('.user-photo-gallery').append( photoTemplate( data.userPhoto));
 } )();
 
 $(document).ready( function() {
