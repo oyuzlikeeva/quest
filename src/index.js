@@ -15,7 +15,7 @@ App.postData = (function(data, path) {
 });
 
 App.getQuestsData = function() {
-    xhr.open('GET', '../api/questData.json', false);
+    xhr.open('GET', '../api/questsData.json', false);
     xhr.send();
     if (xhr.status != 200) {
         console.log(xhr.status + ': ' + xhr.statusText);
