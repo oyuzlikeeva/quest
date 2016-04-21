@@ -8,10 +8,10 @@
 <body>
     <div class="quests-gallery-page">
         <script id="template" type="text/x-handlebars-template">
-            {{#each quests}}
+            {{#each this}}
                 <div class="quest-block" onclick=goOnQuestPage({{id}})>
                     <div class="quest-block-image">
-                        <img src="{{photo.src1}}"
+                        <img src="{{photo.mainSRC}}"
                              width="400"
                              height="250"
                              alt="Quest's photo">

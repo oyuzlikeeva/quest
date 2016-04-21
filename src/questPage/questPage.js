@@ -28,7 +28,6 @@ App.submitEditedQuestInfo = function() {
 };
 
 App.goOnUserProfile = function(username) {
-    console.log(username);
     window.parent.location.hash = '#userProfile/' + username;
 };
 
@@ -46,7 +45,7 @@ App.getQuestInfoData = function() {
         url;
 
     url = window.parent.location.hash;
-    App.questData = window.parent.App.getQuestData(url.split('/')[1]);
+    App.questData = window.parent.App.getQuestData(+url.split('/')[1]);
     template = Handlebars.compile($('#quest-template').html());
     photoTemplate = Handlebars.compile($('#photo-template').html());
     $('.quest-info').append(template(App.questData));

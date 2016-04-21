@@ -7,7 +7,6 @@
 
     hash = window.parent.location.hash;
     data = window.parent.App.getUsersData( hash.split('/')[1] );
-    console.log(data);
     photoTemplate = Handlebars.compile( $('#photo-template').html() );
     commentTemplate = Handlebars.compile( $('#comment-template').html() );
     userTemplate = Handlebars.compile( $('#user-template').html() );

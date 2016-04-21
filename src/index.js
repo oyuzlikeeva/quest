@@ -1,6 +1,7 @@
 var App = {},
     xhr = new XMLHttpRequest();
-    App.questCollection = [];
+    App.questPageCollection = [];
+    App.mainPageCollection = [];
     App.usersCollection = [];
 
 App.postData = (function(data, path) {
@@ -21,10 +22,14 @@ App.getQuestsData = function() {
     } else {
         App.questData = JSON.parse(xhr.responseText);
     }
-    //App.createQuestsCollection(App.questData);
+    App.createQuestsCollection(App.questData);
 
-    //return(App.questData);
+    return App.mainPageCollection;
 };
+
+App.getQuestData = function(id) {
+
+}
 
 App.getUsersData = function(username) {
     var i,
@@ -97,37 +102,58 @@ App.createUsersCollection = function(userData) {
     }
 };
 
+function QuestModel(quest) {
+    this.id = quest.id;
+    this.questInfo = quest.quests;
 
-//App.createQuestsCollection = function(questData) {
-//    var i,
-//        id,
-//        quest,
-//        quests = {},
-//        key;
-//
-//    for (key in questData) {
-//        for (i = 0; i < questData[key].length; i++) {
-//            id = questData[key][i].id;
-//
-//            if (quests[id] !== id) {
-//                quests[id] = { id: id };
-//            }
-//            quests[id][key] = questData[key][i];
-//        }
-//    }
-//
-//    for (quest in quests) {
-//        App.questCollection.push(new QuestModel(quests[quest]));
-//    }
-//    console.log(App.questCollection)
-//};
+    this.getQuestsForMainPage = function() {
+        return this.questInfo;
+    };
 
-App.getUserProfileData = function(username){
-    for (i = 0; i < App.questCollection; i++) {
-        if (App.questCollection[i].username === username) {
-            App.questCollection[i].getUserProfileData();
+    this.getQuestPageData = function() {
+        return {
+            id: this.id,
+            questInfo: this.questInfo
+            //userComments: this.comments
+        };
+    };
+
+    this.getComments = function() {
+        return {
+            username: this.username,
+            userComments: this.comments
+        };
+    };
+
+    return this;
+}
+
+App.createQuestsCollection = function(questData) {
+    var i,
+        id,
+        quest,
+        quests = {},
+        key;
+
+    for (key in questData) {
+        for (i = 0; i < questData[key].length; i++) {
+            id = questData[key][i].id;
+
+            if (quests[id] !== id) {
+                quests[id] = { id: id,
+                                quest: questData[key][i]};
+            }
+            quests[id][key] = questData[key][i];
         }
     }
+
+    for (quest in quests) {
+        var quest = new QuestModel(quests[quest]);
+        App.questPageCollection.push(quest.getQuestPageData());
+        App.mainPageCollection.push(quest.getQuestsForMainPage());
+    }
+
+    return App.questCollection;
 };
 
 App.goOnQuestPage = function(id) {

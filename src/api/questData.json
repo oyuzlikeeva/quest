@@ -2,6 +2,9 @@
     "id": 1,
     "photo": [
       {
+        "mainSRC": "img/fantasmagoria1.jpg"
+      },
+      {
         "src": "img/fantasmagoria1.jpg"
       },
       {
@@ -28,6 +31,9 @@
     "id": 2,
     "photo": [
       {
+        "mainSRC": "img/3reih1.jpg"
+      },
+      {
         "src": "img/3reih1.jpg"
       },
       {
@@ -50,6 +56,9 @@
   }, {
     "id": 3,
     "photo": [
+      {
+        "mainSRC": "img/sherlok1.jpg"
+      },
       {
         "src": "img/sherlok1.jpg"
       },
@@ -77,6 +86,9 @@
     "id": 4,
     "photo": [
       {
+        "mainSRC": "img/kapsHotel1.jpg"
+      },
+      {
         "src": "img/kapsHotel1.jpg"
       },
       {
@@ -102,6 +114,9 @@
   }, {
     "id": 5,
     "photo": [
+      {
+        "mainSRC": "img/santAngelCastle1.jpg"
+      },
       {
         "src": "img/santAngelCastle1.jpg"
       },
@@ -129,6 +144,9 @@
     "id": 6,
     "photo": [
       {
+        "mainSRC": "img/blade1.jpg"
+      },
+      {
         "src1": "img/blade1.jpg"
       },
       {
@@ -155,6 +173,9 @@
     "id": 7,
     "photo": [
       {
+        "mainSRC": "img/secretLab1.jpg"
+      },
+      {
         "src": "img/secretLab1.jpg"
       },
       {
@@ -177,6 +198,9 @@
   }, {
     "id": 8,
     "photo": [
+      {
+        "mainSRC":  "img/14081.jpg"
+      },
       {
         "src": "img/14081.jpg"
       },
@@ -203,6 +227,9 @@
   }, {
     "id": 9,
     "photo": [
+      {
+        "mainSRC": "img/wakeUpYourMind.jpg"
+      },
       {
         "src": "img/wakeUpYourMind.jpg"
       }
