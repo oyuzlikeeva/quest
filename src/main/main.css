@@ -1,44 +1,44 @@
 .quest-block {
-    border: 1px solid #eee;
-    border-radius: 3px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    float: left;
-    height: 300px;
-    margin: 2% 1%;
-    overflow: hidden;
-    padding: 5px;
-    width: 250px;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  float: left;
+  height: 300px;
+  margin: 2% 1%;
+  overflow: hidden;
+  padding: 5px;
+  width: 250px;
 }
 
 .quest-block-info {
-    background: #fff;
-    padding-right: 5px;
-    position: relative;
-    bottom: 0;
-    height: 290px;
-    width: 100%;
+  background: #fff;
+  padding-right: 5px;
+  position: relative;
+  bottom: 0;
+  height: 290px;
+  width: 100%;
 }
 
 .quest-block-info:hover{
-    bottom: 200px;
+  bottom: 200px;
 }
 
 .quest-block-info > .quest-rating {
-    position: relative;
-    bottom: 20px;
-    left: 40px;
+  position: relative;
+  bottom: 20px;
+  left: 40px;
 }
 
 #quest-block-info-title {
-    text-align: right;
-    margin-bottom: 5px;
+  text-align: right;
+  margin-bottom: 5px;
 }
 
 .quests-gallery-page {
-    width:100%;
+  width:100%;
 }
 
 .quest-name {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }

@@ -1,9 +1,10 @@
 var App = {},
     xhr = new XMLHttpRequest();
-    App.questPageCollection = [];
+    App.questsCollection = [];
     App.mainPageCollection = [];
     App.usersCollection = [];
 
+//-------------service------------
 App.postData = (function(data, path) {
     xhr.open('POST', path, false);
     xhr.send(data);
@@ -27,10 +28,6 @@ App.getQuestsData = function() {
     return App.mainPageCollection;
 };
 
-App.getQuestData = function(id) {
-
-};
-
 App.getUsersData = function(username) {
     var i,
         userData,
@@ -51,30 +48,17 @@ App.getUsersData = function(username) {
     }
 };
 
-function UserModel(user) {
-    this.username = user.username;
-    this.comments = user.users.comments;
-    this.photo = user.users.photo;
-    this.role = user.users.role;
+App.getQuestData = function(id) {
+    var i,
+        quests;
 
-    this.getUserProfileData = function() {
-        return {
-            username: this.username,
-            userRole: this.role,
-            userPhoto: this.photo,
-            userComments: this.comments
-        };
-    };
-
-    this.getComments = function() {
-        return {
-            username: this.username,
-            userComments: this.comments
-        };
-    };
-
-    return this;
-}
+    quests = App.questsCollection;
+    for (i = 0; i < quests.length; i++) {
+        if (quests[i].id === id) {
+            return quests[i];
+        }
+    }
+};
 
 App.createUsersCollection = function(userData) {
     var i,
@@ -102,31 +86,6 @@ App.createUsersCollection = function(userData) {
     }
 };
 
-function QuestModel(quest) {
-    this.id = quest.id;
-    this.questInfo = quest.quests;
-
-    this.getQuestsForMainPage = function() {
-        return this.questInfo;
-    };
-
-    this.getQuestPageData = function() {
-        return {
-            id: this.id,
-            questInfo: this.questInfo
-            //userComments: this.comments
-        };
-    };
-
-    this.getComments = function() {
-        return {
-            username: this.username,
-            userComments: this.comments
-        };
-    };
-
-    return this;
-}
 
 App.createQuestsCollection = function(questData) {
     var i,
@@ -141,7 +100,7 @@ App.createQuestsCollection = function(questData) {
 
             if (quests[id] !== id) {
                 quests[id] = { id: id,
-                                quest: questData[key][i]};
+                    quest: questData[key][i]};
             }
             quests[id][key] = questData[key][i];
         }
@@ -149,24 +108,62 @@ App.createQuestsCollection = function(questData) {
 
     for (quest in quests) {
         var quest = new QuestModel(quests[quest]);
-        App.questPageCollection.push(quest.getQuestPageData());
-        App.mainPageCollection.push(quest.getQuestsForMainPage());
-    }
 
-    return App.questCollection;
+        App.questsCollection.push(quest.getQuestData());
+        App.mainPageCollection.push(quest.getQuestForMainPage());
+    }
 };
 
-App.goOnQuestPage = function(id) {
-    var i,
-        hash,
-        questCollection = App.questCollection;
 
-    for (i = 0; i < questCollection.length; i++) {
-        if(questCollection[i].id === id) {
-            hash = '#questPage/' + id;
-            App.questID = id;
-        }
-    }
+//-------------models--------------
+
+function UserModel(user) {
+    this.username = user.username;
+    this.comments = user.users.comments;
+    this.photo = user.users.photo;
+    this.role = user.users.role;
+
+    this.getUserProfileData = function() {
+        return {
+            username: this.username,
+            userRole: this.role,
+            userPhoto: this.photo,
+            userComments: this.comments
+        };
+    };
+
+    return this;
+}
+
+function QuestModel(quest) {
+    this.id = quest.id;
+    this.questInfo = quest.quests;
+    this.comments = quest.quests.comments;
+
+    this.getQuestForMainPage = function() {
+        return this.questInfo;
+    };
+
+    this.getQuestData = function() {
+        return {
+            id: this.id,
+            questInfo: this.questInfo,
+            comments: this.comments
+        };
+    };
+
+    this.getQuestID = function() {
+        return this.id;
+    };
+
+    return this;
+}
+
+//---------------controller---------------
+App.goOnQuestPage = function(id) {
+    var hash;
+
+    hash = '#questPage/' + id;
     window.location.hash = hash;
     document.getElementById('iframe').src = hash;
 };
@@ -178,9 +175,9 @@ App.hiddenHeader = function() {
 
     iframeUrl = document.getElementById('iframe').src;
     if (iframeUrl === 'http://localhost:8888/logIn') {
-        $('#header').css('display', 'none');
+        $('.header').css('display', 'none');
     } else {
-        $('#header').css('display', 'block');
+        $('.header').css('display', 'block');
     }
 };
 

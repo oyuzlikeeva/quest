@@ -46,7 +46,7 @@
                                     </button>
                                 </a>
                                 <span class="number-of-persons">
-                                    {{numberOfPerson}}
+                                    {{numberOfPersons}}
                                     <img src="img/icons/ic_group_black_32px.svg"/>
                                 </span><br/>
                                 <h3>Стоимость прохождения: от <span>{{coast}}</span></h3>
@@ -62,7 +62,6 @@
                                 <span class="rating-{{rating}}"></span>
                             </p>
                         </div>
-
                         <div class="description">
                             <p>{{description}}</p>
                         </div>
@@ -76,7 +75,7 @@
             <div class="quest-comments">
                 <h3>Comments on this quest</h3>
                 <script id="comment-template" type="text/x-handlebars-template">
-                    {{#each comments}}
+                    {{#each this}}
                     <div class="quest-comment">
                         <div class="quest-comment-title">
                             <h4 class="username" onclick=App.goOnUserProfile("{{username}}")>{{username}}</h4>
@@ -231,8 +230,8 @@
                 </form>
             </div>
         </div>
-        <script src="../../bower_components/jquery/jquery.min.js"></script>
-        <script src="../../bower_components/handlebars/handlebars.min.js"></script>
+        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="/bower_components/handlebars/handlebars.min.js"></script>
         <script src="questPage/questPage.js"></script>
     </body>
 </html>

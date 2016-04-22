@@ -1,5 +1,5 @@
 function goOnQuestPage(id) {
-    //window.parent.App.goOnQuestPage(id);
+    window.parent.App.goOnQuestPage(id);
 }
 
 (function() {

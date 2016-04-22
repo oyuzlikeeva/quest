@@ -1,216 +1,178 @@
 @font-face {
-    font-family: "SansationLight";
-    src: url("fonts/SansationLight/SansationLight.woff") format('woff');
-    font-style: normal;
-    font-weight: normal;
+  font-family: "SansationLight";
+  src: url("fonts/SansationLight/SansationLight.woff") format('woff');
 }
 
 body {
-    font-family: "SansationLight";
-    margin: 0;
-    min-width: 450px;
+  font-family: "SansationLight";
+  margin: 0;
+  min-width: 450px;
 }
+
+a { color: #fff; }
+
+li {
+  display: inline;
+  list-style-type: none;
+}
+
+textarea {
+  height: 130px;
+  width: 100%;
+}
+
 
 .admin-page,
 .quests-gallery-page,
 .quest-page,
 .user-page {
-    margin: 3%;
-}
-
-a {
-    color: #fff;
-}
-
-.back-on-main-page {
-    background: #000;
-    border: none;
-    border-radius: 100%;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    display: inline;
-    height: 45px;
-    position: fixed;
-    top: 20px;
-    left: 25px;
-    width: 45px;
+  margin: 3%;
 }
 
 .close {
-    border-radius: 12px;
-    font-weight: bold;
-    line-height: 25px;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    text-decoration: none;
-    width: 24px;
+  border-radius: 12px;
+  font-weight: bold;
+  line-height: 25px;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  text-decoration: none;
+  width: 24px;
 }
 
 .custom-button {
-    background: #000;
-    border: none;
-    border-radius: 2px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    color: #fff;
-    font-size: 16px;
-    padding: 5px 10px;
-    margin: 1px;
+  background: #000;
+  border: 0;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin: 1px;
 }
 
 #iframe {
-    border: none;
-    height: 100%;
-    margin: 0;
-    min-width: 450px;
-    padding-top: 70px;
-    width: 100%;
+  border: 0;
+  height: 100%;
+  margin: 0;
+  min-width: 450px;
+  padding-top: 70px;
+  width: 100%;
 }
 
 .input {
-    border: 1px solid #eee;
-    border-radius: 2px;
-    padding: 5px 10px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 5px 10px;
 }
 
 
-#header {
-    background: #000;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 70px;
-    min-width: 450px;
-    position: fixed;
-    top:0;
-    width: 100%;
+.header {
+  background: #000;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  height: 70px;
+  min-width: 450px;
+  position: fixed;
+  top:0;
+  width: 100%;
 }
 
-.hidden {
-    display: none;
-}
+.hidden { display: none; }
 
 .header-button-group {
-    float: right;
-    margin: 20px 55px;
+  float: right;
+  margin: 20px 55px;
 }
 
 .icon-button {
-    background: #000;
-    border: none;
-    border-radius: 100%;
-    vertical-align: middle;
+  background: #000;
+  border: 0;
+  border-radius: 100%;
+  vertical-align: middle;
 }
 
-li {
-    display: inline;
-    list-style-type: none;
-}
-
-.log-in {
-    border: 1px solid #eee;
-    border-radius: 3px;
-    height: auto;
-    margin: 10% auto;
-    padding: 35px;
-    width: 30%;
-}
-
-.log-in-button {
-    background: none;
-    border: none;
-    color: #fff;
-    font-size: 16px;
-    vertical-align: middle;
-}
-
-.log-in input {
-    margin: 10px;
+.log-out-button {
+  background: #000;
+  border: 0;
+  color: #fff;
+  font-size: 16px;
 }
 
 .modal-dialog {
-    background: rgba(0, 0, 0, .8);
-    display: none;
-    font-family: Arial, Helvetica, sans-serif;
-    pointer-events: none;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    transition: opacity 400ms ease-in;
-    z-index: 99999;
-    -webkit-transition: opacity 400ms ease-in;
-    -moz-transition: opacity 400ms ease-in;
+  background: rgba(0, 0, 0, .8);
+  bottom: 0;
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+  left: 0;
+  -moz-transition: opacity 400ms ease-in;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transition: opacity 400ms ease-in;
+  -webkit-transition: opacity 400ms ease-in;
+  z-index: 99999;
 }
 
 .modal-dialog > div {
-    background: #fff;
-    border-radius: 2px;
-    height: 100%;
-    margin: 2% auto;
-    padding: 5px 50px;
-    position: relative;
-    width: 60%;
+  background: #fff;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 100%;
+  margin: 2% auto;
+  padding: 5px 50px;
+  position: relative;
+  width: 60%;
 }
 
-.modal-dialog p {
-    margin: 7px 10px;
-}
+.modal-dialog p { margin: 7px 10px; }
 
 .modal-dialog:target {
-    display: block;
-    height: 100%;
-    pointer-events: auto;
+  display: block;
+  height: 100%;
+  pointer-events: auto;
 }
 
 .project-name {
-    background: none;
-    border: none;
-    color: #fff;
-    float: left;
-    font-size: 25px;
-    font-weight: bold;
-    margin: 20px 35px;
-}
-
-textarea {
-    height: 130px;
-    width: 100%;
+  background: none;
+  border: 0;
+  color: #fff;
+  float: left;
+  font-size: 25px;
+  font-weight: bold;
+  margin: 20px 35px;
 }
 
 
 .quest-rating {
-    direction: rtl;
-    unicode-bidi: bidi-override;
+  direction: rtl;
+  unicode-bidi: bidi-override;
 }
 
 .quest-rating > span {
-    display: inline-block;
-    color: transparent;
-    position: relative;
-    width: 1.5em;
+  display: inline-block;
+  color: transparent;
+  position: relative;
+  width: 1.5em;
 }
 
 .quest-rating > span:before {
-    color: gold;
-    position: relative;
-    left: 1px;
+  color: gold;
+  position: relative;
+  left: 1px;
 }
 
-.quest-rating > span[class*='rating-1']:before {
-    content: "\2605";
-}
+.quest-rating > span[class*='rating-1']:before { content: "\2605"; }
 
-.quest-rating > span[class*='rating-2']:before {
-    content: "\2605\2605";
-}
+.quest-rating > span[class*='rating-2']:before { content: "\2605\2605";}
 
-.quest-rating > span[class*='rating-3']:before {
-    content: "\2605\2605\2605";
-}
+.quest-rating > span[class*='rating-3']:before { content: "\2605\2605\2605"; }
 
 .quest-rating > span[class*='rating-4']:before {
-    content: "\2605\2605\2605\2605";
+  content: "\2605\2605\2605\2605";
 }
 
 .quest-rating > span[class*='rating-5']:before {
-    content: "\2605\2605\2605\2605\2605";
+  content: "\2605\2605\2605\2605\2605";
 }
