@@ -71,7 +71,7 @@ $(document).ready(function() {
     });
 });
 
-function sliderJS (obj, sl) {
+function slider(obj, sl) {
     var ul,
         bl,
         step;
@@ -80,7 +80,7 @@ function sliderJS (obj, sl) {
     bl = $(sl).find('li.slider' + obj);
     step = $(bl).width();
     $(ul).animate({
-        marginLeft: '-' + step * (obj)
+        marginLeft: '-' + step * (obj - 1)
     }, 500);
 }
 
@@ -92,7 +92,7 @@ $(document).on('click', '.slider .nav span', function() {
     $(sl).find('span').removeClass('on');
     $(this).addClass('on');
     obj = $(this).attr('rel');
-    sliderJS(obj, sl);
+    slider(obj, sl);
 
     return false;
 });

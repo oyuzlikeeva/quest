@@ -32,9 +32,7 @@ hr {
   padding-top: 5%;
 }
 
-.user-info {
-  text-align: right;
-}
+.user-info { text-align: right; }
 
 .quest-name {
   font-size: 20px;
@@ -43,7 +41,7 @@ hr {
 
 .user-page {
   margin: 5% auto;
-  width: 75%;
+  width: 60%;
 }
 
 .user-photo-gallery {
@@ -78,9 +76,7 @@ hr {
   padding: 0;
 }
 
-.slider ul {
-  width: 9999px;
-}
+.slider ul { width: 9999px; }
 
 .slider ul li {
   height: 290px;
@@ -90,9 +86,13 @@ hr {
 }
 
 .slider .nav {
-  position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 15px;
+  position: absolute;
+}
+
+.slider .nav .on {
+  background: #00695c;
 }
 
 .slider .nav span {
@@ -103,12 +103,8 @@ hr {
   display: block;
   float: left;
   height: 16px;
-  margin: 0 8px 0 0;
-  opacity: 0.9;
+  margin-right: 8px;
+  opacity: .9;
   overflow: hidden;
   width: 16px;
-}
-
-.slider .nav span.on {
-  background: #00695c;
 }

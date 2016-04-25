@@ -13,8 +13,10 @@
 
     $('.user-info').append( userTemplate( data.username) );
     $('.user-gallery-item').append( commentTemplate( data.userComments ));
-    $('.user-photo-gallery').append( photoTemplate( data.userPhoto));
+    $('.user-photo-gallery ul').append( photoTemplate( data.userPhoto));
 } )();
+
+//-------slider in photo gallery---------
 
 $(document).ready( function() {
     $('.slider').each( function() {
@@ -28,7 +30,8 @@ $(document).ready( function() {
         $(obj).find('span').first().addClass('on');
     } );
 } );
-function sliderJS (obj, sl) {
+
+function slider(obj, sl) {
     var ul,
         bl,
         step;
@@ -37,19 +40,19 @@ function sliderJS (obj, sl) {
     bl = $(sl).find('li.slider' + obj);
     step = $(bl).width();
     $(ul).animate( {
-        marginLeft: '-' + step * (obj - 1)
+        marginLeft: '-' + step * (obj -1)
     }, 500);
 }
+
 $(document).on('click', '.slider .nav span', function() {
-    var vm = $(this),
-        sl,
+    var sl,
         obj;
 
-    sl = vm.closest('.slider');
+    sl = $(this).closest('.slider');
     $(sl).find('span').removeClass('on');
-    vm.addClass('on');
-    obj = vm.attr('rel');
-    sliderJS(obj, sl);
+    $(this).addClass('on');
+    obj = $(this).attr('rel');
+    slider(obj, sl);
 
     return false;
 } );

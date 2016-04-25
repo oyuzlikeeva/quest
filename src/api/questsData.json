@@ -1,5 +1,8 @@
 {"quests" : [{
   "id": 1,
+  "mainPhoto": {
+    "src": "img/fantasmagoria1.jpg"
+  },
   "photo": [{
     "src": "img/fantasmagoria1.jpg"
     }, {
@@ -28,6 +31,9 @@
   }]
   }, {
   "id": 2,
+  "mainPhoto": {
+    "src": "img/3reih1.jpg"
+  },
   "photo": [{
     "src": "img/3reih1.jpg"
     }, {
@@ -60,6 +66,9 @@
   }]
   }, {
   "id": 3,
+  "mainPhoto": {
+    "src": "img/sherlok1.jpg"
+  },
   "photo": [{
     "src": "img/sherlok1.jpg"
     }, {
@@ -88,6 +97,9 @@
   }]
   }, {
   "id": 4,
+  "mainPhoto": {
+    "src": "img/kapsHotel1.jpg"
+  },
   "photo": [{
     "src": "img/kapsHotel1.jpg"
     }, {
@@ -116,6 +128,9 @@
   }]
   }, {
   "id": 5,
+  "mainPhoto": {
+    "src": "img/santAngelCastle1.jpg"
+  },
   "photo": [{
     "src": "img/santAngelCastle1.jpg"
     }, {
@@ -145,6 +160,9 @@
   }]
   }, {
   "id": 6,
+  "mainPhoto": {
+    "src": "img/blade1.jpg"
+  },
   "photo": [{
     "src1": "img/blade1.jpg"
     }, {
@@ -173,6 +191,9 @@
   }]
   }, {
   "id": 7,
+  "mainPhoto": {
+    "src": "img/secretLab1.jpg"
+  },
   "photo": [{
     "src": "img/secretLab1.jpg"
     }, {
@@ -205,6 +226,9 @@
   }]
   }, {
   "id": 8,
+  "mainPhoto": {
+    "src": "img/14081.jpg"
+  },
   "photo": [{
     "src": "img/14081.jpg"
     }, {
@@ -233,6 +257,9 @@
   }]
   }, {
   "id": 9,
+  "mainPhoto": {
+    "src": "img/wakeUpYourMind.jpg"
+  },
   "photo": [{
     "src": "img/wakeUpYourMind.jpg"
     }],

@@ -20,15 +20,11 @@
 }
 
 
-.number-of-persons>img {
-  vertical-align: middle;
-}
+.number-of-persons>img { vertical-align: middle; }
 
 .time-comment { color: #757575; }
 
-.quest-description-title {
-  text-align: right;
-}
+.quest-description-title { text-align: right; }
 
 .quest-description-button {
   display: inline-block;
@@ -52,13 +48,11 @@
   height: 3px;
 }
 
-.quest-comment-title > .quest-rating {
-  text-align: right;
-  position: relative;
-  top: 0;
-  right: 0;
+.quest-comment-title>.quest-rating {
   bottom: 15px;
   left: 75%;
+  position: relative;
+  text-align: right;
 }
 
 .quest-comments {
@@ -81,25 +75,23 @@
 
 .username { font-size: 20px; }
 
-.username:hover {
-  color: #757575;
-}
+.username:hover { color: #757575; }
 
 .slider {
   height: 290px;
-  overflow: hidden;
   margin-right: 10px;
   margin-bottom: 10px;
+  overflow: hidden;
   position: relative;
-  z-index: 9;
   width: 600px;
+  z-index: 9;
 }
 
 .slider ul,
 .slider li {
-  padding: 0;
-  margin: 0;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .slider ul {
@@ -114,14 +106,12 @@
 }
 
 .slider .nav {
-  position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 15px;
+  position: absolute;
 }
 
-.slider .nav .on {
-  background: #00695C;
-}
+.slider .nav .on { background: #00695c; }
 
 .slider .nav span {
   background: #fff;
@@ -131,8 +121,8 @@
   display: block;
   float: left;
   height: 16px;
-  margin: 0 8px 0 0;
-  opacity: 0.9;
+  margin-right: 8px;
+  opacity: .9;
   overflow: hidden;
   width: 16px;
 }
