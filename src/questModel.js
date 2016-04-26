@@ -1,23 +1,23 @@
-function QuestModel(quest){
-    var vm = this;
+function QuestModel(quest) {
+    this.id = quest.id;
+    this.questInfo = quest.quests;
+    this.comments = quest.quests.comments;
 
-    vm.quest = quest;
+    this.getQuestForMainPage = function() {
+        return this.questInfo;
+    };
+
+    this.getQuestData = function() {
+        return {
+            id: this.id,
+            questInfo: this.questInfo,
+            comments: this.comments
+        };
+    };
+
+    this.getQuestID = function() {
+        return this.id;
+    };
+
+    return this;
 }
-
-QuestModel.prototype = {
-    getItems: function() {
-        return vm.quest;
-    },
-
-    getQuestData: function(url) {
-        var i,
-            questCollection;
-
-        questCollection= App.questCollection;
-        for (i = 0; i < questCollection.length; i++) {
-            if(questCollection[i].id === +url) {
-                return questCollection[i].quests;
-            }
-        }
-    }
-};

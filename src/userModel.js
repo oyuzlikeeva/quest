@@ -1,19 +1,17 @@
 function UserModel(user) {
-    var vm = this;
+    this.username = user.username;
+    this.comments = user.users.comments;
+    this.photo = user.users.photo;
+    this.role = user.users.role;
 
-    vm.user = user;
+    this.getUserProfileData = function() {
+        return {
+            username: this.username,
+            userRole: this.role,
+            userPhoto: this.photo,
+            userComments: this.comments
+        };
+    };
+
+    return this;
 }
-
-UserModel.prototype = {
-
-    getUserProfileData: function() {
-        return data = {userData: vm.user,
-            userComments: vm.comments};
-    },
-
-    getComments: function() {
-        return data = {userData: vm.user,
-            userComments: vm.comments};
-    }
-};
-
