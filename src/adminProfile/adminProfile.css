@@ -1,73 +1,65 @@
 .actions {
-    padding-left: 12%;
+  padding-left: 12%;
 }
 
 .added-new{
-    float: right;
+  float: right;
 }
 
 #added-button {
-    padding: 5px 20px;
-    position: relative;
-    left: 75%;
+  padding: 5px 20px;
+  position: relative;
+  left: 75%;
 }
 
 #added-new-error-message {
-    color: red;
-    display: none;
+  color: red;
+  display: none;
 }
 
 .added-new-button .icon-button {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .comments-notification {
-    float: left;
-    margin: 0 auto;
-    width: 100%;
+  float: left;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .icon-button {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 36px;
-    margin: 0 auto;
-    padding: 0;
-    width: 36px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  height: 36px;
+  margin: 0 auto;
+  padding: 0;
+  width: 36px;
 }
 
 .modal-title-divider {
-    background: #00695C;
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 2px;
+  background: #00695c;
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  height: 2px;
 }
 
 .notification-table {
-    border-radius: 2px;
-    border-collapse: collapse;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    width: 100%;
+  border-radius: 2px;
+  border-collapse: collapse;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  width: 100%;
 }
 
-th {
-    padding: 5px 0;
-}
+th { padding: 5px 0; }
 
-tr {
-    border: 1px solid #eee;
-}
+tr { border: 1px solid #eee; }
 
-tr:nth-child(2n) {
-    background: #eee;
-}
+tr:nth-child(2n) { background: #eee; }
 
 .text-comment {
-    padding: 5px;
-    width: 60%;
+  padding: 5px;
+  width: 60%;
 }
 
-.username {
-    text-align: center;
-}
+.username { text-align: center; }

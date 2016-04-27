@@ -1,114 +1,110 @@
 hr {
-    background: #00695C;
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
-    height: 2px;
+  background: #00695c;
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+  height: 2px;
 }
 
 .icon-button {
-    background: none;
-    height: 20px;
-    margin: 0 20px;
-    padding: 0;
-    width: 20px;
+  background: none;
+  height: 20px;
+  margin: 0 20px;
+  padding: 0;
+  width: 20px;
 }
 
 .item-divider {
-    background: #00695C;
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 2px;
+  background: #00695c;
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  height: 2px;
 }
 
 .time-added-comment {
-    color: #757575;
-    font-size: 14px;
+  color: #757575;
+  font-size: 14px;
 }
 
 .user-gallery-item {
-    clear: both;
-    padding-top: 5%;
+  clear: both;
+  padding-top: 5%;
 }
 
-.user-info {
-    text-align: right;
-}
+.user-info { text-align: right; }
 
 .quest-name {
-    font-size: 20px;
-    font-weight: bold;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .user-page {
-    margin: 5% auto;
-    width: 75%;
+  margin: 5% auto;
+  width: 60%;
 }
 
 .user-photo-gallery {
-    height: 30%;
-    width: 100%;
+  height: 30%;
+  width: 100%;
 }
 
 .quest-rating {
-    position: relative;
-    bottom: 20px;
-    left: 90%;
+  position: relative;
+  bottom: 20px;
+  left: 90%;
 }
 
 .quest-user-photo {
-    height: 500px;
-    width: 600px;
+  height: 500px;
+  width: 600px;
 }
 
 .slider {
-    height: 290px;
-    overflow: hidden;
-    margin: 0 0 7px;
-    position: relative;
-    z-index: 9;
-    width: 700px;
+  height: 290px;
+  overflow: hidden;
+  margin: 0 0 7px;
+  position: relative;
+  width: 700px;
+  z-index: 9;
 }
 
 .slider ul,
 .slider li {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-.slider ul {
-    width: 9999px;
-}
+.slider ul { width: 9999px; }
 
 .slider ul li {
-    height: 290px;
-    float: left;
-    list-style-type: none;
-    width: 700px;
+  height: 290px;
+  float: left;
+  list-style-type: none;
+  width: 700px;
 }
 
 .slider .nav {
-    position: absolute;
-    bottom: 12px;
-    left: 15px;
+  bottom: 10px;
+  left: 15px;
+  position: absolute;
+}
+
+.slider .nav .on {
+  background: #00695c;
 }
 
 .slider .nav span {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 2px #000;
-    cursor: pointer;
-    display: block;
-    float: left;
-    height: 16px;
-    margin: 0 8px 0 0;
-    opacity: 0.9;
-    overflow: hidden;
-    width: 16px;
-}
-
-.slider .nav span.on {
-    background: #00695C;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px #000;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 16px;
+  margin-right: 8px;
+  opacity: .9;
+  overflow: hidden;
+  width: 16px;
 }
