@@ -29,23 +29,25 @@
                     </thead>
                     <tbody>
                     <script id="template" type="text/x-handlebars-template">
-                        {{#each comments}}
-                            {{#if spoiler}}
-                                <tr id="{{questID}}">
-                                    <td class="text-comment">{{comment}}</td>
-                                    <td class="username">{{username}}</td>
-                                    <td class="actions">
-                                        <button class="icon-button" onclick=App.deletedComment({{questID}})>
-                                            <img src="../img/icons/ic_close_white_24px.svg"
-                                                 alt="Delete comment"/>
-                                        </button>
-                                        <button class="icon-button" onclick=App.markNotSpoil({{questID}})>
-                                            <img src="../img/icons/ic_check_white_24px.svg"
-                                                 alt="Stay comment"/>
-                                        </button>
-                                    </td>
-                                </tr>
-                            {{/if}}
+                        {{#each this}}
+                            {{#each this}}
+                                {{#if spoiler}}
+                                    <tr id="{{questID}}">
+                                        <td class="text-comment">{{comment}}</td>
+                                        <td class="username">{{username}}</td>
+                                        <td class="actions">
+                                            <button class="icon-button" onclick=App.deletedComment({{questID}})>
+                                                <img src="../img/icons/ic_close_white_24px.svg"
+                                                     alt="Delete comment"/>
+                                            </button>
+                                            <button class="icon-button" onclick=App.markNotSpoil({{questID}})>
+                                                <img src="../img/icons/ic_check_white_24px.svg"
+                                                     alt="Stay comment"/>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {{/if}}
+                            {{/each}}
                         {{/each}}
                     </script>
                     </tbody>

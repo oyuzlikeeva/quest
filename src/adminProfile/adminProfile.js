@@ -3,6 +3,7 @@ App = window.parent.App;
 (function() {
     var template;
 
+    window.parent.App.getUsersData();
     App.data = window.parent.App.getCommentsData();
     template = Handlebars.compile($('#template').html());
     $('tbody').append( template(App.data) );

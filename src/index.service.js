@@ -28,7 +28,7 @@ App.getQuestsData = function() {
     return App.mainPageCollection;
 };
 
-App.getUsersData = function(username) {
+App.getUsersData = function() {
     var i,
         userData,
         users;
@@ -40,12 +40,28 @@ App.getUsersData = function(username) {
     } else {
         userData = JSON.parse(xhr.responseText);
         App.createUsersCollection(userData);
-        for (i = 0; i < App.usersCollection.length; i++) {
-            if (App.usersCollection[i].username === username) {
-                return App.usersCollection[i].getUserProfileData();
-            }
+    }
+};
+
+App.getUserData =  function(username) {
+    var i;
+
+    for (i = 0; i < App.usersCollection.length; i++) {
+        if (App.usersCollection[i].username === username) {
+            return App.usersCollection[i].getUserProfileData();
         }
     }
+};
+
+App.getCommentsData = function() {
+    var i,
+        comments = [];
+
+    for (i = 0; i < App.usersCollection.length; i++) {
+        comments.push(App.usersCollection[i].getComments());
+    }
+
+    return comments;
 };
 
 App.getQuestData = function(id) {

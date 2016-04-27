@@ -13,5 +13,9 @@ function UserModel(user) {
         };
     };
 
+    this.getComments = function() {
+        return this.comments;
+    };
+
     return this;
 }
