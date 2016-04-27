@@ -1,6 +1,7 @@
 var App = {},
     xhr = new XMLHttpRequest();
     App.questsCollection = [];
+    App.collection = [];
     App.mainPageCollection = [];
     App.usersCollection = [];
 
@@ -23,7 +24,7 @@ App.getQuestsData = function() {
         App.questData = JSON.parse(xhr.responseText);
     }
     App.createQuestsCollection(App.questData);
-    console.log(App.questsCollection)
+
     return App.mainPageCollection;
 };
 
@@ -91,6 +92,7 @@ App.createQuestsCollection = function(questData) {
         id,
         quest,
         quests = {},
+        questItem,
         key;
 
     for (key in questData) {
@@ -98,17 +100,16 @@ App.createQuestsCollection = function(questData) {
             id = questData[key][i].id;
 
             if (quests[id] !== id) {
-                quests[id] = { id: id,
-                    quest: questData[key][i]};
+                quests[id] = { id: id};
+                quests[id][key] = questData[key][i];
             }
             quests[id][key] = questData[key][i];
         }
     }
 
     for (quest in quests) {
-        var quest = new QuestModel(quests[quest]);
 
-        App.questsCollection.push(quest.getQuestData());
-        App.mainPageCollection.push(quest.getQuestForMainPage());
+        App.questsCollection.push(new QuestModel(quests[quest]).getQuestData());
+        App.mainPageCollection.push(new QuestModel(quests[quest]).getQuestForMainPage());
     }
 };

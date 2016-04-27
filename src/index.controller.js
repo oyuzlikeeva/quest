@@ -63,4 +63,3 @@ App.logOut = function() {
     localStorage.removeItem('userRole');
 };
 
-App.getQuestsData();

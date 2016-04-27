@@ -7,6 +7,7 @@ App.getQuestPageData = function() {
         url;
 
     url = window.parent.location.hash;
+    App.getQuestsData();
     App.questData = window.parent.App.getQuestData(+url.split('/')[1]);
     questTemplate = Handlebars.compile($('#quest-template').html());
     photoTemplate = Handlebars.compile($('#photo-template').html());
