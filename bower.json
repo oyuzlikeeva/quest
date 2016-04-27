@@ -1,0 +1,21 @@
+{
+  "name": "quest",
+  "homepage": "https://github.com/oyuzlikeeva/quest",
+  "authors": [
+    "Helga Yuzlikeeva <yuzlikeeva.olga@gmail.com>"
+  ],
+  "description": "",
+  "main": "app.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.3",
+    "handlebars": "~4.0.5"
+  }
+}

@@ -1,5 +1,24 @@
 App = window.parent.App;
 
+App.getQuestPageData = function() {
+    var questTemplate,
+        photoTemplate,
+        commentsTemplate,
+        url;
+
+    url = window.parent.location.hash;
+    App.getQuestsData();
+    App.questData = window.parent.App.getQuestData(+url.split('/')[1]);
+    questTemplate = Handlebars.compile($('#quest-template').html());
+    photoTemplate = Handlebars.compile($('#photo-template').html());
+    commentsTemplate = Handlebars.compile($('#comment-template').html());
+    $('.quest-info').append(questTemplate(App.questData.questInfo));
+    $('.quest-photo-gallery ul').append(photoTemplate(App.questData.questInfo.photo));
+    $('.quest-comments').append(commentsTemplate(App.questData.comments));
+};
+
+App.getQuestPageData();
+
 App.openEditModal = function() {
     var template = Handlebars.compile($('#edit-template').html());
     $('#edit-form').append(template(App.questData));
@@ -7,7 +26,6 @@ App.openEditModal = function() {
 
 App.submitEditedQuestInfo = function() {
     var i,
-        data = {},
         title,
         rating,
         comment,
@@ -39,28 +57,7 @@ App.goOnUserProfile = function(username) {
     }
 })();
 
-App.getQuestInfoData = function() {
-    var template,
-        url;
-
-    url = window.parent.location.hash;
-    App.questData = window.parent.App.getQuestData(url.split('/')[1]);
-    template = Handlebars.compile($('#quest-template').html());
-    $('.quest-info').append(template(App.questData));
-};
-
-App.getQuestInfoData();
-
-App.getCommentData = function() {
-    var data,
-        commentTemplate;
-
-    data = window.parent.App.getQuestCommentsData();
-    commentTemplate = Handlebars.compile($('#comment-template').html());
-    $('.quest-comments').append(commentTemplate(data));
-};
-
-App.getCommentData();
+//-------slider in photo gallery-----------
 
 $(document).ready(function() {
     $('.slider').each(function () {
@@ -74,7 +71,8 @@ $(document).ready(function() {
         $(obj).find('span').first().addClass('on');
     });
 });
-function sliderJS (obj, sl) {
+
+function slider(obj, sl) {
     var ul,
         bl,
         step;
@@ -83,9 +81,10 @@ function sliderJS (obj, sl) {
     bl = $(sl).find('li.slider' + obj);
     step = $(bl).width();
     $(ul).animate({
-        marginLeft: '-' + step * (obj)
+        marginLeft: '-' + step * (obj - 1)
     }, 500);
 }
+
 $(document).on('click', '.slider .nav span', function() {
     var sl,
         obj;
@@ -94,7 +93,7 @@ $(document).on('click', '.slider .nav span', function() {
     $(sl).find('span').removeClass('on');
     $(this).addClass('on');
     obj = $(this).attr('rel');
-    sliderJS(obj, sl);
+    slider(obj, sl);
 
     return false;
 });

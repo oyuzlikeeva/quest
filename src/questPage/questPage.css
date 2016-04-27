@@ -1,140 +1,128 @@
-.address-of-quest {
-    font-weight: bold;
-}
+.address-of-quest { font-weight: bold; }
 
-.description {
-    margin-top: 10%;
-}
+.description { margin-top: 10%; }
 
 .icon-button {
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    display: inline;
-    height: 30px;
-    margin: 0 15px;
-    width: 30px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  display: inline;
+  height: 30px;
+  margin: 0 15px;
+  width: 30px;
 }
 
 .mini-photo-gallery {
-    margin: 5px;
-    position: relative;
-    right: 42px;
+  margin: 5px;
+  position: relative;
+  top: 0;
+  right: 42px;
+  bottom: 0;
+  left: 0;
 }
 
 
-.number-of-persons>img {
-    vertical-align: middle;
-}
+.number-of-persons>img { vertical-align: middle; }
 
-.time-comment {
-    color: #757575;
-}
+.time-comment { color: #757575; }
 
-.quest-description-title {
-    text-align: right;
-}
+.quest-description-title { text-align: right; }
 
 .quest-description-button {
-    display: inline-block;
-    float: left;
-    text-align: left;
+  display: inline-block;
+  float: left;
+  text-align: left;
 }
 
 .quest-comment {
-    border: 1px solid #eee;
-    border-radius: 2px;
-    box-shadow: 0 0 2px rgba(0, 0, 0, .3);
-    margin: 2% 0;
-    padding: 20px;
+  border: 1px solid #eee;
+  border-radius: 2px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, .3);
+  margin: 2% 0;
+  padding: 20px;
 }
 
 .quest-comment-divider {
-    background: #00695C;
-    border: none;
-    border-radius: 1px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-    height: 3px;
+  background: #00695C;
+  border: 0;
+  border-radius: 1px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
+  height: 3px;
 }
 
-.quest-comment-title > .quest-rating {
-    text-align: right;
-    position: relative;
-    bottom: 15px;
-    left: 75%;
+.quest-comment-title>.quest-rating {
+  bottom: 15px;
+  left: 75%;
+  position: relative;
+  text-align: right;
 }
 
 .quest-comments {
-    clear: both;
-    margin: auto;
-    padding: 5%;
-    width: 75%;
+  clear: both;
+  margin: auto;
+  padding: 5%;
+  width: 75%;
 }
 
 .quest-photo-gallery {
-    float: left;
-    height: 40%;
-    width: 80%;
+  float: left;
+  height: 40%;
+  width: 80%;
 }
 
 .quest-photo-gallery img {
-    height: 350px;
-    width: 600px;
+  height: 350px;
+  width: 600px;
 }
 
-.username {
-    font-size: 20px;
-}
+.username { font-size: 20px; }
 
-.username:hover {
-    color: #757575;
-}
+.username:hover { color: #757575; }
 
 .slider {
-    height: 290px;
-    overflow: hidden;
-    margin: 0 0 7px;
-    position: relative;
-    z-index: 9;
-    width: 700px;
+  height: 290px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  position: relative;
+  width: 600px;
+  z-index: 9;
 }
 
 .slider ul,
 .slider li {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .slider ul {
-    width: 9999px;
+  width: 9999px;
 }
 
 .slider ul li {
-    height: 290px;
-    float: left;
-    list-style-type: none;
-    width: 700px;
+  height: 290px;
+  float: left;
+  list-style-type: none;
+  width: 600px;
 }
 
 .slider .nav {
-    position: absolute;
-    bottom: 12px;
-    left: 15px;
+  bottom: 10px;
+  left: 15px;
+  position: absolute;
 }
+
+.slider .nav .on { background: #00695c; }
 
 .slider .nav span {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 1px 2px #000;
-    cursor: pointer;
-    display: block;
-    float: left;
-    height: 16px;
-    margin: 0 8px 0 0;
-    opacity: 0.9;
-    overflow: hidden;
-    width: 16px;
-}
-
-.slider .nav span.on {
-    background: #00695C;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px #000;
+  cursor: pointer;
+  display: block;
+  float: left;
+  height: 16px;
+  margin-right: 8px;
+  opacity: .9;
+  overflow: hidden;
+  width: 16px;
 }

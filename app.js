@@ -23,13 +23,13 @@ function start() {
         }
     }
     http.createServer(onRequest).listen(8888);
-
     console.log('Server has started.');
 }
 
 
 function getProcess(pathname, response) {
     var mimeType,
+        pathnamePrefix,
         filename,
         fileStream;
 
@@ -40,7 +40,13 @@ function getProcess(pathname, response) {
     if (pathname.indexOf('.') === -1) {
         pathname += pathname + '.html';
     }
-    filename = path.join(process.cwd(), '.', pathname);
+
+    if (pathname.indexOf('bower_components') === -1) {
+        pathnamePrefix = './src/';
+    } else {
+        pathnamePrefix = '.';
+    }
+    filename = path.join(process.cwd(), pathnamePrefix, pathname) ;
     fs.exists(filename, function (exists) {
         if (!exists) {
             console.log('not exists: ' + filename);
@@ -55,7 +61,6 @@ function getProcess(pathname, response) {
         fileStream.pipe(response);
 
     });
-    console.log('Request for ' + pathname + ' received.');
 }
 
 start();

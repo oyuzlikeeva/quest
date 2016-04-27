@@ -1,4 +1,4 @@
 /node_modules/*
-/node-v5.7.1-linux-x64/*
 /.idea/*
+/bower_components/*
 /.gitignore

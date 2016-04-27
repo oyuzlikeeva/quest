@@ -5,35 +5,42 @@
         <link rel="stylesheet" type="text/css" href="allPageStyle.css">
     </head>
     <body>
-        <div id="header">
+        <div class="header">
             <div class="block-project-name">
-                <span class="project-name" type="button" onclick=App.goOnMainPage()>
+                <span class="project-name"
+                      type="button"
+                      onclick=App.goOnMainPage()>
                     QuestoMania
                 </span>
             </div>
             <div class="header-button-group">
                 <button type="button" class="icon-button">
-                    <a id="user-profile" href="#userProfile" aria-label="User profile page">
+                    <a id="user-profile"
+                       href="#userProfile"
+                       aria-label="User profile page">
                         <img src="img/icons/ic_person_white_36px.svg"
                              alt="User profile button">
                     </a>
                 </button>
                 <a href="#logIn" aria-label="Log out">
                     <button type="button"
-                            class="log-in-button"
+                            class="log-out-button"
                             onclick=App.logOut()>
                         Log out
                     </button>
                 </a>
             </div>
         </div>
-        <div id="content">
-            <iframe id="iframe" class="hidden" src="#"onload="App.hiddenHeader()"></iframe>
+        <div class="content">
+            <iframe id="iframe"
+                    class="hidden"
+                    src="#"
+                    onload="App.hiddenHeader()"></iframe>
         </div>
-        <script src="https://code.jquery.com/jquery-2.2.3.min.js"
-                integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo="
-                crossorigin="anonymous">
-        </script>
-        <script src="index.js"></script>
+        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="userModel.js"></script>
+        <script src="questModel.js"></script>
+        <script src="index.service.js"></script>
+        <script src="index.controller.js"></script>
     </body>
 </html>
