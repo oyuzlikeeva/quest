@@ -3,6 +3,9 @@
     "role": "admin"
   },{
     "username": "Вася",
+    "userPhoto": {
+      "src": "img/userProfilePhoto/1.jpg"
+    },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -23,6 +26,9 @@
       }]
   }, {
     "username": "Коля",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/3.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -43,6 +49,9 @@
       }]
   }, {
     "username": "Петя",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/6.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -63,6 +72,9 @@
       }]
   }, {
     "username": "Маша",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/2.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -90,6 +102,9 @@
       }]
   }, {
     "username": "Саша",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/4.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -117,6 +132,9 @@
       }]
   }, {
     "username": "Марина",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/5.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -137,6 +155,9 @@
       }]
   }, {
     "username": "Настя",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/7.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"
@@ -157,6 +178,9 @@
       }]
   }, {
     "username": "Лена",
+  "userPhoto": {
+    "src": "img/userProfilePhoto/8.jpg"
+  },
     "role": "user",
     "photo": [{
         "src": "img/1.jpg"

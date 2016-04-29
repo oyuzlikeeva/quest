@@ -20,8 +20,10 @@ App.getQuestPageData = function() {
 App.getQuestPageData();
 
 App.openEditModal = function() {
-    var template = Handlebars.compile($('#edit-template').html());
-    $('#edit-form').append(template(App.questData));
+    var template;
+
+    template = Handlebars.compile($('#edit-template').html());
+    $('#edit-form').append(template(App.questData.questInfo));
 };
 
 App.submitEditedQuestInfo = function() {
@@ -51,9 +53,8 @@ App.goOnUserProfile = function(username) {
 
 (function() {
     var userRole = App.getUserRole();
-
     if (userRole !== 'admin') {
-        $('#edit-quest-info').css('display', 'none');
+        $('.edit-quest-button').css('display', 'none');
     }
 })();
 

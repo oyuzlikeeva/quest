@@ -3,17 +3,20 @@
         data,
         commentTemplate,
         photoTemplate,
+        userPhotoTemplate,
         userTemplate;
 
     hash = window.parent.location.hash;
     window.parent.App.getUsersData();
     data = window.parent.App.getUserData( hash.split('/')[1] );
     photoTemplate = Handlebars.compile( $('#photo-template').html() );
+    userPhotoTemplate = Handlebars.compile( $('#user-photo-template').html() );
     commentTemplate = Handlebars.compile( $('#comment-template').html() );
     userTemplate = Handlebars.compile( $('#user-template').html() );
 
     $('.user-info').append( userTemplate( data.username) );
     $('.user-gallery-item').append( commentTemplate( data.userComments ));
+    $('.user-info').append( userPhotoTemplate( data.userProfilePhoto));
     $('.user-photo-gallery ul').append( photoTemplate( data.userPhoto));
 } )();
 

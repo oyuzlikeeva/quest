@@ -40,26 +40,34 @@ App.goOnMainPage = function() {
 };
 
 App.setUserRole = function(username) {
+    document.cookie = 'userRole=' + username;
+
     if (username === 'admin') {
-        App.userRole = localStorage.setItem('userRole', 'admin');
+        localStorage.setItem('username', username);
         $('#user-profile').attr('href', '#adminProfile');
         return '#adminProfile';
     } else {
         if (App.getUserData(username) !== false) {
-            App.userRole = localStorage.setItem('username', username);
-            $('#user-profile').attr('href', '#userProfile/' + username);
-            return '#userProfile/' + username;
-        } else {
-            return '#logIn';
+            localStorage.setItem('username', username);
+            $('#user-profile').attr('href', '#userProfile/' + document.cookie.split('userRole=')[1]);
+            return '#userProfile/' + document.cookie.split('userRole=')[1];
         }
     }
 };
 
+App.goUserProfile = function() {
+    if (document.cookie.split('userRole=')[1] === 'admin') {
+        $('#user-profile').attr('href', '#adminProfile');
+    } else {
+        $('#user-profile').attr('href', '#userProfile/' + document.cookie.split('userRole=')[1]);
+    }
+};
+
 App.getUserRole = function() {
-    return App.userRole;
+    return document.cookie.split('userRole=')[1];
 };
 
 App.logOut = function() {
-    localStorage.removeItem('userRole');
+    document.cookie = '';
 };
 

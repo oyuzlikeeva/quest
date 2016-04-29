@@ -11,6 +11,13 @@
                 <script id="user-template" type="text/x-handlebars-template">
                     <h1 class="username">{{this}}</h1>
                 </script>
+                <script id="user-photo-template" type="text/x-handlebars-template">
+                    <div class="user-photo">
+                        <a href="#change-photo">
+                            <img src="{{src}}" width="140" height="140"/>
+                        </a>
+                    </div>
+                </script>
             </div>
             <div class="user-photo-gallery slider">
                 <ul>
@@ -38,6 +45,27 @@
                         <hr class="item-divider"/>
                     {{/each}}
                 </script>
+            </div>
+            <!--Modal window for change user profile photo-->
+            <div id="change-photo" class="modal-dialog">
+                <div>
+                    <a href="#close" aria-label="Close" class="close">
+                        <img src="img/icons/ic_clear_black_24px.svg"/>
+                    </a>
+                    <form action="">
+                        <p>
+                            Add new photo from quest:
+                            <input class="input"
+                                   type="file"
+                                   accept="image/jpeg,image/png"
+                                   alt="add quest's photo"/>
+                        </p>
+                        <button class="custom-button"
+                                type="submit">
+                            Edit profile photo
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
 
