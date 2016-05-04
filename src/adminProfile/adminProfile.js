@@ -39,15 +39,20 @@ App.submitData = function(path, data, newHash) {
 
 App.deletedComment = function(id) {
     var i,
+        j,
         response,
-        comments = App.data.comments;
+        comments = App.data;
 
     for (i = 0; i < comments.length; i++) {
-        if (comments[i].questID === id) {
-            response = window.parent.App.postData(comments[i], '/deleteCommentData');
-            if (response === 'success') {
-                $('#'+id ).remove();
-                comments.splice(i,1);
+        if (comments[i] !== undefined) {
+            for (j = 0; j < comments[i].length; j++) {
+                if (comments[i][j].questID === id) {
+                    response = window.parent.App.postData(comments[i], '/deleteCommentData');
+                    if (response === 'success') {
+                        $('#'+id ).remove();
+                        comments.splice(i,1);
+                    }
+                }
             }
         }
     }
@@ -55,15 +60,20 @@ App.deletedComment = function(id) {
 
 App.markNotSpoil = function(id) {
     var i,
+        j,
         response,
-        comments = App.data.comments;
+        comments = App.data;
 
     for (i = 0; i < comments.length; i++) {
-        if (comments[i].questID === id) {
-            comments[i].spoiler = false;
-            response = window.parent.App.postData(comments[i], '/updateCommentsData');
-            if (response === 'success') {
-                $('#'+id ).remove();
+        if (comments[i] !== undefined) {
+            for (j = 0; j < comments[i].length; j++) {
+                if (comments[i][j].questID === id) {
+                    comments[i][j].spoiler = false;
+                    response = window.parent.App.postData(comments[i], '/updateCommentsData');
+                    if (response === 'success') {
+                        $('#' + id).remove();
+                    }
+                }
             }
         }
     }
