@@ -25,7 +25,7 @@ App.submitAddedData = function() {
         address: $('#address').val(),
         siteForReservation: $('#reservation-url').val()};
     newHash = '#questPage';
-    App.submitData(path, data, newHash)
+    App.submitData(path, data, newHash);
 };
 
 App.submitData = function(path, data, newHash) {

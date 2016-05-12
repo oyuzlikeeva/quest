@@ -10,7 +10,7 @@ App.submitLogInData = function() {
     password = document.getElementById('log-in-password').value;
     data = {username: username,
         password: password};
-    App.submitData(path, data)
+    App.submitData(path, data);
 };
 
 App.submitSignUpData = function() {

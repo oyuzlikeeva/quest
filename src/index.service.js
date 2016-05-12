@@ -11,7 +11,7 @@ App.postData = (function(data, path) {
     if (xhr.status != 200) {
         console.error( xhr.status + ': ' + xhr.statusText );
     } else {
-        return 'success'
+        return 'success';
     }
 });
 
@@ -29,9 +29,7 @@ App.getQuestsData = function() {
 };
 
 App.getUsersData = function() {
-    var i,
-        userData,
-        users;
+    var userData;
 
     xhr.open('GET', '../api/usersData.json', false);
     xhr.send();
@@ -78,7 +76,6 @@ App.getQuestData = function(id) {
 
 App.createUsersCollection = function(userData) {
     var i,
-        id,
         user,
         users = {},
         username,
@@ -108,7 +105,6 @@ App.createQuestsCollection = function(questData) {
         id,
         quest,
         quests = {},
-        questItem,
         key;
 
     for (key in questData) {
