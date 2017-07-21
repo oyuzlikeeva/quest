@@ -6,18 +6,18 @@ App.goOnQuestPage = function(id) {
     document.getElementById('iframe').src = hash;
 };
 
-App.hiddenHeader = function() {
-    var header,
-        content,
-        iframeUrl;
-
-    iframeUrl = document.getElementById('iframe').src;
-    if (iframeUrl === 'http://localhost:8888/logIn') {
-        $('.header').css('display', 'none');
-    } else {
-        $('.header').css('display', 'block');
-    }
-};
+//App.hiddenHeader = function() {
+//    var header,
+//        content,
+//        iframeUrl;
+//
+//    iframeUrl = document.getElementById('iframe').src;
+//    if (iframeUrl === 'http://localhost:8888/logIn') {
+//        $('.header').css('display', 'none');
+//    } else {
+//        $('.header').css('display', 'block');
+//    }
+//};
 
 function changeUrl() {
     var windowUrl,

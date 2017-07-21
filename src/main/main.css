@@ -1,37 +1,80 @@
+.quests-gallery-filters {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1%;
+  padding: 16px;
+  border: 2px solid #000;
+  box-shadow: 0 1.2px 5px rgba(0, 0, 0, .7);
+  box-sizing: border-box;
+}
+.button-container {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.search-button {
+  padding: 8px 16px;
+  border: 0;
+  background: #000;
+  box-shadow: 0 1.2px 5px rgba(0, 0, 0, .7);
+  font-size: 16px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  color: #fff;
+}
+
 .quest-block {
+  float: left;
+  height: 372px;
+  padding: 16px;
+  box-sizing: border-box;
   border: 1px solid #eee;
   border-radius: 3px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, .3);
-  float: left;
-  height: 300px;
-  margin: 2% 1%;
   overflow: hidden;
-  padding: 5px;
-  width: 250px;
+}
+
+.quest-block:hover {
+  cursor: pointer;
+}
+
+.quest-block-image {
+  height: 284px;
+  margin-bottom: 16px;
 }
 
 .quest-block-info {
-  background: #fff;
-  padding-right: 5px;
   position: relative;
   bottom: 0;
-  height: 290px;
   width: 100%;
+  height: 290px;
+  padding-right: 5px;
+  background: #fff;
 }
 
 .quest-block-info:hover{
-  bottom: 200px;
+  animation: mymove 0.7s ease-out;
+  -webkit-animation: mymove 0.7s ease-out;
+}
+
+@-webkit-keyframes mymove {
+  from {bottom: 0;}
+  to {bottom: 200px;}
+}
+
+@keyframes mymove {
+  from {bottom: 0;}
+  to {bottom: 200px;}
 }
 
 .quest-block-info > .quest-rating {
   position: relative;
-  bottom: 20px;
-  left: 40px;
+  bottom: 45px;
 }
 
 #quest-block-info-title {
-  text-align: right;
   margin-bottom: 5px;
+  text-align: right;
 }
 
 .quests-gallery-page {

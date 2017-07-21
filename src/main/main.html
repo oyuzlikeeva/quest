@@ -1,38 +1,69 @@
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <title>QuestoMania</title>
     <link rel="stylesheet" type="text/css" href="allPageStyle.css">
     <link rel="stylesheet" type="text/css" href="main/main.css">
-</head>
-<body>
-    <div class="quests-gallery-page">
+  </head>
+  <body>
+    <div class="container">
+      <div class="quests-gallery-page row">
+        <div class="quests-gallery-filters">
+          <div class="row">
+            <select class="col-md-3">
+              <option selected disabled>Выберите проект</option>
+              <option>Внедрение</option>
+              <option>Выйти из комнаты</option>
+              <option>Exit game</option>
+              <option>Location</option>
+              <option>Клаустрофобия</option>
+            </select>
+            <select class="col-md-3">
+              <option selected disabled>Выберите жанр</option>
+              <option>Приключенческие</option>
+              <option>Семейные</option>
+              <option>Страшные</option>
+              <option>Детские</option>
+            </select>
+            <select class="col-md-3">
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>Более</option>
+            </select>
+            <input min="1000" step="100" type="number"  class="col-md-3">
+          </div>
+          <div class="button-container">
+            <button type="button" class="search-button">Подобрать</button>
+          </div>
+        </div>
         <script id="template" type="text/x-handlebars-template">
-            {{#each this}}
-                <div class="quest-block" onclick=goOnQuestPage({{id}})>
-                    <div class="quest-block-image">
-                        <img src="{{mainPhoto.src}}"
-                             width="400"
-                             height="250"
-                             alt="Quest's photo">
-                    </div>
-                    <div class="quest-block-info">
-                        <span id={{id}} class="hidden">{{id}}</span>
-                        <div id="quest-block-info-title">
-                            <span class="quest-name">{{name}}</span><br/>
-                            <span class="quest-project-name">{{projectName}}</span><br/>
-                        </div>
-                        <span class="quest-rating">
-                            <span class="rating-{{rating}}"></span>
-                        </span><br/>
-                        <span class="quest-description">{{description}}</span><br/>
-                    </div>
+          {{#each this}}
+            <div class="quest-block col-md-4" onclick=goOnQuestPage({{id}})>
+              <div class="quest-block-image"
+                 style="background: url({{mainPhoto.src}}) no-repeat; background-size: cover;">
+              </div>
+              <div class="quest-block-info">
+                <span id={{id}} class="hidden">{{id}}</span>
+                <div id="quest-block-info-title">
+                  <span class="quest-name">{{name}}</span><br/>
+                  <span class="quest-project-name">{{projectName}}</span><br/>
                 </div>
-            {{/each}}
+                <span class="quest-rating">
+                  <span class="rating-{{rating}}"></span>
+                </span><br/>
+                <span class="quest-description">{{description}}</span><br/>
+              </div>
+            </div>
+          {{/each}}
         </script>
+      </div>
     </div>
     <script src="/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="/bower_components/handlebars/handlebars.min.js"></script>
     <script src="main/main.js"></script>
-</body>
+    <link rel="stylesheet" type="text/css" href="../flex.css">
+  </body>
 </html>

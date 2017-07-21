@@ -28,6 +28,20 @@ App.getQuestsData = function() {
     return App.mainPageCollection;
 };
 
+App.getAllUsersData = function() {
+    var userData;
+
+    xhr.open('GET', '../api/usersData.json', false);
+    xhr.send();
+    if (xhr.status != 200) {
+        console.error(xhr.status + ': ' + xhr.statusText);
+    } else {
+        userData = JSON.parse(xhr.responseText);
+    }
+    return userData;
+};
+
+
 App.getUsersData = function() {
     var userData;
 
@@ -39,6 +53,7 @@ App.getUsersData = function() {
         userData = JSON.parse(xhr.responseText);
         App.createUsersCollection(userData);
     }
+    return App.usersCollection;
 };
 
 App.getUserData =  function(username) {

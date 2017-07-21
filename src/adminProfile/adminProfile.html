@@ -1,173 +1,313 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>QuestoMania</title>
-        <link rel="stylesheet" type="text/css" href="allPageStyle.css">
-        <link rel="stylesheet" type="text/css" href="adminProfile/adminProfile.css">
-    </head>
-    <body>
-        <div class="admin-page">
-            <div class="comments-notification">
-                <div class="added-new">
-                    <span>Add new quest</span>
-                    <a href="#added-new-quest" aria-label="Added new quest button">
-                        <button type="button" class="icon-button">
-                            <img src="img/icons/ic_add_white_36px.svg"
-                                 alt="Added new quest button">
-                        </button>
-                    </a>
-                </div>
-                <h2>Notification table</h2>
-                <table class="notification-table">
-                    <thead>
-                    <tr>
-                        <th>Text comment</th>
-                        <th>Username</th>
-                        <th>Actions</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <script id="template" type="text/x-handlebars-template">
-                        {{#each this}}
-                            {{#each this}}
-                                {{#if spoiler}}
-                                    <tr id="{{questID}}">
-                                        <td class="text-comment">{{comment}}</td>
-                                        <td class="username">{{username}}</td>
-                                        <td class="actions">
-                                            <button class="icon-button" onclick=App.deletedComment({{questID}})>
-                                                <img src="../img/icons/ic_close_white_24px.svg"
-                                                     alt="Delete comment"/>
-                                            </button>
-                                            <button class="icon-button" onclick=App.markNotSpoil({{questID}})>
-                                                <img src="../img/icons/ic_check_white_24px.svg"
-                                                     alt="Stay comment"/>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                {{/if}}
-                            {{/each}}
-                        {{/each}}
-                    </script>
-                    </tbody>
-                </table>
-            </div>
-            <!--Modal window for add new quest-->
-            <div id="added-new-quest" class="modal-dialog">
-                <div>
-                    <h2>Added new quest</h2>
-                    <a href="#close" aria-label="Close" class="close">
-                        <img src="img/icons/ic_clear_black_24px.svg"
-                             alt="Close modal dialog"/>
-                        </a>
-                    <hr class="modal-title-divider">
-                    <form action="" onsubmit=App.submitAddedData()>
-                        <p>Quest name:
-                            <input id="quest-name"
-                                   name="quest-name"
-                                   class="input"
-                                   type="text"
-                                   required
-                                   placeholder="Quest name"
-                                   alt="Enter quest name"/>
-                        </p>
-                        <p>
-                            Project name:
-                            <input id="project-name"
-                                   name="project-name"
-                                   class="input"
-                                   required
-                                   type="text"
-                                   placeholder="Project name"
-                                   alt="Enter quest's project name"/>
-                        </p>
-                        <p>
-                            Address for reservation:
-                            <input id="reservation-url"
-                                   name="reservation-url"
-                                   class="input"
-                                   required
-                                   type="url"
-                                   alt="quest reservation"
-                                   placeholder="Write url like http://www.siteforreservation.com"/>
-                        </p>
-                        <p>
-                            Number of persons:
-                            <input id="number-of-persons"
-                                   name="number-of-persons"
-                                   class="input"
-                                   required
-                                   type="text"
-                                   pattern="[0-9]-[0-9]"
-                                   alt="Number of persons"/>
-                        </p>
-                        <p>
-                            Time:
-                            <input id="time"
-                                   name="time"
-                                   class="input"
-                                   required
-                                   type="text"
-                                   alt="Number of persons"/>
-                        </p>
-                        <p>
-                            Coast of quest:
-                            <input id="coast"
-                                   name="coast"
-                                   class="input"
-                                   required
-                                   type="number"
-                                   alt="Coast of quest"/>
-                        </p>
-                        <p>
-                            Address of quest:
-                            <input id="address"
-                                   name="address"
-                                   class="input"
-                                   required
-                                   type="text"
-                                   alt="Address of quest"/>
-                        </p>
-                        <p>
-                            Keywords:
-                            <input id="keywords"
-                                   name="keywords"
-                                   class="input"
-                                   required
-                                   type="text"
-                                   placeholder="Write keywords separated by commas"
-                                   alt="Write keywords separated by commas"/>
-                        </p>
-                        <p>
-                            Description of quest:<br/>
-                            <textarea id="description"
-                                      name="description"
-                                      required
-                                      placeholder="Write a short story about quest"></textarea>
-                        </p>
-                        <p>
-                            Add photo of quest
-                            <input id="photo"
-                                   name="photo"
-                                   class="input"
-                                   required
-                                   type="file"
-                                   accept="image/jpeg,image/png"
-                                   multiple
-                                   alt="add quest's photos"/>
-                        </p>
-                        <span id="added-new-error-message">
-                            Invalid form
-                        </span><br/>
-                        <button id="added-button" class="custom-button" type="submit">Added</button>
-                    </form>
-                </div>
-            </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>QuestoMania</title>
+    <link rel="stylesheet" type="text/css" href="allPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="../flex.css">
+    <link rel="stylesheet" type="text/css" href="adminProfile/adminProfile.css">
+  </head>
+  <body>
+    <div class="admin-page">
+      <div class="admin-menu row">
+        <nav class="col-md-11">
+          <a id="notifications-table" class="active">Оповещения</a>
+          <a id="quests-table">Квесты</a>
+          <a id="users-table">Пользователи</a>
+        </nav>
+        <div class="added-new col-md-1">
+          <a href="#added-new-quest" title="Добавить квест" aria-label="Added new quest button">
+            <img src="../img/icons/ic_add_circle_black_36px.svg"
+                 alt="Delete comment"/>
+          </a>
         </div>
-
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/handlebars/handlebars.min.js"></script>
-        <script src="adminProfile/adminProfile.js"></script>
-    </body>
+      </div>
+      <!-- Notification table: Show comments with spoilers. If comments really have spoiler admin can delete comments-->
+      <div class="comments-notification">
+        <table class="notifications-table table">
+          <thead>
+          <tr class="row">
+            <th class="col-md-6">Текст комментария</th>
+            <th class="col-md-2">Квест</th>
+            <th class="col-md-2">Пользователь</th>
+            <th class="col-md-2">Действия</th>
+          </tr>
+          </thead>
+          <tbody>
+          <script id="comments-template" type="text/x-handlebars-template">
+            {{#each this}}
+              {{#each this}}
+                {{#if spoiler}}
+                  <tr id="comment{{commentID}}" class="row">
+                    <td class="text-comment col-md-6">{{comment}}</td>
+                    <td class="quest-name col-md-2">{{questName}}</td>
+                    <td class="username col-md-2" onclick="App.goOnUserProfile('{{username}}')">{{username}}</td>
+                    <td class="actions col-md-2">
+                      <a title="Удалить спойлер" onclick=App.deletedComment({{commentID}})>
+                        <img src="../img/icons/ic_delete_black_36px.svg"
+                           alt="Delete comment"/>
+                      </a>
+                      <a title="Это не спойлер" onclick=App.markNotSpoil({{commentID}})>
+                        <img src="../img/icons/ic_check_black_36px.svg"
+                           alt="Stay comment"/>
+                      </a>
+                    </td>
+                  </tr>
+                {{/if}}
+              {{/each}}
+            {{/each}}
+          </script>
+          </tbody>
+        </table>
+      </div>
+      <!-- Quests table: Show all quest. Admin can edit info of some quest or delete it-->
+      <div class="quests-table-block">
+        <table class="quests-table table hidden">
+          <thead>
+          <tr class="row">
+            <th class="col-md-2">
+              Название квеста
+              <img src="../img/icons/ic_sort_by_alpha_white_24px.svg" onclick="App.sortColumn('quests', 'name')">
+            </th>
+            <th class="col-md-2">Проект</th>
+            <th class="col-md-1">Цена</th>
+            <th class="col-md-1">Участники</th>
+            <th class="col-md-2">Адрес</th>
+            <th class="col-md-3">web-страница</th>
+            <th class="col-md-1">Действия</th>
+          </tr>
+          </thead>
+          <tbody>
+          <!--<script id="quests-template" type="text/x-handlebars-template">-->
+            <!--{{#each this}}-->
+              <!--<tr id="quest{{id}}" class="row">-->
+                <!--<td class="questName col-md-2" onclick="App.goOnQuestPage({{id}})">{{name}}</td>-->
+                <!--<td class="projectName col-md-2">{{projectName}}</td>-->
+                <!--<td class="coast col-md-1">{{coast}}</td>-->
+                <!--<td class="numberOfPersons col-md-1">{{numberOfPersons}}</td>-->
+                <!--<td class="address col-md-2">{{address}}</td>-->
+                <!--<td class="siteForReservation col-md-3">{{siteForReservation}}</td>-->
+                <!--<td class="actions col-md-1">-->
+                  <!--<a title="Удалить квест" href="#request-object-delete" onclick="App.setOnDelete('quest', {{id}})">-->
+                    <!--<img src="../img/icons/ic_delete_black_36px.svg"-->
+                       <!--alt="Delete comment"/>-->
+                  <!--</a>-->
+                  <!--<a title="Изменить квест" href="#edit-quest-info" onclick="App.openEditModal({{id}})">-->
+                    <!--<img src="../img/icons/ic_mode_edit_black_36px.svg"-->
+                       <!--alt="Stay comment"/>-->
+                  <!--</a>-->
+                <!--</td>-->
+              <!--</tr>-->
+            <!--{{/each}}-->
+          <!--</script>-->
+          </tbody>
+        </table>
+      </div>
+      <!-- Quests table: Show all users. If some user have 3 forfeits admin can delete user.-->
+      <div class="">
+        <table class="users-table table hidden">
+          <thead>
+          <tr class="row">
+            <th class="col-md-1">ID</th>
+            <th class="col-md-3">Пользователь</th>
+            <th class="col-md-3 role">Роль</th>
+            <th class="col-md-3">Штрафы</th>
+            <th class="col-md-2">Удалить</th>
+          </tr>
+          </thead>
+          <tbody>
+          <script id="users-template" type="text/x-handlebars-template">
+            {{#each this.users}}
+              <tr id="user{{userID}}" class="row">
+                <td class="userId col-md-1">{{userID}}</td>
+                <td class="username col-md-3" onclick="App.goOnUserProfile('{{username}}')">{{username}}</td>
+                <td class="role col-md-3">{{role}}</td>
+                <td class="forfeits col-md-3">
+                  <img src="../img/icons/forfeit.svg">
+                  <img src="../img/icons/forfeit.svg">
+                  <img src="../img/icons/forfeit.svg">
+                </td>
+                <td class="actions col-md-2">
+                  <a title="Удалить пользователя" href="#request-object-delete" onclick="App.setOnDelete('user', {{id}})">
+                    <img src="../img/icons/ic_delete_black_36px.svg"
+                         alt="Delete comment"/>
+                  </a>
+                </td>
+              </tr>
+            {{/each}}
+          </script>
+          </tbody>
+        </table>
+      </div>
+      <!--Modal window: Added new quest-->
+      <div id="added-new-quest" class="modal-dialog">
+        <div>
+          <h2>Добавить квест</h2>
+          <a href="#close" aria-label="Close" class="close">
+            <img src="img/icons/ic_clear_black_24px.svg"
+               alt="Close modal dialog"/>
+            </a>
+          <hr class="modal-title-divider">
+          <form action="" onsubmit=App.submitAddedData()>
+            <div class="row">
+              <input id="quest-name"
+                     name="quest-name"
+                     class="input col-md-6"
+                     type="text"
+                     required
+                     placeholder="Название"
+                     alt="Enter quest name"/>
+              <input id="project-name"
+                     name="project-name"
+                     class="input col-md-6"
+                     required
+                     type="text"
+                     placeholder="Проект"
+                     alt="Enter quest's project name"/><br>
+              <input id="number-of-persons"
+                     name="number-of-persons"
+                     class="input col-md-4"
+                     required
+                     type="text"
+                     pattern="[0-9]-[0-9]"
+                     placeholder="Кол-во игроков"
+                     alt="Кол-во игроков"/>
+              <input id="time"
+                     name="time"
+                     class="input col-md-4"
+                     required
+                     type="text"
+                     placeholder="Время игры"
+                     alt="Время игры"/>
+              <input id="coast"
+                     name="coast"
+                     class="input  col-md-4"
+                     required
+                     type="number"
+                     placeholder="Стоимость"
+                     alt="Стоимость"/><br>
+              <input id="reservation-url"
+                     name="reservation-url"
+                     class="input col-md-6"
+                     required
+                     type="url"
+                     placeholder="Сайт для брони http://www.siteforreservation.com"
+                     alt="quest reservation"/>
+              <input id="address"
+                     name="address"
+                     class="input col-md-6"
+                     required
+                     type="text"
+                     placeholder="Адресс квеста"
+                     alt="Адрес квеста"/><br>
+              <input id="keywords"
+                     name="keywords"
+                     class="input col-md-12"
+                     required
+                     type="text"
+                     placeholder="Слова для поиска спойлеров"
+                     alt="Слова для поиска спойлеров"/>
+              <textarea id="description"
+                        class="col-md-12"
+                        name="description"
+                        required
+                        placeholder="Описание квеста"></textarea>
+              <input id="photo"
+                     name="photo"
+                     class="input"
+                     required
+                     type="file"
+                     accept="image/jpeg,image/png"
+                     multiple
+                     alt="add quest's photos"/>
+              <button id="added-button" class="custom-button" type="submit">Добавить</button>
+              <span id="added-new-error-message">
+                Invalid form
+              </span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!--Modal window: Edited some quest info-->
+    <div id="edit-quest-info" class="modal-dialog">
+      <div>
+        <h2>Изменение информации о квесте</h2>
+        <a href="#close" aria-label="Close" class="close">
+          <img src="img/icons/ic_clear_black_24px.svg"/>
+        </a>
+        <hr class="quest-comment-divider">
+        <form id="edit-form" action="" onsubmit=App.submitEditedQuestInfo()>
+          <script id="edit-template" type="text/x-handlebars-template">
+            <input class="input col-md-6"
+                   name="quest-name"
+                   type="text"
+                   alt="Enter quest name"
+                   required
+                   value="{{name}}"/>
+            <input class="input col-md-6"
+                   name="project-name"
+                   type="text"
+                   alt="Enter quest's project name"
+                   required
+                   value="{{projectName}}"/><br>
+            <input class="input col-md-2"
+                   name="coast"
+                   type="number"
+                   alt="Coast of quest"
+                   required
+                   value="{{coast}}"/>
+            <input class="input col-md-2"
+                   name="persons"
+                   type="text"
+                   alt="Number of persons"
+                   required
+                   value="{{numberOfPersons}}"/>
+            <input class="input col-md-8"
+                   name="address"
+                   type="text"
+                   alt="Address of quest"
+                   required
+                   value="{{address}}"/><br>
+            <input class="input col-md-12"
+                   name="keywords"
+                   type="text"
+                   alt="Write keywords separated by commas"
+                   required
+                   value="{{keywords}}"/><br>
+              <textarea class="edit-description"
+                        name="description"
+                        required
+                        type="text">{{description}}</textarea><br>
+            <input class="input"
+                   name="photo"
+                   type="file"
+                   accept="image/jpeg,image/png"
+                   multiple
+                   required
+                   alt="add quest's photos"/>
+            <button class="custom-button" type="submit">
+              Сохранить
+            </button>
+          </script>
+        </form>
+      </div>
+    </div>
+    <!--Modal window: Request on object delete-->
+    <div id="request-object-delete" class="modal-dialog">
+      <div>
+        <h2>Удалить объект?</h2>
+        <a id="request-close" href="#close" aria-label="Close" class="close">
+          <img src="img/icons/ic_clear_black_24px.svg"/>
+        </a>
+        <hr class="quest-comment-divider">
+          <button class="custom-button" type="button" onclick="App.objectDelete()">
+            Удалить
+          </button>
+      </div>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/handlebars/handlebars.min.js"></script>
+    <script src="adminProfile/adminProfile.js"></script>
+  </body>
 </html>

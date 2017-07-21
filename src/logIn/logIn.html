@@ -1,110 +1,91 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Log in</title>
-        <link rel="stylesheet" type="text/css" href="allPageStyle.css">
-        <link rel="stylesheet" type="text/css" href="logIn/logIn.css">
-    </head>
-    <body>
-        <div class="log-in">
-            <div class="title-log-in-form">
-                <button type="button">
-                    <span id="log-in-title"
-                          class="log-in-form-title"
-                          onclick=App.showLogInForm()>
-                        Log in
-                    </span>
-                </button>
-                <button type="button">
-                    <span id="sign-up-title"
-                          class="log-in-form-title"
-                          onclick=App.showSignUpForm()>
-                        Sign up
-                    </span>
-                </button>
-            </div>
-            <div>
-                <hr class="log-in-line">
-                <hr class="sign-up-line hidden">
-            </div>
-            <hr class="log-in-title-line">
-            <div class="log-in-form">
-                <form id="log-in-form" action="" onsubmit="App.submitLogInData()">
-                    <p>
-                        Login:
-                        <input id="log-in-username"
-                               class="log-in-input"
-                               type="text"
-                               name="username"
-                               maxlength="10"
-                               placeholder="Enter your login"
-                               required
-                               alt="Enter your login"/>
-                    </p>
-                    <p>
-                        Password
-                        <input id="log-in-password"
-                               class="log-in-input"
-                               type="password"
-                               name="password"
-                               maxlength="10"
-                               placeholder="Enter your password"
-                               required
-                               alt="Enter your password"/>
-                    </p>
-                    <span id="log-in-error-message">Invalid login or password</span>
-                    <button type="submit"
-                            class="custom-button">
-                           Log in
-                    </button>
-                </form>
-            </div>
-            <div class="sign-up-form hidden">
-                <form action="" onsubmit=App.submitSignUpData()>
-                    <p>
-                        Login:
-                        <input id="sign-up-username"
-                               name="sign-up-username"
-                               class="log-in-input"
-                               type="text"
-                               maxlength="10"
-                               placeholder="Enter your login"
-                               required
-                               alt="Enter your login"/>
-                    </p>
-                    <p>
-                        Password:
-                        <input id="sign-up-password"
-                               name="sign-up-password"
-                               class="log-in-input"
-                               type="password"
-                               maxlength="10"
-                               placeholder="Enter your password"
-                               required
-                               alt="Enter your password"/>
-                    </p>
-                    <p>
-                        Repeat password:
-                        <input id="sign-up-repeat-password"
-                               name="sign-up-repeat-password"
-                               class="log-in-input"
-                               type="password"
-                               maxlength="10"
-                               placeholder="Repeat your password"
-                               required
-                               alt="Repeat your password"/>
-                    </p>
-                    <span id="sign-up-error-message">Wrong password</span>
-                    <button class="custom-button"
-                            type="submit">
-                        Sign up
-                    </button>
-                </form>
-            </div>
-        </div>
+  <head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <link rel="stylesheet" type="text/css" href="allPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="logIn/logIn.css">
+  </head>
+  <body>
+    <div class="log-in">
+      <div class="log-in-back"></div>
+      <div class="title-log-in-form">
+        <a id="log-in-title"
+           class="log-in-form-title"
+           onclick=App.showLogInForm()>
+          Log in
+        </a>
+        <a id="sign-up-title"
+           class="log-in-form-title"
+           onclick=App.showSignUpForm()>
+          Sign up
+        </a>
+      </div>
+      <div class="log-in-form">
+        <form id="log-in-form" action="" onsubmit="App.submitLogInData()">
+          <button type="submit" class="login-custom-button"></button>
+          <p>
+            <input id="log-in-username"
+                   class="log-in-input"
+                   type="text"
+                   name="username"
+                   maxlength="10"
+                   placeholder="Login"
+                   required
+                   alt="Login"/>
+          </p>
+          <p>
+            <input id="log-in-password"
+                   class="log-in-input"
+                   type="password"
+                   name="password"
+                   maxlength="10"
+                   placeholder="Password"
+                   required
+                   alt="Password"/>
+          </p>
+          <span id="log-in-error-message">Invalid login or password</span>
+        </form>
+      </div>
+      <div class="sign-up-form hidden">
+        <form action="" onsubmit=App.submitSignUpData()>
+          <button class="login-custom-button" type="submit"></button>
+          <p>
+            <input id="sign-up-username"
+                   name="sign-up-username"
+                   class="log-in-input"
+                   type="text"
+                   maxlength="10"
+                   placeholder="Login"
+                   required
+                   alt="Login"/>
+          </p>
+          <p>
+            <input id="sign-up-password"
+                   name="sign-up-password"
+                   class="log-in-input"
+                   type="password"
+                   maxlength="10"
+                   placeholder="Password"
+                   required
+                   alt="Password"/>
+          </p>
+          <p>
+            <input id="sign-up-repeat-password"
+                   name="sign-up-repeat-password"
+                   class="log-in-input"
+                   type="password"
+                   maxlength="10"
+                   placeholder="Repeat password"
+                   required
+                   alt="Repeat password"/>
+          </p>
+          <span id="sign-up-error-message">Wrong password</span>
+        </form>
+      </div>
+    </div>
 
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="logIn/logIn.js"></script>
-    </body>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="logIn/logIn.js"></script>
+  </body>
 </html>

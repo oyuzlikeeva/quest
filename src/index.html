@@ -1,47 +1,56 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>QuestoMania</title>
-        <link rel="stylesheet" type="text/css" href="allPageStyle.css">
-    </head>
-    <body>
-        <div class="header">
-            <div class="block-project-name">
-                <span class="project-name"
-                      type="button"
-                      onclick=App.goOnMainPage()>
-                    QuestoMania
-                </span>
-            </div>
-            <div class="header-button-group">
-                <button type="button" class="icon-button">
-                    <a id="user-profile"
-                       href="#userProfile"
-                       aria-label="User profile page"
-                       onclick=App.goUserProfile()>
-                        <img src="img/icons/ic_person_white_36px.svg"
-                             alt="User profile button">
-                    </a>
-                </button>
-                <a href="#logIn" aria-label="Log out">
-                    <button type="button"
-                            class="log-out-button"
-                            onclick=App.logOut()>
-                        Log out
-                    </button>
-                </a>
-            </div>
-        </div>
-        <div class="content">
-            <iframe id="iframe"
-                    class="hidden"
-                    src="#"
-                    onload="App.hiddenHeader()"></iframe>
-        </div>
-        <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="userModel.js"></script>
-        <script src="questModel.js"></script>
-        <script src="index.service.js"></script>
-        <script src="index.controller.js"></script>
-    </body>
+  <head>
+    <meta charset="UTF-8">
+    <title>Quest Hunters</title>
+    <link rel="stylesheet" type="text/css" href="allPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="flex.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="block-project-name">
+        <h2 class="project-name"
+            type="button"
+            onclick=App.goOnMainPage()>
+          Quest Hunters
+        </h2>
+      </div>
+      <div class="header-button-group">
+        <button type="button" class="icon-button">
+          <a id="user-profile"
+             href="#userProfile"
+             aria-label="User profile page"
+             onclick=App.goUserProfile()>
+            <img src="img/icons/ic_person_white_24px.svg"
+               alt="User profile button">
+          </a>
+        </button>
+        <a href="#logIn" aria-label="Log out">
+          <button type="button"
+              class="log-out-button"
+              onclick=App.logOut()>
+            Выйти
+          </button>
+        </a>
+      </div>
+    </header>
+    <article class="content">
+      <iframe id="iframe"
+          class="hidden"
+          src="#"
+          onload="App.hiddenHeader()"></iframe>
+    </article>
+    <footer>
+      <div class="col-md-4"></div>
+      <div class="footer-logo-block col-md-4">
+        <div class="footer-logo">QH</div>
+        <div class="caption">@Olga Yuzlikeeva</div>
+      </div>
+      <div class="col-md-4"></div>
+    </footer>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="userModel.js"></script>
+    <script src="questModel.js"></script>
+    <script src="index.service.js"></script>
+    <script src="index.controller.js"></script>
+  </body>
 </html>

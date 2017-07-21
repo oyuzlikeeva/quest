@@ -7,6 +7,7 @@ function UserModel(user) {
 
     this.getUserProfileData = function() {
         return {
+            userID: this.userID,
             username: this.username,
             userProfilePhoto: this.userPhoto,
             userRole: this.role,

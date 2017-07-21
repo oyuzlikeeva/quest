@@ -1,239 +1,158 @@
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>QuestoMania</title>
-        <link rel="stylesheet" type="text/css" href="allPageStyle.css">
-        <link rel="stylesheet" type="text/css" href="questPage/questPage.css">
-    </head>
-    <body>
-        <div class="quest-page">
-            <div class="quest-info">
-                <div class="quest-photo-gallery slider">
-                    <ul>
-                        <script id="photo-template" type="text/x-handlebars-template">
-                            {{#each this}}
-                            <li><img class="quest-photo" src="{{src}}"/></li>
-                            {{/each}}
-                        </script>
-                    </ul>
+  <head>
+    <meta charset="UTF-8">
+    <title>QuestoMania</title>
+    <link rel="stylesheet" type="text/css" href="allPageStyle.css">
+    <link rel="stylesheet" type="text/css" href="questPage/questPage.css">
+    <link rel="stylesheet" type="text/css" href="../flex.css">
+  </head>
+  <body>
+    <!--<div class="quest-photo-gallery slider col-md-12">-->
+      <!--<ul>-->
+        <!--<script id="photo-template" type="text/x-handlebars-template">-->
+          <!--{{#each this}}-->
+          <!--<li><img class="quest-photo" style="background: url({{src}}) no-repeat; background-size: cover;"/></li>-->
+          <!--{{/each}}-->
+        <!--</script>-->
+      <!--</ul>-->
+    <!--</div>-->
+    <div class="quest-photo-gallery slider col-md-12">
+      <div class="slider-arrow left-arrow">
+        <img src="../img/icons/back.svg">
+      </div>
+      <ul>
+        <script id="photo-template" type="text/x-handlebars-template">
+          {{#each this}}
+          <li style="background: url({{src}}) no-repeat; background-size: cover;"></li>
+          {{/each}}
+        </script>
+      </ul>
+      <div class="slider-arrow right-arrow">
+        <img src="../img/icons/next.svg">
+      </div>
+    </div>
+    <div class="container">
+      <div class="quest-page">
+        <div class="quest-info row">
+          <script id="quest-template" type="text/x-handlebars-template">
+            <div class="quest-description col-md-6">
+              <div class="quest-description-title row">
+                <div class=" col-md-9">
+                  <span class="quest-name">{{name}}</span><br>
+                  <div class="quest-description-button">
+                    <a href="{{siteForReservation}}"
+                       target="_blank"
+                       aria-label="Reservation">
+                      <input class="custom-button"
+                           type="button"
+                           value="Забронировать"
+                           alt="make a reservation"/>
+                    </a>
+                    <a href="#mark-passed"
+                       aria-label="Mark quest button">
+                      <button class="custom-button button-default"
+                          type="button">
+                        Отметить пройденным
+                      </button>
+                    </a>
+                  </div>
                 </div>
-                <script id="quest-template" type="text/x-handlebars-template">
-                    <div class="quest-description">
-                        <h1 class="quest-name">{{name}}</h1>
-                        <div class="quest-description-title">
-                            <div class="quest-description-button">
-                                <a href="{{siteForReservation}}"
-                                     target="_blank"
-                                     aria-label="Reservation">
-                                    <input class="custom-button"
-                                             type="button"
-                                             value="Reservation"
-                                             alt="make a reservation"/>
-                                </a>
-                                <a href="#mark-passed"
-                                     aria-label="Mark quest button">
-                                    <button class="custom-button"
-                                            type="button">
-                                        Mark passed
-                                    </button>
-                                </a>
-                                <span class="edit-quest-button" >
-                                    <a href="#edit-quest-info"
-                                         aria-label="Edit quest button">
-                                        <button class="icon-button"
-                                                type="button"
-                                                onclick=App.openEditModal()>
-                                            <img src="img/icons/ic_mode_edit_white_18px.svg">
-                                        </button>
-                                    </a>
-                                </span>
-                                <span class="number-of-persons">
-                                    {{numberOfPersons}}
-                                    <img src="img/icons/ic_group_black_32px.svg"/>
-                                </span><br/>
-                                <h3>Стоимость прохождения: от <span>{{coast}}</span></h3>
-                                <h3>Время прохождения:
-                                    <span class="time-of-quest">
-                                        {{timeOfQuest}}
-                                    </span>
-                                </h3>
-
-                            </div>
-                            <h3 class="quest-project-name">{{projectName}}</h3>
-                            <p class="quest-rating">
-                                <span class="rating-{{rating}}"></span>
-                            </p>
-                        </div>
-                        <div class="description">
-                            <p>{{description}}</p>
-                        </div>
-                        <div>
-                            <span class="address-of-quest">Адресс квеста: </span>
-                            {{address}}
-                        </div>
-                    </div>
-                </script>
+                <div class="col-md-3">
+                  <h3 class="quest-project-name">{{projectName}}</h3>
+                  <p class="quest-rating">
+                    <span class="rating-{{rating}}"></span>
+                  </p>
+                </div>
+              </div>
+              <table class="col-md-12">
+                <thead>
+                <td>Стоимость от</td>
+                <td>Время</td>
+                <td><img src="img/icons/ic_group_white_32px.svg"/></td>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>{{coast}} руб</td>
+                  <td>{{timeOfQuest}}</td>
+                  <td>{{numberOfPersons}}</td>
+                </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="quest-comments">
-                <h3>Comments on this quest</h3>
-                <script id="comment-template" type="text/x-handlebars-template">
-                    {{#each this}}
-                    <div class="quest-comment">
-                        <div class="quest-comment-title">
-                            <h4 class="username" onclick=App.goOnUserProfile("{{username}}")>{{username}}</h4>
-                            <span class="time-comment">{{dateAddedComment}}</span>
-                            <span class="quest-rating">
-                                <span class="rating-{{rating}}"></span>
-                            </span>
-                        </div>
-                        <hr class="quest-comment-divider">
-                        <p class="quest-comment-text">{{comment}}</p>
-                    </div>
-                    {{/each}}
-                </script>
+            <div class="col-md-6">
+              <div class="description">
+                <p>{{description}}</p>
+                <p class="descriptionPS"></p>
+              </div>
+              <div>
+                <span class="address-of-quest">Адресс квеста: </span>
+                {{address}}
+              </div>
             </div>
+          </script>
         </div>
-        <!--Modal window for mark quest passed-->
-        <div id="mark-passed" class="modal-dialog">
-            <div>
-                <h2>Mark quest as passed</h2>
-                <a href="#close" aria-label="Close" class="close">
-                    <img src="img/icons/ic_clear_black_24px.svg"/>
-                </a>
-                <hr class="quest-comment-divider">
-                <form action="">
-                    <p>Title of comment:
-                            <input id="comment-title"
-                                     name="comment-title"
-                                     class="input"
-                                     type="text"
-                                     required
-                                     placeholder="Enter comment's title"
-                                     alt="Enter comment's title"/>
-                    </p>
-                    <p>
-                        Your score quest:
-                        <input id="quest-rating"
-                                 name="quest-rating"
-                                 class="input"
-                                 type="number"
-                                 step="0.5"
-                                 required
-                                 placeholder="How are you scoring the quest"
-                                 alt="How are you scoring the quest"/>
-                    </p>
-                    <p>
-                        Comment of quest:<br/>
-                        <textarea id="comment"
-                                    name="comment"
-                                    type="text"
-                                    required
-                                    placeholder="short story about quest"></textarea>
-                    </p>
-                    <p>
-                        Add photo from quest:
-                        <input class="input"
-                                 type="file"
-                                 accept="image/jpeg,image/png"
-                                 alt="add quest's photo"/>
-                    </p>
-                    <button class="custom-button"
-                            type="submit">
-                        Edit quest info
-                    </button>
-                </form>
+        <div class="quest-comments row">
+          <h3 class="col-md-12">Отзывы по квесту</h3>
+          <script id="comment-template" type="text/x-handlebars-template">
+            {{#each this}}
+            <div class="quest-comment col-md-4">
+              <div class="quest-comment-title">
+                <h4 class="username" onclick=App.goOnUserProfile("{{username}}")>{{username}}</h4>
+                <span class="time-comment">{{dateAddedComment}}</span>
+                <span class="quest-rating">
+                  <span class="rating-{{rating}}"></span>
+                </span>
+              </div>
+              <hr class="quest-comment-divider">
+              <p class="quest-comment-text">{{comment}}</p>
             </div>
+            {{/each}}
+          </script>
         </div>
-        <!--Modal window for quest information edited-->
-        <div id="edit-quest-info" class="modal-dialog">
-            <div>
-                <h2>Edit quest info</h2>
-                <a href="#close" aria-label="Close" class="close">
-                    <img src="img/icons/ic_clear_black_24px.svg"/>
-                </a>
-                <hr class="quest-comment-divider">
-                <form id="edit-form" action="" onsubmit=App.submitEditedQuestInfo()>
-                    <script id="edit-template" type="text/x-handlebars-template">
-                        <p>
-                            Quest name:
-                            <input class="input"
-                                     name="quest-name"
-                                     type="text"
-                                     alt="Enter quest name"
-                                     required
-                                     value="{{name}}"/>
-                        </p>
-                        <p>
-                            Project name:
-                            <input class="input"
-                                     name="project-name"
-                                     type="text"
-                                     alt="Enter quest's project name"
-                                     required
-                                     value="{{projectName}}"/>
-                        </p>
-                        <p>
-                            Coast of quest:
-                            <input class="input"
-                                     name="coast"
-                                     type="number"
-                                     alt="Coast of quest"
-                                     required
-                                     value="{{coast}}"/>
-                        </p>
-                        <p>
-                            Number of persons:
-                            <input class="input"
-                                     name="persons"
-                                     type="text"
-                                     alt="Number of persons"
-                                     required
-                                     value="{{numberOfPersons}}"/>
-                        </p>
-                        <p>
-                            Address of quest:
-                            <input class="input"
-                                     name="address"
-                                     type="text"
-                                     alt="Address of quest"
-                                     required
-                                     value="{{address}}"/>
-                        </p>
-                        <p>
-                            Keywords:
-                            <input class="input"
-                                     name="keywords"
-                                     type="text"
-                                     alt="Write keywords separated by commas"
-                                     required
-                                     value="{{keywords}}"/>
-                        </p>
-                        <p>
-                            Description of quest:<br/>
-                            <textarea class="edit-description"
-                                        name="description"
-                                        required
-                                        type="text">{{description}}</textarea>
-                        </p>
-                        <p>
-                            Add photo of quest:
-                            <input class="input"
-                                     name="photo"
-                                     type="file"
-                                     accept="image/jpeg,image/png"
-                                     multiple
-                                     required
-                                     alt="add quest's photos"/>
-                        </p>
-                        <button class="custom-button" type="submit">
-                            Edit quest info
-                        </button>
-                    </script>
-                </form>
-            </div>
+      </div>
+      <!--Modal window for mark quest passed-->
+      <div id="mark-passed" class="modal-dialog">
+        <div>
+          <h2>Отметить квест как пройденный</h2>
+          <a href="#close" aria-label="Close" class="close">
+            <img src="img/icons/ic_clear_black_24px.svg"/>
+          </a>
+          <hr class="quest-comment-divider">
+          <form action="">
+            <input id="comment-title"
+                   name="comment-title"
+                   class="input col-md-8"
+                   type="text"
+                   required
+                   placeholder="Заголовок комментария"
+                   alt="Enter comment's title"/>
+            <input id="quest-rating"
+                   name="quest-rating"
+                   class="input col-md-4"
+                   type="number"
+                   step="0.5"
+                   required
+                   placeholder="Поставьте оценку"
+                   alt="How are you scoring the quest"/><br>
+            <textarea id="comment"
+                      name="comment"
+                      type="text"
+                      required
+                      placeholder="История похода на квест"></textarea><br>
+            <input class="input col-md-6"
+                   type="file"
+                   accept="image/jpeg,image/png"
+                   alt="add quest's photo"/>
+            <button class="custom-button"
+                    type="submit">
+              Добавить
+            </button>
+          </form>
         </div>
-        <script src="/bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="/bower_components/handlebars/handlebars.min.js"></script>
-        <script src="questPage/questPage.js"></script>
-    </body>
+      </div>
+    </div>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/handlebars/handlebars.min.js"></script>
+    <script src="questPage/questPage.js"></script>
+  </body>
 </html>
